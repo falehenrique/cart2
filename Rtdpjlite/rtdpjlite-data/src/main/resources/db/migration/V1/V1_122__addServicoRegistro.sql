@@ -1,0 +1,1 @@
+ALTER TABLE registro ADD COLUMN servicos jsonb;

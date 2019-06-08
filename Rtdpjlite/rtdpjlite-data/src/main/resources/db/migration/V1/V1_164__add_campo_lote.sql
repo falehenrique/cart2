@@ -1,0 +1,1 @@
+ALTER TABLE lote_item ADD COLUMN nome_ignorar VARCHAR(250);

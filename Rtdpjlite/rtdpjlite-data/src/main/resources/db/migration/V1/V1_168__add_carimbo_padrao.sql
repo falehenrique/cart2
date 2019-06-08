@@ -1,0 +1,1 @@
+UPDATE modelo SET ic_padrao = true WHERE id = (select id from modelo where nome = 'REGISTRO MANUAL');

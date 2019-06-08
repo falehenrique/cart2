@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-horizontal-layout width-full>
+    <vaadin-horizontal-layout width-full _id="panelUpload" :expand></vaadin-horizontal-layout>
+    <vaadin-horizontal-layout _id="panelLoading">
+     <vaadin-progress-bar indeterminate></vaadin-progress-bar>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-tab-sheet size-full _id="tabSheet" :expand="0.6">
+    <tab caption="Encontrados" selected>
+     <vaadin-grid id="gridEncontrados" width-full data-item-type="br.com.exmart.rtdpjlite.vo.indisponibilidade.ParteIndisponivel" _id="gridEncontrados">
+      <table>
+       <colgroup>
+        <col column-id="nome" sortable>
+        <col column-id="documento" sortable>
+        <col column-id="protocoloIndisponibilidade" sortable>
+        <col column-id="protocoloCancelamentoIndisponibilidade" sortable>
+        <col column-id="cancelamentoTipo" sortable>
+        <col column-id="cancelamentoData" sortable>
+        <col column-id="dataPedido" sortable>
+        <col column-id="numeroProcesso" sortable>
+        <col column-id="telefone" sortable>
+        <col column-id="nomeInstituicao" sortable>
+        <col column-id="forumVara" sortable>
+        <col column-id="usuario" sortable>
+        <col column-id="email" sortable>
+        <col column-id="registros" sortable>
+        <col column-id="tipo" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="nome">Nome</th>
+         <th plain-text column-ids="documento">Documento</th>
+         <th plain-text column-ids="protocoloIndisponibilidade">ProtocoloIndisponibilidade</th>
+         <th plain-text column-ids="protocoloCancelamentoIndisponibilidade">ProtocoloCancelamentoIndisponibilidade</th>
+         <th plain-text column-ids="cancelamentoTipo">CancelamentoTipo</th>
+         <th plain-text column-ids="cancelamentoData">CancelamentoData</th>
+         <th plain-text column-ids="dataPedido">DataPedido</th>
+         <th plain-text column-ids="numeroProcesso">NumeroProcesso</th>
+         <th plain-text column-ids="telefone">Telefone</th>
+         <th plain-text column-ids="nomeInstituicao">NomeInstituicao</th>
+         <th plain-text column-ids="forumVara">ForumVara</th>
+         <th plain-text column-ids="usuario">Usuario</th>
+         <th plain-text column-ids="email">Email</th>
+         <th plain-text column-ids="registros">Registros</th>
+         <th plain-text column-ids="tipo">Tipo</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </tab>
+    <tab caption="Validar">
+     <vaadin-grid id="gridValidar" width-full data-item-type="br.com.exmart.rtdpjlite.vo.indisponibilidade.ParteIndisponivel" _id="gridValidar">
+      <table>
+       <colgroup>
+        <col column-id="nome" sortable>
+        <col column-id="documento" sortable>
+        <col column-id="protocoloIndisponibilidade" sortable>
+        <col column-id="protocoloCancelamentoIndisponibilidade" sortable>
+        <col column-id="cancelamentoTipo" sortable>
+        <col column-id="cancelamentoData" sortable>
+        <col column-id="dataPedido" sortable>
+        <col column-id="numeroProcesso" sortable>
+        <col column-id="telefone" sortable>
+        <col column-id="nomeInstituicao" sortable>
+        <col column-id="forumVara" sortable>
+        <col column-id="usuario" sortable>
+        <col column-id="email" sortable>
+        <col column-id="registros" sortable>
+        <col column-id="tipo" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="nome">Nome</th>
+         <th plain-text column-ids="documento">Documento</th>
+         <th plain-text column-ids="protocoloIndisponibilidade">ProtocoloIndisponibilidade</th>
+         <th plain-text column-ids="protocoloCancelamentoIndisponibilidade">ProtocoloCancelamentoIndisponibilidade</th>
+         <th plain-text column-ids="cancelamentoTipo">CancelamentoTipo</th>
+         <th plain-text column-ids="cancelamentoData">CancelamentoData</th>
+         <th plain-text column-ids="dataPedido">DataPedido</th>
+         <th plain-text column-ids="numeroProcesso">NumeroProcesso</th>
+         <th plain-text column-ids="telefone">Telefone</th>
+         <th plain-text column-ids="nomeInstituicao">NomeInstituicao</th>
+         <th plain-text column-ids="forumVara">ForumVara</th>
+         <th plain-text column-ids="usuario">Usuario</th>
+         <th plain-text column-ids="email">Email</th>
+         <th plain-text column-ids="registros">Registros</th>
+         <th plain-text column-ids="tipo">Tipo</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </tab>
+    <tab caption="Não Encontrados">
+     <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.vo.indisponibilidade.ParteIndisponivel" _id="gridNaoEncontrados">
+      <table>
+       <colgroup>
+        <col column-id="nome" sortable>
+        <col column-id="documento" sortable>
+        <col column-id="protocoloIndisponibilidade" sortable>
+        <col column-id="protocoloCancelamentoIndisponibilidade" sortable>
+        <col column-id="cancelamentoTipo" sortable>
+        <col column-id="cancelamentoData" sortable>
+        <col column-id="dataPedido" sortable>
+        <col column-id="numeroProcesso" sortable>
+        <col column-id="telefone" sortable>
+        <col column-id="nomeInstituicao" sortable>
+        <col column-id="forumVara" sortable>
+        <col column-id="usuario" sortable>
+        <col column-id="email" sortable>
+        <col column-id="registros" sortable>
+        <col column-id="tipo" sortable>
+        <col column-id="nomeFonetico" sortable>
+        <col column-id="idOficio" sortable>
+        <col column-id="idParte" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="nome">Nome</th>
+         <th plain-text column-ids="documento">Documento</th>
+         <th plain-text column-ids="protocoloIndisponibilidade">ProtocoloIndisponibilidade</th>
+         <th plain-text column-ids="protocoloCancelamentoIndisponibilidade">ProtocoloCancelamentoIndisponibilidade</th>
+         <th plain-text column-ids="cancelamentoTipo">CancelamentoTipo</th>
+         <th plain-text column-ids="cancelamentoData">CancelamentoData</th>
+         <th plain-text column-ids="dataPedido">DataPedido</th>
+         <th plain-text column-ids="numeroProcesso">NumeroProcesso</th>
+         <th plain-text column-ids="telefone">Telefone</th>
+         <th plain-text column-ids="nomeInstituicao">NomeInstituicao</th>
+         <th plain-text column-ids="forumVara">ForumVara</th>
+         <th plain-text column-ids="usuario">Usuario</th>
+         <th plain-text column-ids="email">Email</th>
+         <th plain-text column-ids="registros">Registros</th>
+         <th plain-text column-ids="tipo">Tipo</th>
+         <th plain-text column-ids="nomeFonetico">NomeFonetico</th>
+         <th plain-text column-ids="idOficio">IdOficio</th>
+         <th plain-text column-ids="idParte">IdParte</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </tab>
+   </vaadin-tab-sheet>
+   <vaadin-grid width-full data-item-type="br.com.exmart.rtdpjlite.vo.indisponibilidade.ParteIndisponivelRegistro" _id="gridRegistros" :expand="0.4">
+    <table>
+     <colgroup>
+      <col column-id="numeroRegistro" sortable>
+      <col column-id="registro" sortable>
+      <col column-id="nrPastaPj" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="numeroRegistro">NumeroRegistro</th>
+       <th plain-text column-ids="registro">Registro</th>
+       <th plain-text column-ids="nrPastaPj">NrPastaPj</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+create table forma_pagamento(id serial, nome varchar(255));

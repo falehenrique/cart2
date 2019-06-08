@@ -1,0 +1,1 @@
+ALTER TABLE natureza ADD COLUMN ic_certidao_digital BOOLEAN NOT NULL DEFAULT TRUE;

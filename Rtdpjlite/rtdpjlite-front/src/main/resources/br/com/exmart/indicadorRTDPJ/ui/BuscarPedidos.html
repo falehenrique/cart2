@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_component:br.com.exmart.indicadorRTDPJ.ui.component">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout style-name="blue-grey100" spacing="false" width-full height="79px" margin-left _id="panelBusca">
+    <vaadin-combo-box style-name="large borderless menuTopoBusca greenRede" placeholder="TODOS OS PEDIDOS" width-full data-item-type="br.com.exmart.rtdpjlite.vo.balcaoonline.PedidoMensagemTipo" _id="comboPeditoMensagemTipo" :middle :expand></vaadin-combo-box>
+    <vaadin-horizontal-layout style-name="margin" width-full margin :middle :expand>
+     <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" style-name="inline-icon search" placeholder="Buscar" width-full _id="busca" :bottom :expand></vaadin-text-field>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7ba" style-name="icon-only borderless" plain-text _id="btnFiltrarData" :middle :right></vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" style-name="wellCokaum bg-blue-grey50 margin" height-full _id="filtroData">
+     <vaadin-date-field placeholder="" width="140px" _id="dtInicial" :middle></vaadin-date-field>
+     <vaadin-label style-name="large light purple-grey" plain-text :middle :center>
+       à 
+     </vaadin-label>
+     <vaadin-date-field width="140px" _id="dtFinal" :middle></vaadin-date-field>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.model.portal.Pedido" _id="gridBusca" :expand>
+    <table>
+     <colgroup>
+      <col column-id="cliente" sortable>
+      <col column-id="data" sortable>
+      <col column-id="arquivo" sortable>
+      <col column-id="protocolo" sortable>
+      <col column-id="observacao" sortable>
+      <col column-id="tipo" sortable>
+      <col column-id="numeroRegistro" sortable>
+      <col column-id="registro" sortable>
+      <col column-id="subNatureza" sortable>
+      <col column-id="dtFinalizado" sortable>
+      <col column-id="responsavel" sortable>
+      <col column-id="protocolos" sortable>
+      <col column-id="protocoloId" sortable>
+      <col column-id="statusPedido" sortable>
+      <col column-id="nrContrato" sortable>
+      <col column-id="statusAtualCliente" sortable>
+      <col column-id="ultimaAtualizacao" sortable>
+      <col column-id="parte" sortable>
+      <col column-id="parteDocumento" sortable>
+      <col column-id="statusAtualCartorio" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="cliente">Cliente</th>
+       <th plain-text column-ids="data">Data</th>
+       <th plain-text column-ids="arquivo">Arquivo</th>
+       <th plain-text column-ids="protocolo">Protocolo</th>
+       <th plain-text column-ids="observacao">Observacao</th>
+       <th plain-text column-ids="tipo">Tipo</th>
+       <th plain-text column-ids="numeroRegistro">NumeroRegistro</th>
+       <th plain-text column-ids="registro">Registro</th>
+       <th plain-text column-ids="subNatureza">SubNatureza</th>
+       <th plain-text column-ids="dtFinalizado">DtFinalizado</th>
+       <th plain-text column-ids="responsavel">Responsavel</th>
+       <th plain-text column-ids="protocolos">Protocolos</th>
+       <th plain-text column-ids="protocoloId">ProtocoloId</th>
+       <th plain-text column-ids="statusPedido">StatusPedido</th>
+       <th plain-text column-ids="nrContrato">NrContrato</th>
+       <th plain-text column-ids="statusAtualCliente">StatusAtualCliente</th>
+       <th plain-text column-ids="ultimaAtualizacao">UltimaAtualizacao</th>
+       <th plain-text column-ids="parte">Parte</th>
+       <th plain-text column-ids="parteDocumento">ParteDocumento</th>
+       <th plain-text column-ids="statusAtualCartorio">StatusAtualCartorio</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+   <vaadin-horizontal-layout style-name="margin" width-full margin>
+    <vaadin-button style-name="bg-td" width-full plain-text _id="btnPrenotarTD" :expand>
+      Novo protocolo TD 
+    </vaadin-button>
+    <vaadin-button style-name="bg-pj" width-full plain-text _id="btnPrenotarPJ" :expand>
+      Novo protocolo PJ 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

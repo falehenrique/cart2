@@ -1,0 +1,1 @@
+ALTER TABLE protocolo ADD COLUMN selo_digital_id INTEGER;

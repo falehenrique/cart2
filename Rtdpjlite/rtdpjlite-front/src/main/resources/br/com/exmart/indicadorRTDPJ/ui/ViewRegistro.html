@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_impl:br.com.exmart.indicadorRTDPJ.ui.impl">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="well" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="card noBorder margin" margin="false" _id="panelCabecalho">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-label style-name="light large colored" plain-text _id="labelTituloProtocolo">
+       REGISTRO - RTD 
+     </vaadin-label>
+     <vaadin-label plain-text :middle>
+       nº: 
+     </vaadin-label>
+     <vaadin-label style-name="light large" plain-text _id="labelNumeroProtocolo">
+       - 
+     </vaadin-label>
+     <vaadin-label plain-text :middle>
+       de: 
+     </vaadin-label>
+     <vaadin-label style-name="light large" width-full plain-text _id="labelDataProtocolo" :expand>
+       - 
+     </vaadin-label>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e703" style-name="small borderless" _id="btnDownloadP7s">
+       P7S 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-tab-sheet style-name="menuLateral equal-width-tabs framed padded-tabbar" size-full _id="tabSheetDetalhesRegistro" :expand>
+    <tab caption="DETALHES DO REGISTRO" icon="fonticon://Vaadin-Icons/e71c" selected>
+     <vaadin-vertical-layout style-name="marginLarge" margin="false" _id="panelDetalhes">
+      <vaadin-horizontal-layout style-name="borderless" width-full>
+       <vaadin-vertical-layout margin="false" :expand="0.6">
+        <vaadin-vertical-layout style-name="captionMenu" margin="false">
+         <vaadin-css-layout icon="fonticon://Vaadin-Icons/e71c" caption="DETALHES" style-name="card margin" width-full _id="panelDetalheRegistro">
+          <vaadin-vertical-layout size-auto margin-left="false" margin-top="false">
+           <vaadin-label caption="CNT" description="Código Nacional do Título" style-name="large" width="230px" plain-text _id="registroLabel">
+             - 
+           </vaadin-label>
+           <vaadin-label caption="Nº do Reg. Anterior" style-name="large" plain-text _id="registroAnteriorLabel">
+             - 
+           </vaadin-label>
+           <vaadin-horizontal-layout>
+            <vaadin-label caption="Nº do Protocolo" style-name="large" plain-text _id="protocoloLabel">
+              - 
+            </vaadin-label>
+           </vaadin-horizontal-layout>
+          </vaadin-vertical-layout>
+          <vaadin-vertical-layout size-auto margin="false">
+           <vaadin-label caption="Natureza" style-name="large" plain-text _id="naturezaLabel">
+             - 
+           </vaadin-label>
+           <vaadin-label caption="SubNatureza" style-name="large" plain-text _id="subnaturezaLabel">
+             - 
+           </vaadin-label>
+          </vaadin-vertical-layout>
+          <vaadin-vertical-layout size-auto margin-left="false" margin-top="false">
+           <vaadin-label caption="Tipo de Ato" style-name="large" plain-text _id="tipoAtoLabel">
+             - 
+           </vaadin-label>
+           <vaadin-label caption="SubTipo de Ato" style-name="large" plain-text _id="subTipoAtoLabel">
+             - 
+           </vaadin-label>
+          </vaadin-vertical-layout>
+         </vaadin-css-layout>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout style-name="captionMenu" spacing="false" size-full margin="false" _id="partesList">
+         <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e747" caption="PARTES" margin="false" _id="panelPartes"></vaadin-vertical-layout>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout style-name="captionMenu" spacing="false" size-full margin="false" _id="objetosListPanel">
+         <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e62d" caption="OBJETOS" margin="false" _id="panelObjetos"></vaadin-vertical-layout>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout style-name="captionMenu" spacing="false" margin="false" _id="assinaturasList">
+         <vaadin-grid icon="fonticon://Vaadin-Icons/e6b3" caption="ASSINATURAS" width-full data-item-type="br.com.exmart.rtdpjlite.vo.AssinaturaDocumentoVO" _id="gridAssinaturas" :expand>
+          <table>
+           <colgroup>
+            <col column-id="emissor" sortable>
+            <col column-id="dtEmissao" sortable>
+            <col column-id="signatario" sortable>
+            <col column-id="motivo" sortable>
+           </colgroup>
+           <thead>
+            <tr default>
+             <th plain-text column-ids="emissor">Emissor</th>
+             <th plain-text column-ids="dtEmissao">DtEmissao</th>
+             <th plain-text column-ids="signatario">Signatario</th>
+             <th plain-text column-ids="motivo">Motivo</th>
+            </tr>
+           </thead>
+           <tbody></tbody>
+          </table>
+         </vaadin-grid>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+       <vaadin-vertical-layout margin="false" :expand="0.4">
+        <vaadin-vertical-layout style-name="captionMenu" size-full margin="false">
+         <vaadin-text-area icon="fonticon://Vaadin-Icons/e711" caption="SITUAÇÃO ATUAL" style-name="large" size-full _id="txtSituacaoAtual"></vaadin-text-area>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout style-name="captionMenu" size-full margin="false">
+         <vaadin-text-area icon="fonticon://Vaadin-Icons/e75a" caption="OBSERVAÇÕES" style-name="large" size-full _id="txtObservacao"></vaadin-text-area>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+    </tab>
+    <tab caption="LINHA DO TEMPO" icon="fonticon://Vaadin-Icons/e7a7">
+     <vaadin-vertical-layout style-name="marginLarge scrollLayout" _id="panelTimeline"></vaadin-vertical-layout>
+    </tab>
+    <tab caption="IMAGEM DO REGISTRO" icon="fonticon://Vaadin-Icons/e70c">
+     <vaadin-horizontal-layout style-name="marginLarge" width-full _id="pdfViewerPanel"></vaadin-horizontal-layout>
+    </tab>
+   </vaadin-tab-sheet>
+   <vaadin-horizontal-layout style-name="card" spacing="false" width-full>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e771" style-name="borderless" plain-text _id="btnEditarRetroativo">
+      Retroativo 
+    </vaadin-button>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e70c" style-name="primary noBorder" width-full plain-text _id="btnEmitirCertidao" :expand>
+      Emitir certidão 
+    </vaadin-button>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="noBorder primary" width-full plain-text _id="btnNovaAverbacao" :expand>
+      Nova averbação 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

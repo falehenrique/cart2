@@ -1,0 +1,1 @@
+insert into status (nome, automatico) values('APTO PARA REGISTRO', FALSE);

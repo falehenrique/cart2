@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout visible="false" style-name="margin" width-full margin-right>
+    <vaadin-label style-name="large light colored" plain-text _id="labelTituloProtocolo" :middle>
+      DETALHAMENTO DAS CUSTAS 
+    </vaadin-label>
+   </vaadin-horizontal-layout>
+   <vaadin-grid style-name="gridAbas borderless" size-full data-item-type="br.com.exmart.rtdpjlite.vo.financeiro.ServicoCalculado" _id="gridCustas" :expand>
+    <table>
+     <colgroup>
+      <col column-id="idServico" sortable>
+      <col column-id="nmServico" sortable>
+      <col column-id="vlBase" sortable>
+      <col column-id="cdFormaCalculo" sortable>
+      <col column-id="nmFormaCalculo" sortable>
+      <col column-id="vlDesconto" sortable>
+      <col column-id="custas1" sortable>
+      <col column-id="custas2" sortable>
+      <col column-id="custas3" sortable>
+      <col column-id="custas4" sortable>
+      <col column-id="custas5" sortable>
+      <col column-id="custas6" sortable>
+      <col column-id="custas7" sortable>
+      <col column-id="custas8" sortable>
+      <col column-id="custas9" sortable>
+      <col column-id="custas10" sortable>
+      <col column-id="total" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="idServico">IdServico</th>
+       <th plain-text column-ids="nmServico">NmServico</th>
+       <th plain-text column-ids="vlBase">VlBase</th>
+       <th plain-text column-ids="cdFormaCalculo">CdFormaCalculo</th>
+       <th plain-text column-ids="nmFormaCalculo">NmFormaCalculo</th>
+       <th plain-text column-ids="vlDesconto">VlDesconto</th>
+       <th plain-text column-ids="custas1">Custas1</th>
+       <th plain-text column-ids="custas2">Custas2</th>
+       <th plain-text column-ids="custas3">Custas3</th>
+       <th plain-text column-ids="custas4">Custas4</th>
+       <th plain-text column-ids="custas5">Custas5</th>
+       <th plain-text column-ids="custas6">Custas6</th>
+       <th plain-text column-ids="custas7">Custas7</th>
+       <th plain-text column-ids="custas8">Custas8</th>
+       <th plain-text column-ids="custas9">Custas9</th>
+       <th plain-text column-ids="custas10">Custas10</th>
+       <th plain-text column-ids="total">Total</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+  </vaadin-vertical-layout>
+ </body>
+</html>

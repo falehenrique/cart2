@@ -1,0 +1,1 @@
+ALTER TABLE checklist_grupo RENAME COLUMN natureza_id TO sub_natureza_id;

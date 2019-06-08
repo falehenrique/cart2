@@ -1,0 +1,1 @@
+ALTER TABLE checklist_item ALTER COLUMN nome TYPE TEXT;

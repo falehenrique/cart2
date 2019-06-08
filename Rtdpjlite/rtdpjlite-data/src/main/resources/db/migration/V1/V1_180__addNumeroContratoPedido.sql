@@ -1,0 +1,1 @@
+ALTER TABLE db_portal.tb_pedido ADD COLUMN nr_contrato VARCHAR(250);

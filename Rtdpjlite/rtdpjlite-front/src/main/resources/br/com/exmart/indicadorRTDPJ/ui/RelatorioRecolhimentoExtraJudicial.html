@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-panel>
+    <vaadin-horizontal-layout size-full margin>
+     <vaadin-button icon="fonticon://FontAwesome/f02f" style-name="btnGrey borderless" width="40px" height="40px" plain-text :middle></vaadin-button>
+     <vaadin-label style-name="h3" plain-text :middle :expand="0.75">
+       Recolhimento Extrajudicial 
+     </vaadin-label>
+     <vaadin-button visible="false" icon="fonticon://FontAwesome/f00c" style-name="icon-only borderless large" width="40px" height="40px" plain-text :middle :right></vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-panel>
+   <vaadin-vertical-layout :expand>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-date-field caption="Data inicial" width-full required _id="dtInicial"></vaadin-date-field>
+     <vaadin-date-field caption="Data final" width-full required _id="dtFinal"></vaadin-date-field>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-panel>
+    <vaadin-horizontal-layout width-full margin _id="tete">
+     <vaadin-button style-name="danger" plain-text _id="btnFechar">
+       Fechar 
+     </vaadin-button>
+     <vaadin-button plain-text _id="btnGerarRelatorio" :right :expand>
+       Gerar Relatório 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-panel>
+  </vaadin-vertical-layout>
+ </body>
+</html>

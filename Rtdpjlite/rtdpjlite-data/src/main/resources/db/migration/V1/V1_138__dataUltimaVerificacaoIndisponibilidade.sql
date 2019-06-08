@@ -1,0 +1,2 @@
+ALTER TABLE configuracao ADD COLUMN dt_ultima_consulta_indisponibilidade TIMESTAMP WITHOUT TIME ZONE default now();
+UPDATE configuracao set dt_ultima_consulta_indisponibilidade =  (SELECT (now() - INTERVAL '1 year')::timestamp without time zone);

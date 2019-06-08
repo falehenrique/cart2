@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+  <meta name="package-mapping" content="org_vaadin_addon_calendar:org.vaadin.addon.calendar">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout spacing="false" height="79px" margin="false">
+    <vaadin-horizontal-layout style-name="margin" spacing="false" width-full :expand>
+     <vaadin-label style-name="light large colored" plain-text _id="labelTituloProtocolo" :middle>
+       ADMINISTRAÇÃO 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-tab-sheet size-full :expand>
+    <tab caption="Cartório" selected>
+     <vaadin-vertical-layout style-name="marginLarge well noBorder scroll" size-full>
+      <vaadin-vertical-layout style-name="card bg-blue-grey50 margin" margin="false" :expand>
+       <vaadin-label style-name="colored large" plain-text>
+         DADOS DO CARTÓRIO 
+       </vaadin-label>
+       <vaadin-form-layout style-name="wellCokaum bg-blue-grey100 margin" size-full margin="false" :expand>
+        <vaadin-text-field caption="Código (CNS)"></vaadin-text-field>
+        <vaadin-text-field caption="Denominação" width-full></vaadin-text-field>
+        <vaadin-date-field caption="Data da criação"></vaadin-date-field>
+        <vaadin-text-field caption="Horário de funcionamento"></vaadin-text-field>
+       </vaadin-form-layout>
+       <vaadin-label style-name="colored large" plain-text>
+         ATRIBUIÇÕES 
+       </vaadin-label>
+       <vaadin-check-box-group style-name="wellCokaum bg-blue-grey100 margin" width-full data-item-type="java.lang.String">
+        <option item="Option1">Registro Civil das Pessoas Naturais</option>
+        <option item="Option2">Registro de Títulos e Documentos e Civis de Pessoas Jurídicas</option>
+        <option item="Option3">Registro de Imóveis</option>
+        <option item="Option4">Tabelionato de Notas</option>
+        <option item="Option5">Tabelionato de Protesto de Título</option>
+        <option item="Option6">Distribuidor</option>
+       </vaadin-check-box-group>
+       <vaadin-label style-name="colored large" plain-text>
+         RESPONSÁVEIS 
+       </vaadin-label>
+       <vaadin-form-layout style-name="wellCokaum bg-blue-grey100 margin" size-full margin="false">
+        <vaadin-text-field caption="Responsável" width-full></vaadin-text-field>
+        <vaadin-combo-box caption="Tipo" data-item-type="java.lang.String">
+         <option item="Option1">Option 1</option>
+         <option item="Option2">Option 2</option>
+         <option item="Option3">Option 3</option>
+        </vaadin-combo-box>
+        <vaadin-date-field caption="Data da assunção"></vaadin-date-field>
+        <vaadin-text-field caption="Substituto" width-full></vaadin-text-field>
+       </vaadin-form-layout>
+       <vaadin-label style-name="colored large" plain-text>
+         LOCALIZAÇÃO 
+       </vaadin-label>
+       <vaadin-form-layout style-name="wellCokaum bg-blue-grey100 margin" size-full margin="false">
+        <vaadin-combo-box caption="UF" data-item-type="java.lang.String">
+         <option item="Option1">Option 1</option>
+         <option item="Option2">Option 2</option>
+         <option item="Option3">Option 3</option>
+        </vaadin-combo-box>
+        <vaadin-text-field caption="Município" width-full></vaadin-text-field>
+        <vaadin-text-field caption="Bairro" width-full></vaadin-text-field>
+        <vaadin-text-field caption="CEP"></vaadin-text-field>
+        <vaadin-text-field caption="Endereço" width-full></vaadin-text-field>
+        <vaadin-text-field caption="Telefone"></vaadin-text-field>
+        <vaadin-text-field caption="Email" width-full></vaadin-text-field>
+       </vaadin-form-layout>
+       <vaadin-label style-name="colored" plain-text></vaadin-label>
+      </vaadin-vertical-layout>
+     </vaadin-vertical-layout>
+    </tab>
+    <tab caption="Usuários">
+     <vaadin-vertical-layout style-name="marginLarge well noBorder scroll" size-full>
+      <vaadin-vertical-layout margin="false" :expand>
+       <vaadin-horizontal-layout width-full>
+        <vaadin-vertical-layout spacing="false" margin="false" :expand>
+         <vaadin-horizontal-layout style-name="margin card" spacing="false" width-full :expand>
+          <vaadin-label caption="TOTAL de usuários" style-name="huge colored bold" width-full plain-text :expand>
+            15/20 
+          </vaadin-label>
+          <vaadin-label caption="Administradores" style-name="large huge" width-full plain-text :expand>
+            3/5 
+          </vaadin-label>
+          <vaadin-label caption="Escreventes" style-name="large huge" width-full plain-text :expand>
+            12/15 
+          </vaadin-label>
+         </vaadin-horizontal-layout>
+         <vaadin-horizontal-layout style-name="margin wellCokaum bg-blue-grey100" size-full>
+          <vaadin-text-field placeholder="Digite aqui o email do usuário" width-full :expand></vaadin-text-field>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" size-full plain-text :expand>
+            Adicionar Usuário 
+          </vaadin-button>
+         </vaadin-horizontal-layout>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout style-name="card margin bg-purple-grey" spacing="false" width-auto height-full margin="false">
+         <vaadin-label style-name="purple-grey-lighter h4 no-margin bold" plain-text :center>
+           MEU PLANO 
+         </vaadin-label>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-label style-name="small white" plain-text :middle>
+            Plano atual: 
+          </vaadin-label>
+          <vaadin-label style-name="colored large" plain-text :right :expand>
+            RTDPJ 20+ 
+          </vaadin-label>
+         </vaadin-horizontal-layout>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-label style-name="small white" plain-text :middle>
+            Mensalidade: 
+          </vaadin-label>
+          <vaadin-label style-name="colored large" plain-text :right :expand>
+            R$ 3.999,00 
+          </vaadin-label>
+         </vaadin-horizontal-layout>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e643" style-name="small" width-full plain-text :bottom>
+           ALTERAR 
+         </vaadin-button>
+        </vaadin-vertical-layout>
+       </vaadin-horizontal-layout>
+       <vaadin-grid width-full>
+        <table>
+         <colgroup>
+          <col column-id="project" sortable="false">
+          <col column-id="status" sortable="false">
+         </colgroup>
+         <thead>
+          <tr default>
+           <th plain-text column-ids="project">Project</th>
+           <th plain-text column-ids="status">Status</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr item="project1">
+           <td>Customer Project 1</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project2">
+           <td>Customer Project 2</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project3">
+           <td>Customer Project 3</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project4">
+           <td>Customer Project 4</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project5">
+           <td>Customer Project 5</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project6">
+           <td>Customer Project 6</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project7">
+           <td>Customer Project 7</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project8">
+           <td>Customer Project 8</td>
+           <td>OK</td>
+          </tr>
+          <tr item="project9">
+           <td>Customer Project 9</td>
+           <td>OK</td>
+          </tr>
+         </tbody>
+        </table>
+       </vaadin-grid>
+      </vaadin-vertical-layout>
+     </vaadin-vertical-layout>
+    </tab>
+    <tab caption="Cadastros">
+     <vaadin-vertical-layout style-name="marginLarge well noBorder scroll" size-full>
+      <vaadin-vertical-layout style-name="card bg-blue-grey50 margin" margin="false">
+       <vaadin-label style-name="colored large" plain-text>
+         CADASTRO DE MODELOS 
+       </vaadin-label>
+       <vaadin-vertical-layout spacing="false" margin="false">
+        <vaadin-horizontal-layout style-name="margin card" spacing="false" width-full :expand>
+         <vaadin-label caption="TOTAL de modelos" style-name="large colored bold" width-full plain-text :expand>
+           150 
+         </vaadin-label>
+         <vaadin-label caption="Modelos de certidão" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Modelos de Etiqueta" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Notas de devolução" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Folhas de rosto" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+        </vaadin-horizontal-layout>
+        <vaadin-horizontal-layout style-name="wellCokaum bg-blue-grey100" spacing="false" size-full>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless" size-full plain-text>
+           Pesquisar Modelos 
+         </vaadin-button>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless" size-full plain-text>
+           Novo Modelo 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+       <vaadin-horizontal-layout visible="false" style-name="card" spacing="false" width-full>
+        <vaadin-vertical-layout style-name="noCaption margin" margin="false" :expand>
+         <vaadin-text-field caption="Nome do modelo" width-full :expand></vaadin-text-field>
+         <vaadin-text-area caption="Texto" width-full :expand></vaadin-text-area>
+        </vaadin-vertical-layout>
+        <vaadin-button icon="fonticon://Vaadin-Icons/e7f3" style-name="borderless red" height-full plain-text></vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-label style-name="colored large" plain-text>
+         CADASTRO DE OBJETOS 
+       </vaadin-label>
+       <vaadin-vertical-layout spacing="false" margin="false">
+        <vaadin-horizontal-layout style-name="margin card" spacing="false" width-full :expand>
+         <vaadin-label caption="TOTAL de objetos" style-name="large colored bold" width-full plain-text :expand>
+           50 
+         </vaadin-label>
+         <vaadin-label caption="Tipos de objeto" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Total de atributos" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+        </vaadin-horizontal-layout>
+        <vaadin-horizontal-layout style-name="wellCokaum bg-blue-grey100" spacing="false" size-full>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless" size-full plain-text>
+           Pesquisar objetos 
+         </vaadin-button>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless" size-full plain-text>
+           Novo objeto 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+       <vaadin-horizontal-layout visible="false" style-name="well" spacing="false" width-full>
+        <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+         <vaadin-text-field caption="Tipo de objeto
+" width-full :expand></vaadin-text-field>
+         <vaadin-text-field caption="Atributo" width-full :expand></vaadin-text-field>
+        </vaadin-horizontal-layout>
+        <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless green" height-full plain-text></vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout visible="false" style-name="card" spacing="false" width-full>
+        <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+         <vaadin-text-field caption="Tipo de objeto" width-full :expand></vaadin-text-field>
+         <vaadin-text-field caption="Atributo" width-full :expand></vaadin-text-field>
+        </vaadin-horizontal-layout>
+        <vaadin-button icon="fonticon://Vaadin-Icons/e7f3" style-name="borderless red" height-full plain-text></vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-label style-name="colored large" plain-text>
+         CADASTRO DE CUSTAS 
+       </vaadin-label>
+       <vaadin-vertical-layout spacing="false" margin="false">
+        <vaadin-horizontal-layout style-name="margin card" spacing="false" width-full :expand>
+         <vaadin-label caption="TOTAL de custas" style-name="large colored bold" width-full plain-text :expand>
+           150 
+         </vaadin-label>
+         <vaadin-label caption="Ítens na Tabela" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Nº de colunas" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Outras custas" style-name="large bold" width-full plain-text :expand>
+           5 
+         </vaadin-label>
+         <vaadin-label caption="Formas de cálculo" style-name="large bold" width-full plain-text :expand>
+           5 
+         </vaadin-label>
+        </vaadin-horizontal-layout>
+        <vaadin-horizontal-layout style-name="wellCokaum bg-blue-grey100" spacing="false" size-full>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless" size-full plain-text _id="btnPesquisarCustas">
+           Pesquisar Custas 
+         </vaadin-button>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e771" style-name="borderless" size-full plain-text>
+           Editar custas 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+       <vaadin-label style-name="colored large" plain-text>
+         CADASTRO DE FERIADOS 
+       </vaadin-label>
+       <vaadin-vertical-layout spacing="false" margin="false">
+        <vaadin-horizontal-layout style-name="margin card" spacing="false" width-full :expand>
+         <vaadin-label caption="TOTAL de feriados" style-name="large colored bold" width-full plain-text :expand>
+           150 
+         </vaadin-label>
+         <vaadin-label caption="Feriados nacionais" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Feriados estaduais" style-name="large bold" width-full plain-text :expand>
+           35 
+         </vaadin-label>
+         <vaadin-label caption="Feriados municipais" style-name="large bold" width-full plain-text :expand>
+           5 
+         </vaadin-label>
+        </vaadin-horizontal-layout>
+        <vaadin-horizontal-layout style-name="wellCokaum bg-blue-grey100" spacing="false" size-full>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e7ba" style-name="borderless" size-full plain-text _id="btnVerCalendario">
+           Ver no calendário 
+         </vaadin-button>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e771" style-name="borderless" size-full plain-text>
+           Editar Feriados 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+     </vaadin-vertical-layout>
+    </tab>
+    <tab caption="Financeiro">
+     <vaadin-vertical-layout style-name="marginLarge well noBorder scroll" size-full></vaadin-vertical-layout>
+    </tab>
+    <tab caption="LOGS DE SISTEMA">
+     <vaadin-vertical-layout style-name="marginLarge well noBorder scroll" size-full>
+      <vaadin-grid size-full :expand>
+       <table>
+        <colgroup>
+         <col column-id="id" sortable>
+         <col column-id="data" sortable>
+         <col column-id="tipo" sortable>
+         <col column-id="usuario" sortable>
+         <col column-id="ip" sortable>
+         <col column-id="mensagem" sortable>
+        </colgroup>
+        <thead>
+         <tr default>
+          <th plain-text column-ids="id">ID</th>
+          <th plain-text column-ids="data">Data e hora</th>
+          <th plain-text column-ids="tipo">Tipo</th>
+          <th plain-text column-ids="usuario">Usuário</th>
+          <th plain-text column-ids="ip">Endereço IP</th>
+          <th plain-text column-ids="mensagem">Mensagem</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr item="1">
+          <td>010101</td>
+          <td>02/01/2018 às 12h45</td>
+          <td>Protocolo Certidão</td>
+          <td>João escrevente</td>
+          <td>200.210.198.099</td>
+          <td>Certidão protocolada sob o Nº 321.222</td>
+         </tr>
+         <tr item="2">
+          <td>010102</td>
+          <td>02/01/2018 às 12h46</td>
+          <td>Protocolo Busca</td>
+          <td>Maria escrevente</td>
+          <td>200.210.198.099</td>
+          <td>Busca verbal protocolada sob o Nº 100.001</td>
+         </tr>
+         <tr item="3">
+          <td>010103</td>
+          <td>02/01/2018 às 12h56</td>
+          <td>Protocolo Registro</td>
+          <td>João escrevente</td>
+          <td>200.210.198.099</td>
+          <td>Registro protocolado sob o Nº 301.002</td>
+         </tr>
+        </tbody>
+       </table>
+      </vaadin-grid>
+     </vaadin-vertical-layout>
+    </tab>
+   </vaadin-tab-sheet>
+  </vaadin-vertical-layout>
+ </body>
+</html>

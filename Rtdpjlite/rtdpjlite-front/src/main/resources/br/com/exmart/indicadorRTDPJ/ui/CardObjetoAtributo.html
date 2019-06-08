@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-horizontal-layout spacing="false" width-full>
+   <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+    <vaadin-combo-box caption="Atributo" width-full data-item-type="br.com.exmart.rtdpjlite.model.ObjetoAtributo" _id="atributo" :expand="0.3"></vaadin-combo-box>
+    <vaadin-combo-box visible="false" caption="Valor" text-input-allowed="false" width-full data-item-type="br.com.exmart.rtdpjlite.model.ObjetoAtributoOpcao" _id="valorCombo" :expand></vaadin-combo-box>
+    <vaadin-text-field caption="Identificador" placeholder="" width-full _id="valor" :expand="0.7"></vaadin-text-field>
+   </vaadin-horizontal-layout>
+   <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless green" height-full plain-text _id="btnAddRemoveAtributo" :middle :right></vaadin-button>
+  </vaadin-horizontal-layout>
+ </body>
+</html>

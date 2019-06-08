@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge well scroll noBorder" size-full margin="false" :expand>
+    <vaadin-vertical-layout margin="false" :expand>
+     <vaadin-vertical-layout style-name="marginLarge card" margin="false" _id="panelApresentante">
+      <vaadin-horizontal-layout width-full>
+       <vaadin-text-field required-indicator-visible caption="Apresentante" width-full _id="apresentante" :expand></vaadin-text-field>
+       <vaadin-text-field caption="Telefone" placeholder="+99 (99) 9 9999-9999" width="160px" _id="apresentanteTelefone"></vaadin-text-field>
+       <vaadin-text-field caption="Email" placeholder="apresentante.sobrenome@emaildaempresa.com.br" width-full _id="apresentanteEmail" :expand></vaadin-text-field>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style-name="marginLarge card" margin="false" _id="panelSuscitacao">
+      <vaadin-horizontal-layout visible="false" width-full _id="botoesSuscitacao">
+       <vaadin-button icon="fonticon://Vaadin-Icons/e6dc" style-name="friendly" width-full plain-text _id="btnProcedente" :expand>
+         Procedente 
+       </vaadin-button>
+       <vaadin-upload button-caption="Anexar resultado" _id="btnAnexarResultado"></vaadin-upload>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e6da" style-name="danger" width-full plain-text _id="btnImprocedente" :expand>
+         Improcedente 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+      <vaadin-text-area caption="Observações" width-full _id="observacao"></vaadin-text-area>
+     </vaadin-vertical-layout>
+     <vaadin-label style-name="small" plain-text>
+       *Não se esqueça de adicionar o recebimento na aba financeiro, caso o protocolo exija um complemento de depósito 
+     </vaadin-label>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout style-name="margin" width-full margin>
+    <vaadin-button style-name="small danger" plain-text _id="btnCancelar" :expand>
+      Cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="small friendly" plain-text _id="btnConfirmar" :right>
+      Confirmar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

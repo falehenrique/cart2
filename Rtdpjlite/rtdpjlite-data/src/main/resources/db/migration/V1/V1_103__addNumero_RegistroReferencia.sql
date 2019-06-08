@@ -1,0 +1,1 @@
+ALTER TABLE protocolo ADD COLUMN numero_registro_referencia VARCHAR(250);

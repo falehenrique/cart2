@@ -1,0 +1,42 @@
+package br.com.exmart.rtdpjlite.repository;
+
+import br.com.exmart.rtdpjlite.model.IndicadorPessoalVO;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface IndicadorPessoalVORepository extends JpaRepository<IndicadorPessoalVO, Long> {
+    
+	@Query(value = "SELECT  distinct row_number() over (order by p.dt_registro) as id, p.dt_registro, numero_registro, parte.nome, parte.cpf_cnpj as documento, q.nome as qualidade, n.nome as sub_natureza, pasta_pj as pasta, p.numero as protocolo, p.tipo_protocolo_id as tipo_protocolo FROM rtdpj.protocolo p  JOIN rtdpj.sub_natureza n ON n.id = p.sub_natureza_id JOIN rtdpj.parte_protocolo pp ON pp.protocolo_id = p.id  JOIN rtdpj.qualidade q ON pp.qualidade_id = q.id JOIN rtdpj.parte ON parte.id = pp.parte_id where  numero_registro is not null and (parte.nome ilike ?1 or cpf_cnpj = ?2)  and p.tipo_protocolo_id = ?3 order by p.dt_registro", nativeQuery = true)
+    List<IndicadorPessoalVO> findIndicadorPessoal(String query, String documento, Integer tipobusca);
+
+    @Query(nativeQuery = true, value = "SELECT id, 'TD' as tp_especialidade,  p.numero as protocolo, numero_registro, registro, data_registro as dt_registro,  nr_pasta_pj as pasta,  nome, r.objetos, parte FROM rtdpj.buscarIndicadorByObjeto(?1,?2,?3,?4)")
+    List<IndicadorPessoalVO> findByObjeto ( Long id, String nome, String valor, Long idCliente);
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id , r.nr_contrato, r.valor, r.data_doc, tp_especialidade, p.numero as protocolo, r.observacao, r.registro , data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') = ?2)")
+    List<IndicadorPessoalVO> findByParte ( String nome, String documento, String especialidade);
+    
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id ,tp_especialidade, p.numero as protocolo, r.observacao, r.registro , data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') =  ?2) and cliente_id = ?4")
+    List<IndicadorPessoalVO> findByParte ( String nome, String documento, String especialidade,  Long idCliente);
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id, r.observacao, r.nr_contrato, r.valor, r.data_doc, r.registro ,tp_especialidade, p.numero as protocolo, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?2 AND r.cliente_id = ?3 AND r.numero_registro = ?1 LIMIT 1")
+    List<IndicadorPessoalVO> findByRegistro(Long idRegistro, String especialidade, Long idCliente);
+   
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id , r.observacao, r.nr_contrato, r.valor, r.data_doc,  r.registro, tp_especialidade, p.numero as protocolo, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?2 AND r.numero_registro =   ?1 LIMIT 1")
+    List<IndicadorPessoalVO> findByRegistro(Long idRegistro, String especialidade);
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id , r.observacao, r.nr_contrato, r.valor, r.data_doc, r.registro ,tp_especialidade, p.numero as protocolo, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome_fonetico ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') =  ?2)")
+    List<IndicadorPessoalVO> findByParteFonetico ( String nome, String documento, String especialidade);
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro),r.id , r.observacao, r.nr_contrato, r.valor, p.numero as protocolo, r.data_doc, r.registro ,tp_especialidade, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome_fonetico ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') =  ?2) and ip.nome ilike ?4 ")
+    List<IndicadorPessoalVO> findByParteFonetico ( String nome, String documento, String especialidade, String complementoFonetica);
+
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro), r.observacao, r.registro , r.id ,tp_especialidade, p.numero as protocolo, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome_fonetico ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') =  ?2)  and cliente_id = ?4")
+    List<IndicadorPessoalVO> findByParteFonetico ( String nome, String documento, String especialidade,  Long idCliente);
+
+    @Query(nativeQuery = true, value = "SELECT DISTINCT(r.numero_registro), r.observacao, r.registro , r.id ,tp_especialidade, p.numero as protocolo, data_registro as dt_registro ,nr_pasta_pj as pasta, n.nome, cast ('{\"nome\" : \"' || ip.nome ||'\", \"documento\": \"' || cpf_cnpj || '\", \"qualidade\": \"'|| q.nome || '\"}' as jsonb) as parte, r.objetos -> 0 as r.objetos FROM rtdpj.registro r  JOIN rtdpj.protocolo p ON p.id=r.protocolo_id JOIN rtdpj.indicador_pessoal ip ON ip.registro_id = r.id JOIN rtdpj.sub_natureza n ON r.sub_natureza_id = n.id  JOIN rtdpj.qualidade q ON ip.qualidade_id = q.id WHERE r.tp_especialidade = ?3 AND (ip.nome_fonetico ilike ?1 or replace(replace(replace(ip.cpf_cnpj, '.',''), '-',''), '/','') =  ?2)  and cliente_id = ?4 and ip.nome ilike ?5")
+    List<IndicadorPessoalVO> findByParteFonetico ( String nome, String documento, String especialidade,  Long idCliente, String complementoFonetica);
+}
+

@@ -1,0 +1,2 @@
+ALTER TABLE modelo DROP COLUMN ic_carimbo;
+ALTER TABLE modelo ADD COLUMN tipo_modelo_id BIGINT NOT NULL DEFAULT 1;

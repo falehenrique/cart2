@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN site_assinatura_digital VARCHAR(250);

@@ -1,0 +1,1 @@
+ALTER TABLE protocolo ADD COLUMN servicos jsonb;

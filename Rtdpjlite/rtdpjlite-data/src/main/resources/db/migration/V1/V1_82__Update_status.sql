@@ -1,0 +1,2 @@
+ALTER TABLE status ADD COLUMN bloquear_protocolo boolean NOT NULL default true;
+UPDATE status SET bloquear_protocolo = false where nome in ('PROTOCOLADO','REENTRADA','DIGITALIZADO','1º CONFERÊNCIA','2º CONFERÊNCIA');

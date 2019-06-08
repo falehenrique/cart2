@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+  <meta name="package-mapping" content="com_wcs_wcslib_vaadin_widget_multifileupload_ui:com.wcs.wcslib.vaadin.widget.multifileupload.ui">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge well scroll noBorder" size-full margin="false" :expand>
+    <vaadin-horizontal-layout style-name="marginLarge card" width-full _id="panel" :center>
+     <vaadin-text-field caption="Nº da ordem" width-full _id="numeroOrdem" :expand></vaadin-text-field>
+     <vaadin-date-time-field caption="Data e hora da ordem" width-full _id="dtOrdem" :expand></vaadin-date-time-field>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout style-name="margin" width-full>
+    <vaadin-button style-name="small danger" plain-text _id="btnCancelar" :expand>
+      Cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="small friendly" plain-text _id="btnConfirmar" :right>
+      Confirmar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

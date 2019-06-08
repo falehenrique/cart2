@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="org_vaadin_tinymceeditor:org.vaadin.tinymceeditor">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="scroll marginLarge" spacing="false" size-full margin="false" :expand>
+    <vaadin-vertical-layout margin="false">
+     <vaadin-combo-box caption="SELECIONE O MODELO DESEJADO" placeholder="Selecione o modelo desejado e altere os dados no texto" width-full data-item-type="br.com.exmart.rtdpjlite.model.Modelo" _id="comboModelos"></vaadin-combo-box>
+     <vaadin-rich-text-area width-full height="600px" _id="editor" :expand></vaadin-rich-text-area>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout width-full margin>
+    <vaadin-button style-name="borderless small" plain-text _id="btnCancelar" :right :expand>
+      cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="friendly small" plain-text _id="btnSalvar" :right>
+      Salvar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

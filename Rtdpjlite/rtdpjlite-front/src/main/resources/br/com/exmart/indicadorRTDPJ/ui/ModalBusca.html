@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_component:br.com.exmart.indicadorRTDPJ.ui.component">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_impl:br.com.exmart.indicadorRTDPJ.ui.impl">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui:br.com.exmart.indicadorRTDPJ.ui">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout style-name="bg-blue-grey50" spacing="false" width-full _id="panelBusca">
+    <vaadin-horizontal-layout style-name="margin" width-full margin :expand>
+     <vaadin-combo-box popup-width="" style-name="floating" placeholder="ONDE DESEJA BUSCAR?" width="250px" data-item-type="br.com.exmart.indicadorRTDPJ.ui.impl.ModalBuscaImpl.TipoBusca" _id="seletorBusca"></vaadin-combo-box>
+     <vaadin-horizontal-layout visible="false" width-full _id="buscaReal" :expand>
+      <vaadin-combo-box description="Selecione o tipo de objeto" placeholder="Tipo de objeto" width-full data-item-type="br.com.exmart.rtdpjlite.model.Objeto" _id="comboObjeto" :expand></vaadin-combo-box>
+      <vaadin-combo-box description="Agora selecione o atributo" placeholder="Atributo" width-full data-item-type="br.com.exmart.rtdpjlite.model.ObjetoAtributo" _id="comboAtributo" :expand></vaadin-combo-box>
+      <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" description="Digite aqui o que deseja buscar" style-name="inline-icon search" placeholder="Buscar" width-full _id="txtBuscaReal" :bottom :expand></vaadin-text-field>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless icon-only" plain-text _id="btnBuscarIndicadorReal"></vaadin-button>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout spacing="false" width-full _id="buscaPessoal" :expand>
+      <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" style-name="inline-icon" placeholder="O QUE DESEJA BUSCAR?" width-full _id="txtBusca" :expand></vaadin-text-field>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless" plain-text _id="btnBuscar"></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e6a2" style-name="borderless" plain-text _id="btnFiltros"></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e761" style-name="borderless" plain-text _id="btnGerarLinkCompartilhamento"></vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+    <vaadin-absolute-layout width="120px" height="64px"></vaadin-absolute-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-vertical-layout visible="false" style-name="wellCokaum bg-blue-grey100 margin" spacing="false" height="50px" margin="false" _id="panelIndicadorPessoal">
+    <vaadin-check-box caption="Buscar em qualquer parte do nome" _id="ckTipoBuscaNome"></vaadin-check-box>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout spacing="false" size-full margin="false" _id="panelProtocolos" :expand>
+    <br_com_exmart_indicadorrtdpj_ui_component-grid-indicadores-pessoal size-full _id="grid" :expand></br_com_exmart_indicadorrtdpj_ui_component-grid-indicadores-pessoal>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

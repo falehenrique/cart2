@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN carimbo_certidao_sem_registro TEXT DEFAULT 'Certidão eletrônica, com valor de original, assinada digitalmente pelo [[NOME_CARTORIO]]';

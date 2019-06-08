@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge" size-full _id="panelMensagem" :expand>
+    <vaadin-combo-box caption="Status" width-full data-item-type="br.com.exmart.rtdpjlite.vo.balcaoonline.PedidoMensagemTipo" _id="tipoMensagem"></vaadin-combo-box>
+    <vaadin-text-area caption="Mensagem" size-full _id="mensagem" :expand></vaadin-text-area>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout width-full>
+    <vaadin-button style-name="danger noBorder" width-full plain-text _id="btnCancelar" :expand>
+      cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="friendly noBorder" width-full plain-text _id="btnEnviar" :expand>
+      Enviar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+create table custa_titulo(id serial, nome varchar(255), ordem int, alias varchar(50));

@@ -1,0 +1,6 @@
+ALTER TABLE protocolo ADD COLUMN ic_guarda_conservacao BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE protocolo ADD COLUMN ic_possui_sigilo_legal BOOLEAN NOT NULL DEFAULT FALSE;
+
+
+ALTER TABLE registro ADD COLUMN ic_guarda_conservacao BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE registro ADD COLUMN ic_possui_sigilo_legal BOOLEAN NOT NULL DEFAULT FALSE;

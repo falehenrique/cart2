@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_impl:br.com.exmart.indicadorRTDPJ.ui.impl">
+  <meta name="package-mapping" content="eu_maxschuster_vaadin_autocompletetextfield:eu.maxschuster.vaadin.autocompletetextfield">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="well noBorder" spacing="false" size-full margin="false">
+   <vaadin-tab-sheet style-name="equal-width-tabs framed padded-tabbar" size-full>
+    <tab caption="PROTOCOLAR" icon="fonticon://Vaadin-Icons/e801" selected>
+     <vaadin-horizontal-layout spacing="false" width-full>
+      <vaadin-vertical-layout style-name="borderless" spacing="false" size-full margin="false" _id="panelTD">
+       <vaadin-vertical-layout style-name="marginLarge" margin="false">
+        <vaadin-vertical-layout margin="false">
+         <vaadin-label style-name="align-center large light td" width-full plain-text>
+           Registro de Títulos e Documentos 
+         </vaadin-label>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout margin="false" :expand>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e60a" style-name="icon-align-top iconLarge bg-td white noBorder" width-full plain-text _id="btnNovoCalculoTD">
+           EXAME E CÁLCULO TD 
+         </vaadin-button>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e929" style-name="icon-align-top iconLarge bg-td white noBorder" width-full plain-text _id="btnNovaPrenotacaoTD" :expand="0.7">
+            REGISTRO TD 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e647" style-name="icon-align-top iconLarge bg-td white noBorder" size-full plain-text _id="btnRegistroTDLote" :expand="0.3">
+            Lote 
+          </vaadin-button>
+         </vaadin-horizontal-layout>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e70c" style-name="icon-align-top iconLarge bg-td white noBorder" width-full plain-text _id="btnNovaCertidaoTD">
+           CERTIDÃO TD 
+         </vaadin-button>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+      <vaadin-vertical-layout style-name="borderless" spacing="false" size-full margin="false" _id="panelPJ">
+       <vaadin-vertical-layout style-name="marginLarge" margin="false">
+        <vaadin-vertical-layout margin="false">
+         <vaadin-label style-name="align-center large pj light" width-full plain-text>
+           Registro Civil das Pessoas Jurídicas 
+         </vaadin-label>
+        </vaadin-vertical-layout>
+        <vaadin-vertical-layout margin="false">
+         <vaadin-button icon="fonticon://Vaadin-Icons/e60a" style-name="icon-align-top iconLarge bg-pj white noBorder" width-full plain-text _id="btnNovoCalculoPJ">
+           EXAME E CÁLCULO PJ 
+         </vaadin-button>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e929" style-name="icon-align-top iconLarge bg-pj white noBorder" width-full plain-text _id="btnNovaPrenotacaoPJ" :expand="0.7">
+            REGISTRO PJ 
+          </vaadin-button>
+         </vaadin-horizontal-layout>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e70c" style-name="icon-align-top iconLarge bg-pj white noBorder" width-full plain-text _id="btnNovaCertidaoPJ">
+           CERTIDÃO PJ 
+         </vaadin-button>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+    </tab>
+    <tab caption="VISUALIZAR PROTOCOLOS" icon="fonticon://Vaadin-Icons/e71f">
+     <vaadin-vertical-layout spacing="false" size-full margin="false">
+      <br_com_exmart_indicadorrtdpj_ui_impl-buscar-protocolos-impl size-full></br_com_exmart_indicadorrtdpj_ui_impl-buscar-protocolos-impl>
+     </vaadin-vertical-layout>
+    </tab>
+   </vaadin-tab-sheet>
+  </vaadin-vertical-layout>
+ </body>
+</html>

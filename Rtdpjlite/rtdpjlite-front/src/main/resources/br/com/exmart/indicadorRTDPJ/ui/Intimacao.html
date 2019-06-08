@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll well" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge" margin="false" :expand>
+    <vaadin-vertical-layout visible="false" style-name="marginLarge" margin="false" _id="panelCertidao">
+     <vaadin-combo-box caption="Modelos de certidão" width-full data-item-type="java.lang.String">
+      <option item="Option1">Modelo 1</option>
+      <option item="Option2">Modelo 2</option>
+      <option item="Option3">Modelo 3</option>
+     </vaadin-combo-box>
+     <vaadin-rich-text-area width-full height="600px" _id="textoNotaDevolucao" :expand></vaadin-rich-text-area>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout spacing="false" margin="false">
+     <vaadin-vertical-layout style-name="card marginLarge bg-blue-grey50" margin="false" _id="panelIntimacao">
+      <vaadin-text-area required-indicator-visible caption="Resultado da Intimação" width-full _id="resultadoIntimacao"></vaadin-text-area>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-date-time-field required-indicator-visible caption="Data e Hora" placeholder="" width="180px" _id="dataHoraIntimacao"></vaadin-date-time-field>
+       <vaadin-combo-box required-indicator-visible caption="Status da intimação" text-input-allowed="false" width-full data-item-type="java.lang.String" _id="statusIntimacao" :expand>
+        <option item="INTIMADO">INTIMADO</option>
+        <option item="INTIMADO BALCÃO">INTIMADO BALCÃO</option>
+        <option item="NÃO ENCONTRADO">NÃO ENCONTRADO</option>
+        <option item="LOCAL INCERTO OU NÃO SABIDO">LOCAL INCERTO OU NÃO SABIDO</option>
+       </vaadin-combo-box>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e801" description="Adicionar" style-name="small primary" width-full plain-text _id="btnAddResultado">
+       ADICIONAR RESULTADO 
+     </vaadin-button>
+    </vaadin-vertical-layout>
+    <vaadin-grid style-name="gridAbas" width-full data-item-type="br.com.exmart.rtdpjlite.model.IntimacaoProtocolo" _id="gridIntimacao" :expand>
+     <table>
+      <colgroup>
+       <col column-id="nome" sortable>
+       <col column-id="resultado" sortable>
+       <col column-id="dia" sortable>
+      </colgroup>
+      <thead>
+       <tr default>
+        <th plain-text column-ids="nome">Nome</th>
+        <th plain-text column-ids="resultado">Resultado</th>
+        <th plain-text column-ids="dia">Dia</th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+     </table>
+    </vaadin-grid>
+    <vaadin-horizontal-layout style-name="marginLarge card" width-full _id="panelInfo">
+     <vaadin-horizontal-layout width-full :expand>
+      <vaadin-label caption="Primeira intimação" style-name="h3 no-margin bold" plain-text _id="labelPrimeiraIntimacao">
+        27/01/2018 
+      </vaadin-label>
+      <vaadin-label caption="Validade Prenotação" style-name="h3 no-margin bold" width-full plain-text _id="labelValidadePrenotacao" :expand>
+        12/02/2018 
+      </vaadin-label>
+      <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e7df" style-name="borderless" height-full plain-text _id="btnAbrirCertidao">
+        Ver Certidão 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e929" style-name="primary" height-full plain-text _id="btnGerarCertidao" :right>
+       Redigir Certidão 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout visible="false" width-full margin _id="panelEditarProtocolo">
+    <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e802" style-name="small borderless" plain-text _id="btnImprimir">
+      Imprimir 
+    </vaadin-button>
+    <vaadin-button style-name="small borderless" plain-text _id="btnCancelar" :expand>
+      Cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="friendly small" plain-text _id="btnSalvar" :right>
+      Salvar 
+    </vaadin-button>
+    <vaadin-button visible="false" style-name="borderless small" plain-text _id="btnEditar" :right>
+      Editar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_component:br.com.exmart.indicadorRTDPJ.ui.component">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout height="79px" margin="false" _id="panelLine" :bottom>
+    <vaadin-horizontal-layout spacing="false" width-full height="79px" margin-left _id="panelBusca">
+     <vaadin-combo-box style-name="large borderless menuTopoBusca verde" placeholder="ONDE DESEJA BUSCAR?" width-full height="54px" data-item-type="java.lang.String" _id="tipoProtocolo" :middle :center :expand>
+      <option item="TODOS OS PROTOCOLOS">TODOS OS PROTOCOLOS</option>
+      <option item="PROTOCOLOS DE EXAME E CÁLCULO - TD">PROTOCOLOS DE EXAME E CÁLCULO - TD</option>
+      <option item="PROTOCOLOS DE EXAME E CÁLCULO - PJ">PROTOCOLOS DE EXAME E CÁLCULO - PJ</option>
+      <option item="PROTOCOLOS DE CERTIDÃO - TD">PROTOCOLOS DE CERTIDÃO - TD</option>
+      <option item="PROTOCOLOS DE CERTIDÃO - PJ">PROTOCOLOS DE CERTIDÃO - PJ</option>
+      <option item="PROTOCOLOS DE REGISTRO - TD">PROTOCOLOS DE REGISTRO - TD</option>
+      <option item="PROTOCOLOS DE REGISTRO - PJ">PROTOCOLOS DE REGISTRO - PJ</option>
+     </vaadin-combo-box>
+     <vaadin-horizontal-layout style-name="margin" width-full margin :middle :expand>
+      <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" style-name="inline-icon search" placeholder="Buscar" width-full _id="busca" :middle :right :expand></vaadin-text-field>
+      <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e7ba" style-name="icon-only borderless" plain-text _id="btnFiltrarData" :middle :right></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e6a2" description="Filtros" style-name="icon-only borderless" plain-text _id="btnFiltros"></vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-css-layout visible="false" style-name="wellCokaum bg-blue-grey100 margin" width-full _id="panelFiltros">
+    <vaadin-horizontal-layout visible="false" _id="panelSwitch">
+     <vaadin-radio-button-group data-item-type="java.lang.String" _id="switchTDPJ" :middle :center>
+      <option item="Option1">TD</option>
+      <option item="Option2">PJ</option>
+     </vaadin-radio-button-group>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" caption="Listar protocolos do(s) tipo(s)" margin-left margin-top _id="filtroTipoProtocolo">
+     <vaadin-check-box-group style-name="horizontal" data-item-type="java.lang.String">
+      <option item="Option1">Certidão</option>
+      <option item="Option2">Registro</option>
+      <option item="Option3">Exame e Cálculo</option>
+     </vaadin-check-box-group>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout margin-left margin-top _id="filtroNatureza">
+     <vaadin-combo-box caption="Filtrar por natureza" data-item-type="br.com.exmart.rtdpjlite.model.Natureza" _id="comboNatureza"></vaadin-combo-box>
+     <vaadin-check-box-group visible="false" data-item-type="java.lang.String">
+      <option item="protocolado">Protocolado</option>
+      <option item="1conf">1ª Conferência</option>
+      <option item="2conf">2ª Conferência</option>
+      <option item="apto">Apto para registro</option>
+      <option item="registrado">Registrado</option>
+      <option item="devolvido">Devolvido</option>
+      <option item="pronto">Pronto para entrega</option>
+      <option item="entregue">Entregue</option>
+      <option item="cancelParte">Cancelado pela parte</option>
+      <option item="cancelJud">Cancelado Judicialmente</option>
+      <option item="cancelPrazo">Cancelado por decurso de prazo</option>
+      <option item="duvida">Suscitação de dúvida</option>
+     </vaadin-check-box-group>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout margin-left margin-top>
+     <vaadin-combo-box caption="Filtrar por data" data-item-type="java.lang.String" _id="comboData">
+      <option item="dataProtocolo">Data do protocolo</option>
+      <option item="data_vencimento">Data do vencimento</option>
+      <option item="dtRegistro">Data do registro</option>
+      <option item="data_entrega">Data da entrega</option>
+     </vaadin-combo-box>
+     <vaadin-horizontal-layout _id="filtroData" :bottom>
+      <vaadin-date-field placeholder="" date-format="dd/MM/yyyy" width="140px" _id="dtInicial" :middle></vaadin-date-field>
+      <vaadin-label style-name="light purple-grey" plain-text :middle :center>
+        à 
+      </vaadin-label>
+      <vaadin-date-field date-format="dd/MM/yyyy" width="140px" _id="dtFinal" :middle></vaadin-date-field>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout margin-left margin-top _id="filtroStatus">
+     <vaadin-combo-box caption="Filtrar por andamento" data-item-type="br.com.exmart.rtdpjlite.model.Status" _id="comboAndamento"></vaadin-combo-box>
+     <vaadin-combo-box caption="Filtrar por Cliente" data-item-type="br.com.exmart.rtdpjlite.model.Cliente" _id="comboCliente"></vaadin-combo-box>
+     <vaadin-check-box-group visible="false" data-item-type="java.lang.String">
+      <option item="protocolado">Protocolado</option>
+      <option item="1conf">1ª Conferência</option>
+      <option item="2conf">2ª Conferência</option>
+      <option item="apto">Apto para registro</option>
+      <option item="registrado">Registrado</option>
+      <option item="devolvido">Devolvido</option>
+      <option item="pronto">Pronto para entrega</option>
+      <option item="entregue">Entregue</option>
+      <option item="cancelParte">Cancelado pela parte</option>
+      <option item="cancelJud">Cancelado Judicialmente</option>
+      <option item="cancelPrazo">Cancelado por decurso de prazo</option>
+      <option item="duvida">Suscitação de dúvida</option>
+     </vaadin-check-box-group>
+    </vaadin-horizontal-layout>
+   </vaadin-css-layout>
+   <br_com_exmart_indicadorrtdpj_ui_component-grid-protocolo style-name="gridProtocolo" size-full _id="gridProtocolo" :expand></br_com_exmart_indicadorrtdpj_ui_component-grid-protocolo>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_impl:br.com.exmart.indicadorRTDPJ.ui.impl">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout style-name="borderless menuLateral" spacing="false" size-full _id="splitPdf" :expand>
+    <vaadin-horizontal-layout visible="false" style-name="margin" size-full _id="panelPdf"></vaadin-horizontal-layout>
+    <vaadin-vertical-layout style-name="menuLateral noBorder" spacing="false" size-full margin="false">
+     <vaadin-tab-sheet size-full _id="tabSheet" :expand>
+      <tab caption="REGISTRO" icon="fonticon://Vaadin-Icons/e71d" selected>
+       <vaadin-vertical-layout style-name="marginLarge well noBorder" size-full margin="false" _id="panelRegistro">
+        <vaadin-vertical-layout style-name="margin card" margin="false" _id="formAddInfo11" :expand>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-combo-box caption="Especialidade" width="100px" data-item-type="java.lang.String" _id="especialidade">
+           <option item="TD">TD</option>
+           <option item="PJ">PJ</option>
+          </vaadin-combo-box>
+          <vaadin-text-field caption="Nº do Registro" width="150px" _id="numReg"></vaadin-text-field>
+          <vaadin-text-field caption="Data do Registro" _id="dataReg"></vaadin-text-field>
+          <vaadin-text-field caption="Nº do Reg. Anterior" width="150px" _id="regAnterior"></vaadin-text-field>
+         </vaadin-horizontal-layout>
+         <vaadin-horizontal-layout width-full>
+          <vaadin-combo-box caption="Natureza" width-full height="45px" data-item-type="br.com.exmart.rtdpjlite.model.Natureza" _id="natureza"></vaadin-combo-box>
+          <vaadin-combo-box caption="Subnatureza" placeholder="" width-full height="45px" data-item-type="br.com.exmart.rtdpjlite.model.SubNatureza" _id="subnatureza"></vaadin-combo-box>
+         </vaadin-horizontal-layout>
+         <vaadin-horizontal-layout visible="false" width-full>
+          <vaadin-combo-box caption="Tipo de ato" width-full height="45px" data-item-type="java.lang.String" _id="fieldTipoAto">
+           <option item="Option1">Option 1</option>
+           <option item="Option2">Option 2</option>
+           <option item="Option3">Option 3</option>
+          </vaadin-combo-box>
+          <vaadin-combo-box caption="Subtipo de ato" placeholder="" width-full data-item-type="java.lang.String" _id="fieldSubTipoAto">
+           <option item="Option1">Option 1</option>
+           <option item="Option2">Option 2</option>
+           <option item="Option3">Option 3</option>
+          </vaadin-combo-box>
+         </vaadin-horizontal-layout>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab caption="TÍTULO" icon="fonticon://Vaadin-Icons/e70c">
+       <vaadin-vertical-layout spacing="false" size-full margin="false" _id="panelTitulo">
+        <vaadin-horizontal-layout size-full margin _id="panelBotaoUpload" :expand="0.1"></vaadin-horizontal-layout>
+        <vaadin-horizontal-layout size-full margin _id="panelMostrarTitulo" :expand></vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab caption="PARTES" icon="fonticon://Vaadin-Icons/e61a">
+       <vaadin-vertical-layout spacing="false" size-full margin="false" _id="panelPartes">
+        <vaadin-vertical-split-panel split-position="77%" _id="v1">
+         <vaadin-vertical-layout style-name="scroll" spacing="false" size-full margin="false" _id="panelAddParte1">
+          <vaadin-vertical-layout enabled="false" style-name="scroll" spacing="false" size-full margin="false" _id="panelPartesForm" :expand>
+           <vaadin-vertical-layout style-name="margin captionMenu" margin="false">
+            <vaadin-form-layout icon="fonticon://Vaadin-Icons/e61a" caption="IDENTIFICAÇÃO DA PARTE" margin="false" _id="formAddParte1">
+             <vaadin-text-field caption="CPF/CNPJ" placeholder="00.000.000/0000-00" width-full _id="documento"></vaadin-text-field>
+             <vaadin-text-field caption="Nome" width-full _id="nome"></vaadin-text-field>
+             <vaadin-combo-box caption="Qualidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="qualidade"></vaadin-combo-box>
+             <vaadin-combo-box caption="Tipo Doc." width-full data-item-type="br.com.exmart.rtdpjlite.model.TipoDocumento" _id="tipoDocumento"></vaadin-combo-box>
+             <vaadin-text-field caption="Identidade" placeholder="00.000.000-00" width-full _id="rg"></vaadin-text-field>
+             <vaadin-text-field caption="Orgão Exp." width-full _id="orgaoExpedidor"></vaadin-text-field>
+             <vaadin-text-field caption="Telefone" placeholder="+99 (99) 9.9999-9999" width-full _id="telefone"></vaadin-text-field>
+             <vaadin-text-field caption="Email" width-full _id="email"></vaadin-text-field>
+            </vaadin-form-layout>
+            <vaadin-form-layout icon="fonticon://Vaadin-Icons/e71d" caption="INFORMAÇÕES ADICIONAIS" margin="false" _id="formAddInfo1" :expand>
+             <vaadin-combo-box caption="Nacionalidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Nacionalidade" _id="nacionalidade"></vaadin-combo-box>
+             <vaadin-combo-box caption="Estado Civil" placeholder="solteiro" width-full data-item-type="br.com.exmart.rtdpjlite.model.EstadoCivil" _id="estadoCivil"></vaadin-combo-box>
+             <vaadin-combo-box caption="Regime de Bens" width-full data-item-type="br.com.exmart.rtdpjlite.model.RegimeBens" _id="regimeBens"></vaadin-combo-box>
+             <vaadin-combo-box caption="Profissão" width-full data-item-type="br.com.exmart.rtdpjlite.model.Profissao" _id="profissao"></vaadin-combo-box>
+             <vaadin-text-field caption="Qtd. Cotas" width-full _id="cotas"></vaadin-text-field>
+            </vaadin-form-layout>
+            <vaadin-form-layout icon="fonticon://Vaadin-Icons/e788" caption="ENDEREÇO DA PARTE" margin="false" _id="formAddEndereco1" :expand>
+             <vaadin-text-field caption="CEP" placeholder="99999-999" width-full _id="cep"></vaadin-text-field>
+             <vaadin-text-field caption="Endereço" width-full _id="endereco"></vaadin-text-field>
+             <vaadin-text-field caption="Nº" width-full _id="nrEndereco"></vaadin-text-field>
+             <vaadin-text-field caption="Compl." width-full _id="complemento"></vaadin-text-field>
+             <vaadin-text-field caption="Bairro" width-full _id="bairro"></vaadin-text-field>
+             <vaadin-combo-box caption="UF" placeholder="SP" width-full data-item-type="br.com.exmart.rtdpjlite.model.Estado" _id="estado"></vaadin-combo-box>
+             <vaadin-combo-box caption="Cidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cidade" _id="cidade"></vaadin-combo-box>
+            </vaadin-form-layout>
+           </vaadin-vertical-layout>
+          </vaadin-vertical-layout>
+          <vaadin-horizontal-layout width-full>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="primary small noBorder" width-full plain-text _id="btnNovaParte" :expand>
+             Adicionar Parte 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e75b" style-name="primary small noBorder" width-full plain-text _id="btnSalvarParte" :expand>
+             Salvar Parte 
+           </vaadin-button>
+          </vaadin-horizontal-layout>
+         </vaadin-vertical-layout>
+         <vaadin-grid style-name="gridAbas" width-full data-item-type="br.com.exmart.rtdpjlite.model.IndicadorPessoal" _id="gridIndicadorPessoal">
+          <table>
+           <colgroup>
+            <col column-id="nome" sortable>
+            <col column-id="cpfCnpj" sortable>
+            <col column-id="tipoDocumento" sortable>
+            <col column-id="nrDocumento" sortable>
+            <col column-id="nmOrgaoExpedidorDocumento" sortable>
+            <col column-id="dtEmissaoDocumento" sortable>
+            <col column-id="telefone" sortable>
+            <col column-id="email" sortable>
+            <col column-id="cep" sortable>
+            <col column-id="tipoLogradouro" sortable>
+            <col column-id="endereco" sortable>
+            <col column-id="numero" sortable>
+            <col column-id="complemento" sortable>
+            <col column-id="bairro" sortable>
+            <col column-id="uuidConjuge" sortable>
+            <col column-id="nacionalidade" sortable>
+            <col column-id="estadoCivil" sortable>
+            <col column-id="profissao" sortable>
+            <col column-id="regimeBens" sortable>
+            <col column-id="estado" sortable>
+            <col column-id="cidade" sortable>
+            <col column-id="qualidade" sortable>
+            <col column-id="vlParticipacao" sortable>
+            <col column-id="qtdCotas" sortable>
+            <col column-id="registro" sortable>
+            <col column-id="nomeFonetico" sortable>
+           </colgroup>
+           <thead>
+            <tr default>
+             <th plain-text column-ids="nome">Nome</th>
+             <th plain-text column-ids="cpfCnpj">CpfCnpj</th>
+             <th plain-text column-ids="tipoDocumento">TipoDocumento</th>
+             <th plain-text column-ids="nrDocumento">NrDocumento</th>
+             <th plain-text column-ids="nmOrgaoExpedidorDocumento">NmOrgaoExpedidorDocumento</th>
+             <th plain-text column-ids="dtEmissaoDocumento">DtEmissaoDocumento</th>
+             <th plain-text column-ids="telefone">Telefone</th>
+             <th plain-text column-ids="email">Email</th>
+             <th plain-text column-ids="cep">Cep</th>
+             <th plain-text column-ids="tipoLogradouro">TipoLogradouro</th>
+             <th plain-text column-ids="endereco">Endereco</th>
+             <th plain-text column-ids="numero">Numero</th>
+             <th plain-text column-ids="complemento">Complemento</th>
+             <th plain-text column-ids="bairro">Bairro</th>
+             <th plain-text column-ids="uuidConjuge">UuidConjuge</th>
+             <th plain-text column-ids="nacionalidade">Nacionalidade</th>
+             <th plain-text column-ids="estadoCivil">EstadoCivil</th>
+             <th plain-text column-ids="profissao">Profissao</th>
+             <th plain-text column-ids="regimeBens">RegimeBens</th>
+             <th plain-text column-ids="estado">Estado</th>
+             <th plain-text column-ids="cidade">Cidade</th>
+             <th plain-text column-ids="qualidade">Qualidade</th>
+             <th plain-text column-ids="vlParticipacao">VlParticipacao</th>
+             <th plain-text column-ids="qtdCotas">QtdCotas</th>
+             <th plain-text column-ids="registro">Registro</th>
+             <th plain-text column-ids="nomeFonetico">NomeFonetico</th>
+            </tr>
+           </thead>
+           <tbody></tbody>
+          </table>
+         </vaadin-grid>
+        </vaadin-vertical-split-panel>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab caption="OBJETOS" icon="fonticon://Vaadin-Icons/e62d">
+       <vaadin-vertical-layout visible="false" enabled="false" spacing="false" size-full margin="false" _id="panelObjetos">
+        <vaadin-vertical-layout spacing="false" size-full margin="false">
+         <vaadin-vertical-layout style-name="scroll captionMenu margin" spacing="false" size-full margin="false" :expand>
+          <vaadin-vertical-layout spacing="false" margin="false" _id="panelAddObjeto"></vaadin-vertical-layout>
+         </vaadin-vertical-layout>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </tab>
+     </vaadin-tab-sheet>
+    </vaadin-vertical-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout style-name="margin" width-full margin>
+    <vaadin-button style-name="small borderless" _id="btnCancelar">
+      Cancelar 
+    </vaadin-button>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e75b" style-name="friendly small" width-full _id="btnSalvar" :expand>
+      Atualizar indicadores 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

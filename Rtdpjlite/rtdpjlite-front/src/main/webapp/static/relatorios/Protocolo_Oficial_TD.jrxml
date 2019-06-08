@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Protocolo_Oficial_TD" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="1b71ca2c-8872-4a2c-84ae-3f58b2bf0024">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="2Osasco"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="155"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="838"/>
+	<parameter name="dtInicial" class="java.util.Date"/>
+	<parameter name="dtFinal" class="java.util.Date"/>
+	<parameter name="cartorio" class="java.lang.String"/>
+	<parameter name="endereco" class="java.lang.String"/>
+	<parameter name="cnpj" class="java.lang.String"/>
+	<parameter name="oficial" class="java.lang.String"/>
+	<parameter name="nrLivro" class="java.lang.String"/>
+	<parameter name="nrFolha" class="java.lang.Integer"/>
+	<parameter name="diretorioImagem" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 
+	numero, 
+	numero_registro, 
+	apresentante,
+	data_protocolo, 
+	dt_registro, 
+	data,
+	((select nome from rtdpj.natureza n where n.id = natureza_id) || ' - ' || (select nome from rtdpj.sub_natureza s where s.id = sub_natureza_id)) as natureza, 
+	(select nome from rtdpj.sub_natureza s where s.id = sub_natureza_id) as sub_natureza,
+	(select nome from rtdpj.status s where s.id = sp.status_id) as andamento,
+	(select count(sp.protocolo_id) from rtdpj.status_protocolo sp
+ join 
+	rtdpj.protocolo p2 on p2.id = sp.protocolo_id 
+where 
+	sp.data::date between $P{dtInicial} and $P{dtFinal} and sp.status_id = 7 and sp.protocolo_id is not null and p2.tipo_protocolo_id = 20) as qtd,
+	(select * from rtdpj.retorna_registros($P{dtInicial},$P{dtFinal})) as registros,
+	(select count(protocolo_id) from rtdpj.status_protocolo sp join rtdpj.protocolo p2 on p2.id = sp.protocolo_id where sp.data::date between $P{dtInicial} and $P{dtFinal} and sp.status_id = 1 and p2.tipo_protocolo_id = 20 ) as qtd_prenotados
+	
+FROM rtdpj.status_protocolo sp
+JOIN rtdpj.protocolo p ON p.id = sp.protocolo_id 
+where tipo_protocolo_id = 20 
+and data::date between $P{dtInicial} and $P{dtFinal}
+and sp.status_id IN (1,2,6,7,10,11,12) order by numero]]>
+	</queryString>
+	<field name="numero" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+	</field>
+	<field name="numero_registro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero_registro"/>
+	</field>
+	<field name="apresentante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="apresentante"/>
+	</field>
+	<field name="natureza" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="natureza"/>
+	</field>
+	<field name="sub_natureza" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sub_natureza"/>
+	</field>
+	<field name="data_protocolo" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="data_protocolo"/>
+	</field>
+	<field name="dt_registro" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="dt_registro"/>
+	</field>
+	<field name="data" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+	</field>
+	<field name="andamento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="andamento"/>
+	</field>
+	<field name="registros" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="registros"/>
+	</field>
+	<field name="qtd" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="qtd"/>
+	</field>
+	<field name="qtd_prenotados" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="qtd_prenotados"/>
+	</field>
+	<variable name="v_apresentante" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$F{apresentante}]]></variableExpression>
+	</variable>
+	<variable name="total_atos" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{numero}]]></variableExpression>
+	</variable>
+	<variable name="registros" class="java.lang.String" resetType="None">
+		<variableExpression><![CDATA[$F{registros}]]></variableExpression>
+	</variable>
+	<variable name="folha" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$P{nrFolha}]]></variableExpression>
+	</variable>
+	<variable name="rodape" class="java.lang.String">
+		<variableExpression><![CDATA[new String("Certifico que na hora legal encerrei o expediente, prenotando "+$F{qtd_prenotados}+" documentos, tendo registrados: " + $F{qtd} +", documentos microfilmados sob número(s):" + $V{registros})]]></variableExpression>
+	</variable>
+	<variable name="protocolo_registro" class="java.lang.String" resetType="Group" resetGroup="Group1">
+		<variableExpression><![CDATA[$F{andamento}.equals("REGISTRADO") ? $F{numero_registro} : String.valueOf($F{numero})]]></variableExpression>
+	</variable>
+	<group name="Group1" minHeightToStartNewPage="2">
+		<groupExpression><![CDATA[$F{numero}]]></groupExpression>
+		<groupHeader>
+			<band height="15">
+				<textField isBlankWhenNull="true">
+					<reportElement isPrintRepeatedValues="false" x="1" y="0" width="55" height="13" uuid="4b6d43dd-6e8c-4114-9684-191ebf543963">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a9223978-7889-438d-b0de-75b81f6d1731"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToTallestObject" x="239" y="0" width="137" height="13" uuid="8b2a7af9-997f-4c93-95b9-6a6bd5547f71">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1cb9ccf8-4723-44ed-9e32-53ca58aaf2d1"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{natureza}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="59" y="0" width="173" height="13" uuid="3174ad0c-98d5-41f4-85a5-fa63193a9e35"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{v_apresentante}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="378" y="1" width="100" height="12" uuid="f0e62eb7-041b-4afa-91a1-2d03c8bd325f"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[PRENOTADO sob no.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="458" y="-1" width="45" height="14" uuid="54e2bfc7-aef8-4adc-bc12-64701ed60c50"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="492" y="-1" width="18" height="13" uuid="0e80b4a7-1ddf-47d1-8ab5-c0a88146ec59">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[em:]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement x="507" y="-1" width="50" height="14" uuid="b671a48a-7fff-4454-83b2-499976886908"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data_protocolo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="2">
+				<line>
+					<reportElement x="1" y="1" width="555" height="1" uuid="b93c3b9f-7286-4f32-82d6-82d0efaaed2b">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+				</line>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<image>
+				<reportElement x="2" y="0" width="232" height="72" uuid="714a3861-e8f8-47c4-be98-739e3358e18b"/>
+				<imageExpression><![CDATA[$P{diretorioImagem}+"logo_2osasco_290px.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="235" y="2" width="322" height="58" uuid="c384c4c7-919d-483e-aa08-f84ab2a68156"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Protocolo - Títulos e Documentos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="25" forecolor="#EBEBEB" backcolor="#EBEBEB" uuid="2453603c-bba1-4c4a-9f7c-3a996b183405"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" x="2" y="0" width="38" height="25" uuid="b054f1e6-2c34-4a10-87f0-a545a30c9c96"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Livro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="143" y="0" width="86" height="25" uuid="c0fa911f-ccda-4058-9f21-f6b5f6bd4429"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Registro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="454" y="0" width="48" height="25" uuid="6ec825d1-3f1c-4fdd-8092-838bcdf64dd8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folha:]]></text>
+			</staticText>
+			<textField pattern="EEEE, d &apos;de&apos; MMMM &apos;de&apos; yyyy">
+				<reportElement positionType="Float" x="231" y="0" width="223" height="25" uuid="bb0163b7-8557-4b34-b16b-f76e11b8bfa6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dtInicial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="41" y="0" width="100" height="25" uuid="6998cb4b-6577-49bf-84d2-e8258facf01f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nrLivro}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement positionType="Float" x="507" y="0" width="48" height="25" uuid="db3c94a3-d51a-486a-ac9c-30f53ad3128e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[SUM($P{nrFolha},$V{PAGE_NUMBER}-1)]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="59" height="20" uuid="9bee839b-1c3b-48ef-a74c-55712b0a2003">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Protocolo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="59" y="2" width="176" height="20" uuid="bfe3f6ea-13ef-483b-8d0f-11317388ddf6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apresentante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="238" y="2" width="140" height="20" uuid="f4a683ee-4287-4519-9e34-77e402290261">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Natureza]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="2" width="158" height="20" uuid="e2dea5a9-74b4-49b4-a5cf-dcb8d651a10f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Averbações / Anotações]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="24" width="555" height="1" uuid="3e8c6758-26a8-4a6f-a2e9-86da621a7689">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="1" y="1" width="555" height="1" uuid="7bd98803-0bb2-4486-844a-23742efe9e36">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="378" y="-1" width="100" height="13" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group1" uuid="ba0297f2-9dba-4111-9649-0071a0e45c0c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="61df6c30-ffe0-4649-95e9-388cac34de04"/>
+					<printWhenExpression><![CDATA[!$F{andamento}.equals("PROTOCOLADO")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{andamento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="508" y="-1" width="50" height="13" isRemoveLineWhenBlank="true" uuid="c6660364-40ce-42df-9a69-4c3a17f7258b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a55ee9b5-3b9c-4a00-ad10-ab0a0e973654"/>
+					<printWhenExpression><![CDATA[!$F{andamento}.equals("PROTOCOLADO")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="492" y="-1" width="18" height="13" isRemoveLineWhenBlank="true" uuid="a58cc8aa-190a-4e06-b458-2d5aaf2a87c7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{andamento}.equals("PROTOCOLADO")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[em:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="-1" width="34" height="13" isRemoveLineWhenBlank="true" uuid="bef660ab-3763-4ca3-b035-ec2a82f2285c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<printWhenExpression><![CDATA[!$F{andamento}.equals("PROTOCOLADO")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[sob no.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="458" y="0" width="52" height="12" isRemoveLineWhenBlank="true" uuid="e411a1e1-d606-4d6b-8df0-44959c0dfe69">
+					<printWhenExpression><![CDATA[!$F{andamento}.equals("PROTOCOLADO")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{protocolo_registro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="4" splitType="Immediate"/>
+	</lastPageFooter>
+	<summary>
+		<band height="190" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="2" width="555" height="90" isRemoveLineWhenBlank="true" printWhenGroupChanges="Group1" uuid="9572c050-cca8-4bb8-916f-da8ead1cd222"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{rodape}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="94" width="100" height="26" isPrintWhenDetailOverflows="true" uuid="78132d91-7e83-429c-b188-e08ecc4eb618"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Dou fé, Osasco,]]></text>
+			</staticText>
+			<textField pattern="EEEE, d &apos;de&apos; MMMM &apos;de&apos; yyyy">
+				<reportElement positionType="FixRelativeToBottom" x="80" y="94" width="472" height="25" uuid="39035f8a-cf84-4ea4-a51d-9a6afe9b7c8c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dtInicial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="124" width="548" height="26" uuid="2b02cd0e-632b-4bec-8140-2c9122f857a6"/>
+				<text><![CDATA[Oficial _________________________________________________ Ruy Veridiano Patu Rebello Pinho]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="-2" y="155" width="555" height="1" uuid="c70d9df0-bb27-4962-a380-4930b7c6efc2"/>
+			</line>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="409" y="160" width="100" height="23" uuid="16349d8e-2084-4e61-8576-6ef0d1d359e0"/>
+				<textElement textAlignment="Right" verticalAlignment="Top"/>
+				<text><![CDATA[Continua na folha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="72" width="546" height="20" uuid="caae305b-a229-4c9b-93e4-2c17cf61e256">
+					<printWhenExpression><![CDATA[$V{rodape} == null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Certifico que na hora legal encerrei o expediente, tendo registrado 0 documento(s).]]></text>
+			</staticText>
+			<textField evaluationTime="Page" pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement x="508" y="160" width="45" height="24" uuid="03e4c6fa-bda5-48de-acd4-7bdb209b3d85"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[SUM($P{nrFolha},$V{PAGE_NUMBER}).intValue() < 301 ? SUM($P{nrFolha},$V{PAGE_NUMBER}) : '1';]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

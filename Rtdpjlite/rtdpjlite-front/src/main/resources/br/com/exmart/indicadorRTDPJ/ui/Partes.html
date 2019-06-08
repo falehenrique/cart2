@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll well noBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge" margin="false" :expand>
+    <vaadin-vertical-layout style-name="menuLateral" spacing="false" margin="false" _id="panelAddParte">
+     <vaadin-vertical-layout style-name="card marginLarge bg-blue-grey50" _id="panelParte">
+      <vaadin-horizontal-layout style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text>
+         DADOS DA PARTE 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-text-field caption="CPF/CNPJ" id="cpfCnpjParte" placeholder="00.000.000/0000-00" width="170px" _id="fieldDocumento"></vaadin-text-field>
+       <vaadin-text-field caption="Nome" width-full _id="fieldNomeParte" :expand></vaadin-text-field>
+      </vaadin-horizontal-layout>
+      <vaadin-combo-box caption="Qualidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldQualidadeParte"></vaadin-combo-box>
+      <vaadin-horizontal-layout width-full _id="panelDocumento">
+       <vaadin-combo-box popup-width="" caption="Tipo Doc." width="170px" data-item-type="br.com.exmart.rtdpjlite.model.TipoDocumento" _id="fieldTipoDoc"></vaadin-combo-box>
+       <vaadin-text-field caption="Nº Doc." placeholder="" width-full _id="fieldIdentidade" :expand></vaadin-text-field>
+       <vaadin-text-field caption="Orgão Exp." placeholder="" width="140px" _id="fieldOrgaoExp"></vaadin-text-field>
+       <vaadin-text-field caption="Data Emissão" _id="fieldDtEmissaoDocumento"></vaadin-text-field>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full _id="panelAddInfo">
+       <vaadin-combo-box caption="Nacionalidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Nacionalidade" _id="fieldNacionalidade" :expand></vaadin-combo-box>
+       <vaadin-combo-box caption="Profissão" width-full data-item-type="br.com.exmart.rtdpjlite.model.Profissao" _id="fieldProfissao" :expand></vaadin-combo-box>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full _id="panelAddInfo2">
+       <vaadin-combo-box scroll-to-selected-item caption="Estado Civil" placeholder="Selecione o Estado Civil" width-full data-item-type="br.com.exmart.rtdpjlite.model.EstadoCivil" _id="fieldEstadoCivilParte" :expand></vaadin-combo-box>
+       <vaadin-horizontal-layout width-full :expand>
+        <vaadin-combo-box caption="Regime de bens" placeholder="Selecione o Regime de Bens" width-full data-item-type="br.com.exmart.rtdpjlite.model.RegimeBens" _id="fieldRegimeBens" :expand></vaadin-combo-box>
+       </vaadin-horizontal-layout>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text>
+         DADOS DE CONTATO 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full>
+       <vaadin-text-field caption="Telefone" placeholder="" width="170px" _id="fieldTelefoneParte"></vaadin-text-field>
+       <vaadin-text-field caption="Email" width-full _id="fieldEmailParte" :expand></vaadin-text-field>
+       <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e801" description="Adicionar" style-name="primary icon-only large" plain-text _id="btnAdicionarParte" :bottom :right></vaadin-button>
+      </vaadin-horizontal-layout>
+      <vaadin-vertical-layout margin="false" _id="panelAddEndereco">
+       <vaadin-horizontal-layout width-full>
+        <vaadin-text-field caption="CEP" placeholder="99999-999" width="100px" _id="fieldCepParte"></vaadin-text-field>
+        <vaadin-combo-box caption="Tipo logradouro" data-item-type="br.com.exmart.rtdpjlite.model.TipoLogradouro" _id="fieldTipoLogradouro"></vaadin-combo-box>
+        <vaadin-text-field caption="Nome Logradouro" width-full _id="fieldEnderecoParte" :expand></vaadin-text-field>
+        <vaadin-text-field caption="Nº" width-full _id="fieldNumeroParte" :expand="0.2"></vaadin-text-field>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout width-full>
+        <vaadin-text-field caption="Compl." width-full _id="fieldComplementoParte" :expand></vaadin-text-field>
+        <vaadin-text-field caption="Bairro" width-full _id="fieldBairroParte" :expand></vaadin-text-field>
+        <vaadin-combo-box caption="UF" placeholder="" width="80px" data-item-type="br.com.exmart.rtdpjlite.model.Estado" _id="fieldUfParte"></vaadin-combo-box>
+        <vaadin-combo-box caption="Cidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cidade" _id="fieldCidadeParte" :expand></vaadin-combo-box>
+        <vaadin-button icon="fonticon://Vaadin-Icons/e801" description="Cadastrar cônjuge" style-name="primary" plain-text _id="btnCadastrarConjuge" :bottom :right>
+          cônjuge 
+        </vaadin-button>
+       </vaadin-horizontal-layout>
+      </vaadin-vertical-layout>
+      <vaadin-horizontal-layout visible="false" style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text>
+         RELAÇÃO JURÍDICA 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout visible="false" style-name="card" spacing="false" width-full>
+       <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+        <vaadin-combo-box caption="Objeto" width-full height="45px" data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldObjeto" :expand></vaadin-combo-box>
+        <vaadin-combo-box caption="Vínculo" data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldQualidadeParteold"></vaadin-combo-box>
+        <vaadin-text-field caption="Fração" width="150px" _id="fieldCotasParte" :right></vaadin-text-field>
+       </vaadin-horizontal-layout>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless green" height-full plain-text _id="btnAddRemoveAtributo" :middle :right></vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style-name="card marginLarge bg-blue-grey100" _id="conjugePanel">
+      <vaadin-horizontal-layout style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text :middle>
+         DADOS DO CÔNJUGE 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full _id="panelAddInfo21">
+       <vaadin-combo-box caption="Qualidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldConjugeQualidade" :expand></vaadin-combo-box>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-text-field caption="CPF/CNPJ" placeholder="00.000.000/0000-00" width="170px" _id="fieldConjugeDocumento"></vaadin-text-field>
+       <vaadin-text-field caption="Nome" width-full _id="fieldConjugeNome" :expand></vaadin-text-field>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-combo-box popup-width="" caption="Tipo Doc." width="140px" data-item-type="br.com.exmart.rtdpjlite.model.TipoDocumento" _id="fieldConjugeTipoDoc"></vaadin-combo-box>
+       <vaadin-text-field caption="Nº Doc." placeholder="" width-full _id="fieldConjugeIdentidade" :expand></vaadin-text-field>
+       <vaadin-text-field caption="Orgão Exp." placeholder="" width="140px" _id="fieldConjugeOrgaoExp"></vaadin-text-field>
+       <vaadin-text-field caption="Data Emissão" _id="fieldConjugeDataDoc"></vaadin-text-field>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full _id="panelAddInfo1">
+       <vaadin-combo-box caption="Nacionalidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Nacionalidade" _id="fieldConjugeNacionalidade" :expand></vaadin-combo-box>
+       <vaadin-combo-box caption="Profissão" width-full data-item-type="br.com.exmart.rtdpjlite.model.Profissao" _id="fieldConjugeProfissao" :expand></vaadin-combo-box>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text>
+         DADOS DE CONTATO 
+       </vaadin-label>
+       <vaadin-button style-name="tiny borderless" plain-text _id="btnCopiarDados" :expand>
+         Copiar dados 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout size-full>
+       <vaadin-text-field caption="Telefone" placeholder="" width="170px" _id="fieldConjugeTelefone"></vaadin-text-field>
+       <vaadin-text-field caption="Email" width-full _id="fieldConjugeEmail" :expand></vaadin-text-field>
+       <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e801" description="Adicionar" style-name="primary icon-only large" plain-text _id="btnAdicionarParte2" :bottom :right></vaadin-button>
+      </vaadin-horizontal-layout>
+      <vaadin-vertical-layout margin="false" _id="panelAddEndereco1">
+       <vaadin-horizontal-layout width-full>
+        <vaadin-text-field caption="CEP" placeholder="99999-999" width="100px" _id="fieldConjugeCep"></vaadin-text-field>
+        <vaadin-combo-box caption="Tipo logradouro" data-item-type="br.com.exmart.rtdpjlite.model.TipoLogradouro" _id="fieldConjugeTipoLogradouro"></vaadin-combo-box>
+        <vaadin-text-field caption="Nome Logradouro" width-full _id="fieldConjugeEndereco" :expand></vaadin-text-field>
+        <vaadin-text-field caption="Nº" width-full _id="fieldConjugeNumero" :expand="0.2"></vaadin-text-field>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout width-full>
+        <vaadin-text-field caption="Compl." width-full _id="fieldConjugeComplemento" :expand></vaadin-text-field>
+        <vaadin-text-field caption="Bairro" width-full _id="fieldConjugeBairro" :expand></vaadin-text-field>
+        <vaadin-combo-box caption="UF" placeholder="" width="80px" data-item-type="br.com.exmart.rtdpjlite.model.Estado" _id="fieldConjugeUf"></vaadin-combo-box>
+        <vaadin-combo-box caption="Cidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cidade" _id="fieldConjugeCidade" :expand></vaadin-combo-box>
+        <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e801" description="Adicionar" style-name="primary icon-only large" plain-text _id="btnAdicionarParte11" :bottom :right></vaadin-button>
+       </vaadin-horizontal-layout>
+      </vaadin-vertical-layout>
+      <vaadin-horizontal-layout visible="false" style-name="border-bottom" width-full>
+       <vaadin-label style-name="large colored" plain-text>
+         RELAÇÃO JURÍDICA 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout visible="false" style-name="card" spacing="false" width-full>
+       <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+        <vaadin-combo-box caption="Objeto" width-full height="45px" data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldObjeto1" :expand></vaadin-combo-box>
+        <vaadin-combo-box caption="Vínculo" data-item-type="br.com.exmart.rtdpjlite.model.Qualidade" _id="fieldConjugeQualidadeOld"></vaadin-combo-box>
+        <vaadin-text-field caption="Fração" width="150px" _id="fieldConjugeCota" :right></vaadin-text-field>
+       </vaadin-horizontal-layout>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless green" height-full plain-text _id="btnAddRemoveAtributo1" :middle :right></vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-horizontal-layout spacing="false" width-full>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="primary small noBorder" width-full plain-text _id="btnAddParte" :expand="0.7">
+        ADICIONAR PARTE 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e69a" style-name="danger small noBorder" width-full plain-text _id="btnCancelarParte" :expand="0.3">
+        Limpar formulário 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-grid style-name="gridAbas" width-full data-item-type="br.com.exmart.rtdpjlite.model.ParteProtocolo" _id="gridPartes" :expand>
+     <table>
+      <colgroup>
+       <col column-id="parte" sortable>
+       <col column-id="qualidade" sortable>
+       <col column-id="icProtocolo" sortable>
+       <col column-id="vlParticipacao" sortable>
+       <col column-id="qtdCotas" sortable>
+      </colgroup>
+      <thead>
+       <tr default>
+        <th plain-text column-ids="parte">Parte</th>
+        <th plain-text column-ids="qualidade">Qualidade</th>
+        <th plain-text column-ids="icProtocolo">IcProtocolo</th>
+        <th plain-text column-ids="vlParticipacao">VlParticipacao</th>
+        <th plain-text column-ids="qtdCotas">QtdCotas</th>
+       </tr>
+      </thead>
+      <tbody></tbody>
+     </table>
+    </vaadin-grid>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

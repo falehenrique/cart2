@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll well noBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="card marginLarge" _id="panelAddCartorio">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-combo-box caption="Estado" width-full data-item-type="br.com.exmart.rtdpjlite.model.Estado" _id="estado" :expand="0.2"></vaadin-combo-box>
+     <vaadin-combo-box caption="Cidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cidade" _id="cidade" :expand="0.6"></vaadin-combo-box>
+     <vaadin-combo-box caption="Cartório" empty-selection-allowed="false" placeholder="Selecione o cartório que receberá a certidão" width-full data-item-type="br.com.exmart.rtdpjlite.model.CartorioParceiro" _id="comboCartorioParceiro" :expand></vaadin-combo-box>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full _id="panelSelecioarCartorioParceiro">
+     <vaadin-button icon="fonticon://Vaadin-Icons/e801" description="Convidar novo cartório para se cadastrar no portal" style-name="borderless" plain-text _id="btnConvidarCartorio" :middle :right :expand>
+       Cadastrar Novo 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7b1" style-name="friendly noBorder" plain-text _id="btnAddCartorio" :middle :right>
+       Adicionar 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-vertical-layout visible="false" spacing="false" margin="false" _id="panelConvidarCartorio">
+     <vaadin-horizontal-layout style-name="wellCokaum margin bg-blue-grey50" width-full margin :expand>
+      <vaadin-text-field caption="Denominação do cartório" width-full _id="nomeCartorio" :expand></vaadin-text-field>
+      <vaadin-text-field caption="Apelido do cartório" _id="aliasCartorio"></vaadin-text-field>
+      <vaadin-text-field caption="Email" width-full _id="emailCartorio" :expand></vaadin-text-field>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full height="50px">
+      <vaadin-check-box caption="Recebe Eletronico" _id="ckRecebeEletronico" :middle></vaadin-check-box>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="friendly noBorder" width="75px" height-full plain-text _id="btnEnviarConvite" :middle :right></vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.model.ProtocoloCartorioParceiro" _id="gridCartorioParceiro" :expand>
+    <table>
+     <colgroup>
+      <col column-id="cartorioParceiro" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="cartorioParceiro">CartorioParceiro</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+  </vaadin-vertical-layout>
+ </body>
+</html>

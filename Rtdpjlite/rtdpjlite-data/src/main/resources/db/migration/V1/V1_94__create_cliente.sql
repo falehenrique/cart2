@@ -1,0 +1,5 @@
+CREATE TABLE cliente (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(250) NOT NULL,
+  identificacao VARCHAR(250) NOT NULL
+);

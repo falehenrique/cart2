@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui:br.com.exmart.indicadorRTDPJ.ui">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="card margin menuLateral" margin="false">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-label style-name="large purple-grey-medium" plain-text _id="titulo1">
+       #1 - 
+     </vaadin-label>
+     <vaadin-label style-name="colored large" width-full plain-text _id="titulo" :expand>
+       AUTOMÓVEL 
+     </vaadin-label>
+     <vaadin-button style-name="small" plain-text _id="btnGarantia">
+       GARANTIA 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e771" description="EDITAR OBJETO" style-name="small icon-only borderless" plain-text _id="btnEditarObjeto"></vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e80b" description="REMOVER OBJETO" style-name="borderless red icon-only" height-full plain-text _id="btnRemoverObjeto" :middle :right></vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-vertical-layout style-name="captionMenu" margin="false">
+     <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e71d" caption="ATRIBUTOS" margin="false" _id="atributosList"></vaadin-vertical-layout>
+     <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e747" caption="PARTES" margin="false" _id="partesList"></vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout spacing="false" width-full :expand>
+    <vaadin-button style-name="primary noBorder" width-full plain-text _id="btnSalvarObjeto">
+      Salvar objeto 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

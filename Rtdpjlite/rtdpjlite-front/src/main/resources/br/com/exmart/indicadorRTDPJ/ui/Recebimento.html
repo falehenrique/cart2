@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="wellnoBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="scroll" size-full margin="false" :expand>
+    <vaadin-vertical-layout style-name="well marginLarge noBorder" _id="panelAddRecebimento">
+     <vaadin-vertical-layout spacing="false" margin="false" _id="panelRecebimento" :expand>
+      <vaadin-horizontal-layout style-name="card marginLarge bg-blue-grey50" width-full margin-bottom _id="panelFormaRecebimentoDevolucao">
+       <vaadin-combo-box caption="Forma de Recebimento/Devolução" empty-selection-allowed="false" width-full data-item-type="br.com.exmart.rtdpjlite.model.FormaPagamento" _id="comboFormaRecebimento" :expand></vaadin-combo-box>
+       <vaadin-text-field caption="Valor" _id="valor"></vaadin-text-field>
+       <vaadin-text-field caption="Obs."></vaadin-text-field>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout spacing="false" width-full>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e93f" style-name="friendly small noBorder" width-full plain-text _id="btnAdicionarRecebimento">
+         Adicionar Recebimento 
+       </vaadin-button>
+       <vaadin-button icon="fonticon://Vaadin-Icons/e941" style-name="danger small noBorder" width-full plain-text _id="btnAdicionarDevolucao">
+         Adicionar Devolução 
+       </vaadin-button>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-grid style-name="gridAbas" column-reordering-allowed size-full data-item-type="br.com.exmart.rtdpjlite.vo.financeiro.PagamentoProtocoloFinanceiro" _id="gridRecebimentos">
+      <table>
+       <colgroup>
+        <col column-id="idFormaPagamento" sortable>
+        <col column-id="formaPagamento" sortable>
+        <col column-id="valor" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="idFormaPagamento">IdFormaPagamento</th>
+         <th plain-text column-ids="formaPagamento">FormaPagamento</th>
+         <th plain-text column-ids="valor">Valor</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout margin="false"></vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout style-name="bg-purple-grey-medium margin" width-full margin>
+    <vaadin-horizontal-layout style-name="well bg-purple-grey margin" margin :middle>
+     <vaadin-label style-name="white tiny" plain-text :middle>
+       TOTAL Recebimentos: 
+     </vaadin-label>
+     <vaadin-label style-name="bold green" plain-text _id="labelTotalRecebimentos" :bottom>
+       R$ 200,00 
+     </vaadin-label>
+     <vaadin-label style-name="white tiny align-right" plain-text :middle :right>
+       TOTAL Devoluções: 
+     </vaadin-label>
+     <vaadin-label style-name="bold red" plain-text _id="labelTotalDevolucoes" :middle>
+       R$ 200,00 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-label style-name="purple-grey-lighter" plain-text :middle :right :expand>
+      TOTAL de Serviços: 
+    </vaadin-label>
+    <vaadin-label style-name="h4 no-margin white" plain-text _id="labelTotalServicos" :middle>
+      R$ 200,00 
+    </vaadin-label>
+    <vaadin-label style-name="purple-grey-lighter align-right" width="140px" plain-text _id="labelTotalReceberDevolver" :middle :right>
+      TOTAL a Receber: 
+    </vaadin-label>
+    <vaadin-label style-name="h4 no-margin white" plain-text _id="labelTotalReceberDevolverValor" :middle>
+      R$ 0,00 
+    </vaadin-label>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e790" description="Atualizar recebimentos" style-name="borderless white" plain-text _id="btnAtualizarPagamentosFinanceiro" :right></vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

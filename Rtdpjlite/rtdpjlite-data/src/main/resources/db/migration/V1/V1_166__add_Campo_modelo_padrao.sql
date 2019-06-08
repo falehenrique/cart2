@@ -1,0 +1,1 @@
+ALTER TABLE modelo ADD COLUMN ic_padrao BOOLEAN default false;

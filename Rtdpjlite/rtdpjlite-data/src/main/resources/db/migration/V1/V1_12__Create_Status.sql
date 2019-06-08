@@ -1,0 +1,1 @@
+create table status(id serial,nome varchar(255), automatico boolean not null);

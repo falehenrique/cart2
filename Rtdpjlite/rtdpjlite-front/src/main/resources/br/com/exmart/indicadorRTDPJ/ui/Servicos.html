@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="scroll well noBorder" size-full margin="false" :expand>
+    <vaadin-vertical-layout style-name="marginLarge" margin="false" :expand>
+     <vaadin-vertical-layout spacing="false" margin="false" _id="panelServico">
+      <vaadin-vertical-layout style-name="marginLarge card bg-blue-grey50 noBorder">
+       <vaadin-horizontal-layout width-full _id="panelValor">
+        <vaadin-combo-box required-indicator-visible caption="Serviço" width-full data-item-type="br.com.exmart.rtdpjlite.vo.financeiro.ServicoFinanceiro" _id="servico" :expand="0.7"></vaadin-combo-box>
+        <vaadin-combo-box caption="Forma de cálculo" empty-selection-allowed="false" width-full data-item-type="br.com.exmart.rtdpjlite.vo.financeiro.FormaCalculoFinanceiro" _id="formaCalculo" :expand="0.3"></vaadin-combo-box>
+        <vaadin-text-field caption="Valor Base" placeholder="" width="120px" _id="valorBase"></vaadin-text-field>
+        <vaadin-text-field caption="Quantidade" width="80px" _id="repeticoes"></vaadin-text-field>
+       </vaadin-horizontal-layout>
+      </vaadin-vertical-layout>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="primary small noBorder" width-full plain-text _id="btnAdicionarServico">
+        Adicionar 
+      </vaadin-button>
+     </vaadin-vertical-layout>
+     <vaadin-grid style-name="gridAbas" width-full data-item-type="br.com.exmart.indicadorRTDPJ.ui.vo.ServicosAgrupadoVO" _id="gridServicos">
+      <table>
+       <colgroup>
+        <col column-id="idServico" sortable>
+        <col column-id="nmServico" sortable>
+        <col column-id="total" sortable>
+        <col column-id="vlBase" sortable>
+        <col column-id="formaCalculo" sortable>
+        <col column-id="qtd" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="idServico">IdServico</th>
+         <th plain-text column-ids="nmServico">NmServico</th>
+         <th plain-text column-ids="total">Total</th>
+         <th plain-text column-ids="vlBase">VlBase</th>
+         <th plain-text column-ids="formaCalculo">FormaCalculo</th>
+         <th plain-text column-ids="qtd">Qtd</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-horizontal-layout style-name="margin" width-full>
+    <vaadin-label style-name="colored small bold" plain-text :middle>
+      Depósito 
+    </vaadin-label>
+    <vaadin-text-field style-name="borderlesss" width="120px" _id="vlDepositoPrevio"></vaadin-text-field>
+    <vaadin-label style-name="colored small bold" plain-text _id="labelTotalServicos" :middle :right :expand>
+      TOTAL de Serviços: 
+    </vaadin-label>
+    <vaadin-label style-name="bold" plain-text _id="labelTotalServicosValor" :middle>
+      R$ 0,00 
+    </vaadin-label>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e71e" style-name="borderless icon-only" plain-text _id="btnDetalhesCustas"></vaadin-button>
+    <vaadin-label style-name="colored small bold" plain-text _id="labelTotalReceberDevolver" :middle>
+      TOTAL Recebido: 
+    </vaadin-label>
+    <vaadin-label style-name="bold" plain-text _id="labelTotalReceberDevolverValor" :middle>
+      R$ 0,00 
+    </vaadin-label>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e71e" style-name="borderless icon-only" plain-text _id="btnVerMovimentacoes"></vaadin-button>
+    <vaadin-label style-name="colored small bold" plain-text _id="labelResultadoCalculo" :middle>
+      Label 
+    </vaadin-label>
+    <vaadin-label style-name="bold" plain-text _id="labelResultadoCalculoValor" :middle>
+      Label 
+    </vaadin-label>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e790" style-name="borderless icon-only" plain-text icon-alt="Atualizar Pagamentos" _id="btnAtualizarPagamentos"></vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

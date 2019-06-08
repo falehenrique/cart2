@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.1.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout visible="false" style-name="margin" margin-right>
+    <vaadin-label style-name="h4 no-margin light colored" plain-text _id="labelTituloProtocolo" :middle>
+      RECEBIMENTOS DO PROTOCOLO 
+    </vaadin-label>
+   </vaadin-horizontal-layout>
+   <vaadin-grid style-name="gridAbas borderless" size-full data-item-type="br.com.exmart.rtdpjlite.vo.financeiro.PagamentoProtocoloFinanceiro" _id="gridRecebimentos" :expand>
+    <table>
+     <colgroup>
+      <col column-id="idFormaPagamento" sortable>
+      <col column-id="formaPagamento" sortable>
+      <col column-id="valor" sortable>
+      <col column-id="data" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="idFormaPagamento">IdFormaPagamento</th>
+       <th plain-text column-ids="formaPagamento">FormaPagamento</th>
+       <th plain-text column-ids="valor">Valor</th>
+       <th plain-text column-ids="data">Data</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+   <vaadin-horizontal-layout style-name="margin" width-full>
+    <vaadin-label plain-text :middle :right>
+      TOTAL Devolvido: 
+    </vaadin-label>
+    <vaadin-label style-name="h5 no-margin red" width-full plain-text _id="labelTotalDevolucoes" :middle :expand>
+      R$ 200,00 
+    </vaadin-label>
+    <vaadin-label plain-text :middle :right>
+      TOTAL Recebido: 
+    </vaadin-label>
+    <vaadin-label style-name="h5 no-margin green" width-full plain-text _id="labelTotalRecebimentos" :middle :expand>
+      R$ 200,00 
+    </vaadin-label>
+    <vaadin-label style-name="align-right" width="140px" plain-text _id="labelTotalReceberDevolver" :middle :right>
+      TOTAL a Receber: 
+    </vaadin-label>
+    <vaadin-label style-name="h4 no-margin" width-full plain-text _id="labelTotalReceberDevolverValor" :middle :expand>
+      R$ 0,00 
+    </vaadin-label>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

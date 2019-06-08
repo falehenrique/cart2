@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-panel>
+    <vaadin-horizontal-layout size-full margin>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e61a" style-name="btnGrey borderless" width="40px" height="40px" plain-text :middle></vaadin-button>
+     <vaadin-label style-name="h3" plain-text :middle :expand="0.75">
+       Cadastro Responsável 
+     </vaadin-label>
+     <vaadin-button visible="false" icon="fonticon://FontAwesome/f00c" style-name="icon-only borderless large" width="40px" height="40px" plain-text :middle :right></vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-panel>
+   <vaadin-text-field caption="Nome" width-full _id="nome" :expand></vaadin-text-field>
+   <vaadin-text-field caption="Email" width-full _id="email" :expand></vaadin-text-field>
+   <vaadin-label plain-text :expand>
+     * Uma senha aleatória sera enviada para o email 
+   </vaadin-label>
+   <vaadin-horizontal-layout width-full :expand>
+    <vaadin-button style-name="danger" plain-text _id="btnCancelar" :middle :right :expand>
+      Cancelar 
+    </vaadin-button>
+    <vaadin-button style-name="friendly" plain-text _id="btnSalvar" :middle :right>
+      Salvar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

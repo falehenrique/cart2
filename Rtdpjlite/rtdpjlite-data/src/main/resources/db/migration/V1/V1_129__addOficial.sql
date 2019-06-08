@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN oficial VARCHAR(250) NOT NULL DEFAULT 'Oficial Teste';

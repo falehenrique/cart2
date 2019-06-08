@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout height="360px">
+   <vaadin-vertical-layout spacing="false" margin-left="false" margin-right="false" margin-top="false" _id="cardTimeline">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-label style-name="h4 no-margin purple-grey-medium" plain-text _id="dia">
+       25/01/2017 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+    <vaadin-label style-name="h6 purple-grey" width-full plain-text _id="escrevente">
+      Nome do Escrevente 
+    </vaadin-label>
+    <vaadin-horizontal-layout width-full margin-top _id="cardTimeline21144" :expand>
+     <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full _id="barraLateral"></vaadin-css-layout>
+     <vaadin-vertical-layout style-name="card" spacing="false" margin="false" :expand>
+      <vaadin-vertical-layout style-name="margin" margin="false">
+       <vaadin-horizontal-layout spacing="false" width-full>
+        <vaadin-horizontal-layout width-full :expand>
+         <vaadin-label caption="Registro nº" style-name="large bold colored" plain-text _id="registro">
+           1234567890 
+         </vaadin-label>
+         <vaadin-label caption="Data do Registro" style-name="bold purple-grey" plain-text _id="dataRegistro">
+           99/99/9999 
+         </vaadin-label>
+         <vaadin-label caption="Natureza" style-name="bold purple-grey" width-full plain-text _id="natureza" :expand>
+           Alteração Contratual 
+         </vaadin-label>
+        </vaadin-horizontal-layout>
+        <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Ver detalhes do Registro" style-name="borderless icon-only" height-full plain-text _id="btnVerRegistro"></vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-vertical-layout spacing="false" margin="false">
+        <vaadin-text-area caption="Situação atual" rows="4" style-name="borderless wellCokaum" width-full _id="situacaoAtual"></vaadin-text-area>
+       </vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+     </vaadin-vertical-layout>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

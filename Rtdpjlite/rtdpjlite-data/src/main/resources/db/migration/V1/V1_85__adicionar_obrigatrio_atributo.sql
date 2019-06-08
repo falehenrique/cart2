@@ -1,0 +1,1 @@
+ALTER TABLE objeto_atributo ADD COLUMN obrigatorio boolean DEFAULT FALSE;

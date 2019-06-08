@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-label visible="false" style-name="align-center large light" width-full plain-text _id="txtTipoImportacao">
+     Enviar arquivo Indisponibilidade 
+   </vaadin-label>
+   <vaadin-horizontal-layout size-full _id="panelUpload" :expand></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout width-full _id="panelLoading">
+    <vaadin-progress-bar indeterminate></vaadin-progress-bar>
+    <vaadin-label plain-text :expand>
+      Processando Arquivo 
+    </vaadin-label>
+   </vaadin-horizontal-layout>
+   <vaadin-horizontal-layout width-full>
+    <vaadin-button enabled="false" plain-text _id="btnProcessarArquivo" :expand>
+      Processar Arquivo 
+    </vaadin-button>
+    <vaadin-button width-full plain-text _id="btnCancelar" :expand>
+      Fechar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

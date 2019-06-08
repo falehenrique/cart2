@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PendenciasMensalista" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eba0a2c4-d2e2-4bb6-828d-2052757b912d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MensalistasGeral"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[new String("/Users/leandrosilva/JaspersoftWorkspace/MyReports/")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="NomeCliente" class="java.lang.String"/>
+	<parameter name="DocumentoCliente" class="java.lang.String"/>
+	<parameter name="cartorio" class="java.lang.String"/>
+	<parameter name="endereco" class="java.lang.String"/>
+	<parameter name="cnpj" class="java.lang.String"/>
+	<parameter name="tabeliao" class="java.lang.String"/>
+	<parameter name="diretorioImagem" class="java.lang.String"/>
+	<queryString language="json">
+		<![CDATA[mensalista]]>
+	</queryString>
+	<field name="nmCliente" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="nmCliente"/>
+		<fieldDescription><![CDATA[nmCliente]]></fieldDescription>
+	</field>
+	<field name="idCliente" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.json.field.expression" value="idCliente"/>
+		<fieldDescription><![CDATA[idCliente]]></fieldDescription>
+	</field>
+	<field name="pedidos" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="pedidos"/>
+		<fieldDescription><![CDATA[pedidos]]></fieldDescription>
+	</field>
+	<group name="Group2">
+		<groupExpression><![CDATA[$F{idCliente}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField>
+					<reportElement x="70" y="0" width="710" height="30" uuid="4d799176-09e9-459f-83a5-4e2b914c2aba"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nmCliente}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="70" height="30" uuid="a8919c99-a83b-4eac-82a0-f4303dd68ffe"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cliente:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="590" y="49" width="170" height="15" uuid="9433ca64-3120-4f43-89e9-81c8954dd1ef"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="480" y="49" width="107" height="15" uuid="9e26796a-1499-4a51-af17-3916c5942aad">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório do dia: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="320" height="61" uuid="f0187605-cc8d-4f67-b185-4efe1667a499"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Clientes Faturados]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="3" width="460" height="30" uuid="be1f3413-5581-43dd-84a6-a47c9f9514e1"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cartorio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="33" width="100" height="30" uuid="73d1fe01-c154-4a0b-a232-f0f890de5f74"/>
+				<textFieldExpression><![CDATA[$P{endereco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="97" splitType="Stretch">
+			<subreport>
+				<reportElement x="2" y="1" width="798" height="89" uuid="0d3193c9-828c-48de-85de-ae0077ab0cd3"/>
+				<subreportParameter name="REPORT_DATA_SOURCE">
+					<subreportParameterExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource(“servicos”)]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"PendenciasMensalista_Servicos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band height="38" splitType="Stretch"/>
+	</summary>
+</jasperReport>

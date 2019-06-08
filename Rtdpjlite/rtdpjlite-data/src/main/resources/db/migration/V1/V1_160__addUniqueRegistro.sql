@@ -1,0 +1,1 @@
+--ALTER TABLE registro ADD CONSTRAINT numero_registro_especialidade UNIQUE (numero_registro, tp_especialidade);

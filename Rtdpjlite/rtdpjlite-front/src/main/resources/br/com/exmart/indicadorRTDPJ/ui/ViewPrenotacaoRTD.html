@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;material&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout spacing="false" width-full height="79px">
+    <vaadin-css-layout style-name="margin" width-full :middle :expand>
+     <vaadin-horizontal-layout margin-right>
+      <vaadin-label style-name="light huge colored" plain-text _id="labelTituloProtocolo" :middle>
+        PROTOCOLO - RTD 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout margin-left margin-right>
+      <vaadin-label plain-text :middle>
+        nº: 
+      </vaadin-label>
+      <vaadin-label style-name="light huge" plain-text _id="labelNumeroProtocolo" :middle>
+        300.000 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout margin-left margin-right>
+      <vaadin-label plain-text :middle>
+        de: 
+      </vaadin-label>
+      <vaadin-label style-name="light huge" plain-text _id="labelDataProtocolo" :middle>
+        12/01/2018 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-css-layout>
+    <vaadin-css-layout style-name="margin" :middle :right>
+     <vaadin-combo-box style-name="large" data-item-type="java.lang.String">
+      <option item="Option1">1/6 - Protocolado</option>
+      <option item="Option2">2/6 - Digitalizado</option>
+      <option item="Option3">3/6 - Examinado</option>
+      <option item="Option4">4/6 - Qualificado</option>
+      <option item="Option5">5/6 - Registrado</option>
+      <option item="Option6">6/6 - Expedido</option>
+     </vaadin-combo-box>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e71d" style-name="icon-only borderless large" plain-text _id="btnInfo"></vaadin-button>
+    </vaadin-css-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-css-layout style-name="equal-width-tabs" size-full _id="conteudo" :expand></vaadin-css-layout>
+   <vaadin-horizontal-layout visible="false" spacing="false" width-full _id="panelAndamentoRegistro"></vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

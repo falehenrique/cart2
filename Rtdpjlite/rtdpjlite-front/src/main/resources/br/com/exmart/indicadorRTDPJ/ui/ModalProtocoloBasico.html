@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;material&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-combo-box caption="Natureza" width-full data-item-type="br.com.exmart.rtdpjlite.model.Natureza" _id="comboNatureza"></vaadin-combo-box>
+   <vaadin-combo-box caption="SubNatureza" width-full data-item-type="br.com.exmart.rtdpjlite.model.SubNatureza" _id="comboSubNatureza"></vaadin-combo-box>
+   <vaadin-horizontal-layout size-full :expand>
+    <vaadin-button plain-text _id="btnProtocolar" :middle>
+      Protocolar 
+    </vaadin-button>
+    <vaadin-button plain-text _id="btnCancelar" :middle :right>
+      Cancelar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

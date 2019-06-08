@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-horizontal-layout width-full>
+    <vaadin-combo-box caption="Cliente" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cliente" _id="comboCliente" :expand="0.8"></vaadin-combo-box>
+    <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e801" style-name="friendly" plain-text _id="btnNovoCliente" :bottom :center :expand="0.1"></vaadin-button>
+   </vaadin-horizontal-layout>
+   <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.model.portal.UsuarioPortal" _id="gridResponsavel" :expand>
+    <table>
+     <colgroup>
+      <col column-id="nome" sortable>
+      <col column-id="email" sortable>
+      <col column-id="senha" sortable>
+      <col column-id="dtCadastro" sortable>
+      <col column-id="cliente" sortable>
+      <col column-id="resetToken" sortable>
+      <col column-id="usuario" sortable>
+      <col column-id="cartorioParceiro" sortable>
+      <col column-id="lembreteSenha" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="nome">Nome</th>
+       <th plain-text column-ids="email">Email</th>
+       <th plain-text column-ids="senha">Senha</th>
+       <th plain-text column-ids="dtCadastro">DtCadastro</th>
+       <th plain-text column-ids="cliente">Cliente</th>
+       <th plain-text column-ids="resetToken">ResetToken</th>
+       <th plain-text column-ids="usuario">Usuario</th>
+       <th plain-text column-ids="cartorioParceiro">CartorioParceiro</th>
+       <th plain-text column-ids="lembreteSenha">LembreteSenha</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+   <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="friendly" plain-text _id="btnNovoResponsavel" :middle :right>
+     Adicionar 
+   </vaadin-button>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+ALTER TABLE protocolo ADD COLUMN dt_certidao_informado_portal TIMESTAMP WITHOUT TIME ZONE;

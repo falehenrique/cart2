@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="com_whitestein_vaadin_widgets_wtpdfviewer:com.whitestein.vaadin.widgets.wtpdfviewer">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout style-name="card noBorder" spacing="false" size-full _id="splitRegistro" :expand>
+    <vaadin-vertical-layout visible="false" style-name="borderless margin wellCokaum" size-full _id="panelTexto" :expand>
+     <vaadin-combo-box placeholder="Selecione o modelo de certidão
+" width-full data-item-type="br.com.exmart.rtdpjlite.model.Modelo" _id="comboTexto"></vaadin-combo-box>
+     <vaadin-rich-text-area enabled="false" size-full _id="editoTexto" :expand></vaadin-rich-text-area>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button style-name="borderless" _id="btnCancelarTexto">
+        CANCELAR 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e643" style-name="primary" width-full _id="btnGerarTexto" :expand>
+        GERAR DOCUMENTO 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout visible="false" style-name="borderless wellCokaum" spacing="false" size-full margin="false" _id="panelEtiqueta" :expand>
+     <vaadin-horizontal-layout width-full margin>
+      <vaadin-combo-box placeholder="Selecione o modelo da carimbo" width-full data-item-type="br.com.exmart.rtdpjlite.model.Modelo" _id="comboEtiquetas"></vaadin-combo-box>
+     </vaadin-horizontal-layout>
+     <vaadin-rich-text-area size-full _id="editorEtiquetas" :expand></vaadin-rich-text-area>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-button style-name="borderless" _id="btnCancelarEtiqueta">
+        CANCELAR 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e643" style-name="primary" width-full _id="btnAtualizarEtiqueta" :expand>
+        ATUALIZAR CARIMBO 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout spacing="false" size-full margin="false" _id="panelImagem" :expand>
+     <vaadin-horizontal-layout style-name="margin viewerStyle scroll card noBorder" spacing="false" size-full _id="pdfViewerPanel" :expand></vaadin-horizontal-layout>
+     <vaadin-horizontal-layout spacing="false" width-full>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e7e1" style-name="borderless" _id="btnEditarTexto">
+        ALTERAR TEXTO 
+      </vaadin-button>
+      <vaadin-button disable-on-click icon="fonticon://Vaadin-Icons/e643" style-name="borderless" plain-text _id="btnEditarCarimbo">
+        ALTERAR CARIMBO 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e75b" style-name="friendly noBorder" width-full _id="btnConfirmarRegistro" :expand>
+        FINALIZAR 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

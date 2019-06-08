@@ -1,0 +1,1 @@
+create table item_tabela(id serial,nome varchar(255), descricao varchar(255), quantidade boolean)

@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-css-layout style-name="margin" width-full>
+    <vaadin-horizontal-layout margin-right>
+     <vaadin-label style-name="large colored" plain-text _id="labelTituloProtocolo" :middle>
+       Contrato_Social_1234567.pdf 
+     </vaadin-label>
+    </vaadin-horizontal-layout>
+   </vaadin-css-layout>
+   <vaadin-horizontal-split-panel split-position="70%" :expand>
+    <vaadin-vertical-layout style-name="marginLarge viewerStyle well scroll noBorder" size-full margin="false" _id="pdfViewer">
+     <vaadin-vertical-layout style-name="card" spacing="false" margin="false">
+      <vaadin-image source="http://tademais.net/img/fotos/modelo%20de%20contrato%20social%208.png" size-full _id="thumbDoc"></vaadin-image>
+     </vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style-name="menuLateral card noBorder" spacing="false" size-full margin="false" _id="v1">
+     <vaadin-tab-sheet style-name="equal-width-tabs" size-full :expand>
+      <tab icon="fonticon://Vaadin-Icons/e92b" selected>
+       <vaadin-vertical-layout style-name="wellCokaum bg-blue-grey50 captionMenu" spacing="false" size-full margin="false" _id="panelExame">
+        <vaadin-vertical-layout style-name="scroll" spacing="false" size-full margin="false" :expand>
+         <vaadin-vertical-layout style-name="borderless margin">
+          <vaadin-text-area icon="fonticon://Vaadin-Icons/e711" caption="SITUAÇÃO ATUAL" size-full></vaadin-text-area>
+          <vaadin-text-area icon="fonticon://Vaadin-Icons/e71d" caption="OBSERVAÇÕES" size-full></vaadin-text-area>
+         </vaadin-vertical-layout>
+        </vaadin-vertical-layout>
+        <vaadin-horizontal-layout style-name="bg-purple-grey-light" width-full margin>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e6dc" style-name="friendly small" width-full _id="btnRegistrar">
+           Registrar 
+         </vaadin-button>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e6da" style-name="danger small" width-full _id="btnDevolver">
+           Devolver 
+         </vaadin-button>
+        </vaadin-horizontal-layout>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab icon="fonticon://Vaadin-Icons/e6fd">
+       <vaadin-vertical-layout style-name="scroll wellCokaum bg-blue-grey50 captionMenu" size-full margin="false">
+        <vaadin-vertical-layout>
+         <vaadin-check-box-group icon="fonticon://Vaadin-Icons/e7f0" caption="CHECKLIST DE EXAME" style-name="no-box-drag-hints" width-full data-item-type="java.lang.String">
+          <option item="Option1">O registro ou a averbação de título, documento ou papel, em que tenham interesse as fundações, sernao efetuados mediante cientificação do Ministério Público, item 27, Cap. XIX, NCGJ.</option>
+          <option item="Option2">Busca no sistema pelo nome da devedora</option>
+          <option item="Option3">Deve ser apresentado pelo menos uma via negociável</option>
+          <option item="Option4">Verificar se o documento é original</option>
+          <option item="Option5">Número da CCB - todas as vias devem estar numeradas</option>
+          <option item="Option6">Verificar se uma das partes pertence à comarca de Osasco</option>
+          <option item="Option7">Credor</option>
+          <option item="Option8">Devedor</option>
+          <option item="Option9">Data de vencimento, no caso de pagamento parcelado, as datas e os valores de cada prestação, ou os critérios para essa determinação;</option>
+          <option item="Option10">Avalista(s). Se o estado civil for casado, verificar o regime e solicitar assinatura do cônjuge do avalista.</option>
+          <option item="Option11">Verificar se tem terceiro garantidor e se assinou</option>
+          <option item="Option12">Verificar se tem fiel depositário e se assinou</option>
+          <option item="Option13">Assinaturas das partes</option>
+          <option item="Option14">Rubricas</option>
+          <option item="Option15">Nº de páginas</option>
+          <option item="Option16">Data da emissão</option>
+          <option item="Option17">Praça de pagamento</option>
+          <option item="Option18">Cláusula de promessa do emitente de pagar a dívida em dinheiro, certa, líquida e exegível no seu vencimento</option>
+          <option item="Option19">Verificar o selo do reconhecimento de firma/registro</option>
+          <option item="Option20">Nota Fiscal (quando a garantia for alienação fiduciária de bem móvel)</option>
+          <option item="Option21">Buscar no indicador real</option>
+         </vaadin-check-box-group>
+         <vaadin-check-box-group icon="fonticon://Vaadin-Icons/e91e" caption="GARANTIAS" style-name="no-box-drag-hints" width-full data-item-type="java.lang.String">
+          <option item="Option1">Penhor comum</option>
+          <option item="Option2">Alienação fiduciária ações</option>
+          <option item="Option3">Alienação fiduciária de bem móvel</option>
+          <option item="Option4">Cessão fiduciária</option>
+          <option item="Option5">Aval (se o estado civil for casado verificar o regime e solicitar assinatura do cônjuge)</option>
+         </vaadin-check-box-group>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab icon="fonticon://Vaadin-Icons/e7a7">
+       <vaadin-vertical-layout style-name="scroll wellCokaum bg-blue-grey50" spacing="false" size-full margin="false" _id="panelTimeline">
+        <vaadin-vertical-layout style-name="margin" margin="false">
+         <vaadin-vertical-layout spacing="false" margin-left="false" margin-right="false" margin-top="false" _id="cardTimelineV2114">
+          <vaadin-horizontal-layout width-full>
+           <vaadin-label style-name="h4 no-margin purple-grey-medium" plain-text>
+             25/01/2017 
+           </vaadin-label>
+           <vaadin-label style-name="purple-grey-medium bold" plain-text :bottom :expand>
+             às 14:31 
+           </vaadin-label>
+          </vaadin-horizontal-layout>
+          <vaadin-label style-name="h6 purple-grey" width-full plain-text>
+            Nome do Escrevente 
+          </vaadin-label>
+          <vaadin-horizontal-layout width-full margin-top _id="cardTimeline2114" :expand>
+           <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full></vaadin-css-layout>
+           <vaadin-vertical-layout style-name="card" spacing="false" margin="false" :expand>
+            <vaadin-horizontal-layout style-name="margin" width-full margin>
+             <vaadin-vertical-layout margin="false" :expand>
+              <vaadin-label caption="Registro nº" style-name="large bold colored" width-full plain-text>
+                1234567890 
+              </vaadin-label>
+              <vaadin-label caption="Natureza" style-name="bold purple-grey" width-full plain-text>
+                Alteração Contratual 
+              </vaadin-label>
+             </vaadin-vertical-layout>
+            </vaadin-horizontal-layout>
+            <vaadin-horizontal-layout style-name="well" spacing="false" width-full>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Visualizar documento" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e71d" description="Mais informações" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e77b" description="Abrir protocolo" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+            </vaadin-horizontal-layout>
+           </vaadin-vertical-layout>
+          </vaadin-horizontal-layout>
+         </vaadin-vertical-layout>
+         <vaadin-vertical-layout spacing="false" margin-left="false" margin-right="false" margin-top="false" _id="cardTimelineV21141">
+          <vaadin-horizontal-layout width-full>
+           <vaadin-label style-name="h4 no-margin purple-grey-medium" plain-text>
+             25/01/2017 
+           </vaadin-label>
+           <vaadin-label style-name="purple-grey-medium bold" plain-text :bottom :expand>
+             às 14:31 
+           </vaadin-label>
+          </vaadin-horizontal-layout>
+          <vaadin-label style-name="h6 purple-grey" width-full plain-text>
+            Nome do Escrevente 
+          </vaadin-label>
+          <vaadin-horizontal-layout width-full margin-top _id="cardTimeline21141" :expand>
+           <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full></vaadin-css-layout>
+           <vaadin-vertical-layout style-name="card" spacing="false" margin="false" :expand>
+            <vaadin-horizontal-layout style-name="margin" width-full margin>
+             <vaadin-vertical-layout margin="false" :expand>
+              <vaadin-label caption="Registro nº" style-name="large bold colored" width-full plain-text>
+                1234567890 
+              </vaadin-label>
+              <vaadin-label caption="Natureza" style-name="bold purple-grey" width-full plain-text>
+                Alteração Contratual 
+              </vaadin-label>
+             </vaadin-vertical-layout>
+            </vaadin-horizontal-layout>
+            <vaadin-horizontal-layout style-name="well" spacing="false" width-full>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Visualizar documento" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e71d" description="Mais informações" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e77b" description="Abrir protocolo" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+            </vaadin-horizontal-layout>
+           </vaadin-vertical-layout>
+          </vaadin-horizontal-layout>
+         </vaadin-vertical-layout>
+         <vaadin-vertical-layout spacing="false" margin-left="false" margin-right="false" margin-top="false" _id="cardTimelineV21142">
+          <vaadin-horizontal-layout width-full>
+           <vaadin-label style-name="h4 no-margin purple-grey-medium" plain-text>
+             25/01/2017 
+           </vaadin-label>
+           <vaadin-label style-name="purple-grey-medium bold" plain-text :bottom :expand>
+             às 14:31 
+           </vaadin-label>
+          </vaadin-horizontal-layout>
+          <vaadin-label style-name="h6 purple-grey" width-full plain-text>
+            Nome do Escrevente 
+          </vaadin-label>
+          <vaadin-horizontal-layout width-full margin-top _id="cardTimeline21142" :expand>
+           <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full></vaadin-css-layout>
+           <vaadin-vertical-layout style-name="card" spacing="false" margin="false" :expand>
+            <vaadin-horizontal-layout style-name="margin" width-full margin>
+             <vaadin-vertical-layout margin="false" :expand>
+              <vaadin-label caption="Registro nº" style-name="large bold colored" width-full plain-text>
+                1234567890 
+              </vaadin-label>
+              <vaadin-label caption="Natureza" style-name="bold purple-grey" width-full plain-text>
+                Alteração Contratual 
+              </vaadin-label>
+             </vaadin-vertical-layout>
+            </vaadin-horizontal-layout>
+            <vaadin-horizontal-layout style-name="well" spacing="false" width-full>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Visualizar documento" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e71d" description="Mais informações" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e77b" description="Abrir protocolo" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+            </vaadin-horizontal-layout>
+           </vaadin-vertical-layout>
+          </vaadin-horizontal-layout>
+         </vaadin-vertical-layout>
+         <vaadin-vertical-layout spacing="false" margin-left="false" margin-right="false" margin-top="false" _id="cardTimelineV21143">
+          <vaadin-horizontal-layout width-full>
+           <vaadin-label style-name="h4 no-margin purple-grey-medium" plain-text>
+             25/01/2017 
+           </vaadin-label>
+           <vaadin-label style-name="purple-grey-medium bold" plain-text :bottom :expand>
+             às 14:31 
+           </vaadin-label>
+          </vaadin-horizontal-layout>
+          <vaadin-label style-name="h6 purple-grey" width-full plain-text>
+            Nome do Escrevente 
+          </vaadin-label>
+          <vaadin-horizontal-layout width-full margin-top _id="cardTimeline21143" :expand>
+           <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full></vaadin-css-layout>
+           <vaadin-vertical-layout style-name="card" spacing="false" margin="false" :expand>
+            <vaadin-horizontal-layout style-name="margin" width-full margin>
+             <vaadin-vertical-layout margin="false" :expand>
+              <vaadin-label caption="Registro nº" style-name="large bold colored" width-full plain-text>
+                1234567890 
+              </vaadin-label>
+              <vaadin-label caption="Natureza" style-name="bold purple-grey" width-full plain-text>
+                Alteração Contratual 
+              </vaadin-label>
+             </vaadin-vertical-layout>
+            </vaadin-horizontal-layout>
+            <vaadin-horizontal-layout style-name="well" spacing="false" width-full>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Visualizar documento" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e71d" description="Mais informações" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e77b" description="Abrir protocolo" style-name="borderless purple-grey" width-full plain-text :expand></vaadin-button>
+            </vaadin-horizontal-layout>
+           </vaadin-vertical-layout>
+          </vaadin-horizontal-layout>
+         </vaadin-vertical-layout>
+        </vaadin-vertical-layout>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab icon="fonticon://Vaadin-Icons/e61a">
+       <vaadin-vertical-split-panel _id="panelPartes1">
+        <vaadin-vertical-layout spacing="false" size-full margin="false" _id="panelAddParte1">
+         <vaadin-vertical-layout style-name="scroll margin wellCokaum bg-blue-grey50 captionMenu" spacing="false" size-full margin="false" :expand>
+          <vaadin-vertical-layout margin="false">
+           <vaadin-form-layout icon="fonticon://Vaadin-Icons/e61a" caption="IDENTIFICAÇÃO DA PARTE" margin="false" _id="formAddParte1">
+            <vaadin-text-field caption="CPF/CNPJ" placeholder="00.000.000/0000-00" width-full _id="fieldCpfCnpjParte2"></vaadin-text-field>
+            <vaadin-text-field caption="Nome" width-full _id="fieldNomeParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Identidade" placeholder="00.000.000-00" width-full _id="fieldCpfCnpjParte11"></vaadin-text-field>
+            <vaadin-text-field caption="Telefone" placeholder="+99 (99) 9.9999-9999" width-full _id="fieldTelefoneParte1"></vaadin-text-field>
+            <vaadin-combo-box caption="Qualidade" width-full data-item-type="java.lang.String" _id="fieldQualidadeParte1">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+            <vaadin-text-field caption="Email" width-full _id="fieldEmailParte1"></vaadin-text-field>
+           </vaadin-form-layout>
+           <vaadin-form-layout icon="fonticon://Vaadin-Icons/e71d" caption="INFORMAÇÕES ADICIONAIS" margin="false" _id="formAddInfo1" :expand>
+            <vaadin-combo-box caption="Nacionalidade" width-full data-item-type="java.lang.String" _id="fieldEstadoCivilParte11">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+            <vaadin-combo-box caption="Estado Civil" placeholder="solteiro" width-full data-item-type="java.lang.String" _id="fieldEstadoCivilParte2">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+            <vaadin-text-field caption="Profissão" width-full _id="fieldProfissaoParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Vl. Participação" width-full _id="fieldValorParticipacaoParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Qtd. Cotas" width-full _id="fieldCotasParte1"></vaadin-text-field>
+           </vaadin-form-layout>
+           <vaadin-form-layout icon="fonticon://Vaadin-Icons/e788" caption="ENDEREÇO DA PARTE" margin="false" _id="formAddEndereco1" :expand>
+            <vaadin-text-field caption="CEP" placeholder="99999-999" width-full _id="fieldCepParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Endereço" width-full _id="fieldEnderecoParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Nº" width-full _id="fieldNumeroParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Compl." width-full _id="fieldComplementoParte1"></vaadin-text-field>
+            <vaadin-text-field caption="Bairro" width-full _id="fieldBairroParte1"></vaadin-text-field>
+            <vaadin-combo-box caption="Cidade" width-full data-item-type="java.lang.String" _id="fieldCidadeParte1">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+            <vaadin-combo-box caption="UF" placeholder="SP" width-full data-item-type="java.lang.String" _id="fieldUfParte1">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+           </vaadin-form-layout>
+          </vaadin-vertical-layout>
+         </vaadin-vertical-layout>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e801" enabled="false" style-name="primary small noBorder" width-full plain-text _id="btnAdicionarParte1">
+           Adicionar Parte 
+         </vaadin-button>
+        </vaadin-vertical-layout>
+        <vaadin-grid style-name="gridAbas" width-full _id="gridPartes1">
+         <table>
+          <colgroup>
+           <col column-id="1" sortable>
+           <col column-id="2" sortable>
+           <col column-id="3" sortable>
+           <col column-id="4" sortable>
+          </colgroup>
+          <thead>
+           <tr default>
+            <th plain-text column-ids="1">CÓDIGO</th>
+            <th plain-text column-ids="2">NOME</th>
+            <th plain-text column-ids="3">DOCUMENTO</th>
+            <th plain-text column-ids="4">QUALIDADE</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr item="1">
+            <td>1234567890</td>
+            <td>João da Silva</td>
+            <td>333.444.555-66</td>
+            <td>DEVEDOR</td>
+           </tr>
+           <tr item="2">
+            <td>1234567890</td>
+            <td>João da Silva</td>
+            <td>333.444.555-66</td>
+            <td>DEVEDOR</td>
+           </tr>
+           <tr item="2">
+            <td>1234567890</td>
+            <td>João da Silva</td>
+            <td>333.444.555-66</td>
+            <td>DEVEDOR</td>
+           </tr>
+           <tr item="2">
+            <td>1234567890</td>
+            <td>João da Silva</td>
+            <td>333.444.555-66</td>
+            <td>DEVEDOR</td>
+           </tr>
+           <tr item="2">
+            <td>1234567890</td>
+            <td>João da Silva</td>
+            <td>333.444.555-66</td>
+            <td>DEVEDOR</td>
+           </tr>
+          </tbody>
+         </table>
+        </vaadin-grid>
+       </vaadin-vertical-split-panel>
+      </tab>
+      <tab icon="fonticon://Vaadin-Icons/e62d">
+       <vaadin-vertical-split-panel split-position="47%" _id="panelObjetos">
+        <vaadin-vertical-layout style-name="wellCokaum bg-blue-grey50" spacing="false" size-full margin="false" _id="panelAddObjeto1">
+         <vaadin-vertical-layout style-name="scroll captionMenu margin" spacing="false" size-full margin="false" :expand>
+          <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e62d" caption="OBJETO EM GARANTIA" style-name="card margin">
+           <vaadin-vertical-layout style-name="noCaption" margin="false">
+            <vaadin-combo-box caption="Tipo do objeto" width-full data-item-type="java.lang.String">
+             <option item="Option1">Option 1</option>
+             <option item="Option2">Option 2</option>
+             <option item="Option3">Option 3</option>
+            </vaadin-combo-box>
+            <vaadin-horizontal-layout visible="false" style-name="card" spacing="false" width-full>
+             <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+              <vaadin-combo-box caption="Atributo" data-item-type="java.lang.String">
+               <option item="Option1">Option 1</option>
+               <option item="Option2">Option 2</option>
+               <option item="Option3">Option 3</option>
+              </vaadin-combo-box>
+              <vaadin-text-field caption="Nº identificador" width-full :expand></vaadin-text-field>
+             </vaadin-horizontal-layout>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7f3" style-name="borderless red" height-full plain-text></vaadin-button>
+            </vaadin-horizontal-layout>
+            <vaadin-horizontal-layout style-name="well" spacing="false" width-full>
+             <vaadin-horizontal-layout style-name="noCaption margin" width-full :expand>
+              <vaadin-combo-box caption="Atributo" width-full data-item-type="java.lang.String" :expand>
+               <option item="Option1">Option 1</option>
+               <option item="Option2">Option 2</option>
+               <option item="Option3">Option 3</option>
+              </vaadin-combo-box>
+              <vaadin-text-field caption="Nº identificador" width-full :expand></vaadin-text-field>
+             </vaadin-horizontal-layout>
+             <vaadin-button icon="fonticon://Vaadin-Icons/e7fe" style-name="borderless green" height-full plain-text></vaadin-button>
+            </vaadin-horizontal-layout>
+           </vaadin-vertical-layout>
+          </vaadin-vertical-layout>
+         </vaadin-vertical-layout>
+         <vaadin-button icon="fonticon://Vaadin-Icons/e801" enabled="false" style-name="primary small noBorder" width-full plain-text _id="btnAdicionarObjeto1">
+           Adicionar Objeto 
+         </vaadin-button>
+        </vaadin-vertical-layout>
+        <vaadin-grid width-full _id="gridObjetos1">
+         <table>
+          <colgroup>
+           <col column-id="1" sortable>
+           <col column-id="2" sortable>
+           <col column-id="3" sortable>
+           <col column-id="4" sortable>
+          </colgroup>
+          <thead>
+           <tr default>
+            <th plain-text column-ids="1">Nº DO OBJETO</th>
+            <th plain-text column-ids="2">TIPO DO OBJETO</th>
+            <th plain-text column-ids="3">ATRIBUTO</th>
+            <th plain-text column-ids="4">IDENTIFICADOR</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr item="1">
+            <td>01</td>
+            <td>Automóvel</td>
+            <td>Placa</td>
+            <td>CYP 1167</td>
+           </tr>
+           <tr item="1">
+            <td>01</td>
+            <td>Automóvel</td>
+            <td>Modelo</td>
+            <td>Fiat Palio</td>
+           </tr>
+           <tr item="2">
+            <td>02</td>
+            <td>Máquina agrícola</td>
+            <td>Nota Fiscal</td>
+            <td>NF 0987654356789</td>
+           </tr>
+           <tr item="3">
+            <td>03</td>
+            <td>Animal</td>
+            <td>Registro</td>
+            <td>56786543</td>
+           </tr>
+          </tbody>
+         </table>
+        </vaadin-grid>
+       </vaadin-vertical-split-panel>
+      </tab>
+     </vaadin-tab-sheet>
+    </vaadin-vertical-layout>
+   </vaadin-horizontal-split-panel>
+  </vaadin-vertical-layout>
+ </body>
+</html>

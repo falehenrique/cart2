@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Recolhimento_PortalExtrajudicial" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73ecfa49-535f-40a5-8960-266e0c0411c2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="2Osasco"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="cartorio" class="java.lang.String"/>
+	<parameter name="endereco" class="java.lang.String"/>
+	<parameter name="cnpj" class="java.lang.String"/>
+	<parameter name="oficial" class="java.lang.String"/>
+	<parameter name="dtInicial" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dtFinal" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select 
+	tipo_servico,
+	count(tipo_servico) as qtd_servicos,
+	sum(custas1+custas2+custas3+custas4+custas5+custas6+custas7+custas8+custas9+custas10) as valor
+from rtdpj.rel_portalextrajudicial($P{dtInicial}, $P{dtFinal})
+group by tipo_servico]]>
+	</queryString>
+	<field name="tipo_servico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo_servico"/>
+	</field>
+	<field name="qtd_servicos" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="qtd_servicos"/>
+	</field>
+	<field name="valor" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="valor"/>
+	</field>
+	<variable name="total_qtd_atos" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{qtd_servicos}]]></variableExpression>
+	</variable>
+	<variable name="total_valor" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{valor}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="280" y="0" width="522" height="20" uuid="98a6d899-7bc5-45aa-95bd-3ce72a99e15b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cartorio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="20" width="522" height="20" uuid="9699767c-a23b-4734-ad8e-b0889a3efb07">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="40" width="522" height="20" uuid="d0c69dc4-366c-4a33-b9a1-119ee711391d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{cnpj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="60" width="522" height="20" uuid="f7a6a469-e1eb-4028-bfcf-df87d33a74c4">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{oficial}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="2" y="0" width="230" height="72" uuid="39c8312c-27e9-4282-b830-2f97c10f671f"/>
+				<imageExpression><![CDATA["http://valida.2osasco.com.br/assets/images/logo_2osasco_290px.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="40" uuid="9fe76d0c-ecfa-4e52-8cee-1c68b83ef8ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DO PORTAL EXTRAJUDICIAL]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="539" y="32" width="110" height="25" uuid="dbb1059c-74ce-4d6b-9520-e4f1ec762fe4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dtInicial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="32" width="98" height="24" uuid="a8c9ceb4-cf4e-4360-8416-2f56a81771cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Período de:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="654" y="32" width="39" height="24" uuid="2ce8bbac-e70a-49f7-b000-ec9a3320d96c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[até]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="699" y="33" width="100" height="24" uuid="bfd2ea67-50a0-4b32-919f-251ca351cd43"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dtFinal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="29" backcolor="#7C7C80" uuid="db1bd4d0-9ec1-4abf-b08f-88de91a56736"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="570" y="0" width="96" height="29" uuid="4e93c0b5-f282-4059-ae91-2b15683bc174"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="666" y="0" width="136" height="29" uuid="936042f8-606b-407c-a98a-e83f98bbc468"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="0" width="215" height="29" backcolor="#FFFFFF" uuid="0753b307-26cf-4353-9954-1dd3488b7959">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Serviço]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="0" width="564" height="19" uuid="af8752c1-909b-4dec-8cab-aea166c53d7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="08985140-cff6-4b1c-bcd9-6e8e641ab09b"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{tipo_servico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="-2" width="96" height="20" uuid="22c2c449-7e88-424e-901d-ce64e96e16db">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="adb9e429-d1ee-4750-bc2d-cf4a30fff51d"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{qtd_servicos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="-2" width="131" height="20" uuid="cd1fe6ba-59b2-4303-a02e-f100e93b0682">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee4ae683-1912-44fe-9067-435b7894581b"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="32">
+			<rectangle>
+				<reportElement x="0" y="1" width="802" height="20" backcolor="#848487" uuid="2a63b2a4-91f1-4621-b900-ec24e37d6a10"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="4" width="100" height="17" uuid="6cddcd10-bbd2-4109-8ad6-15cb5060fbd4"/>
+				<textElement verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DE ATOS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="570" y="2" width="100" height="19" uuid="ff515668-9fb0-41c9-898d-a6992247cf2c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{total_qtd_atos}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.##;¤-#,##0.##">
+				<reportElement x="670" y="2" width="132" height="19" uuid="871b4847-e5c6-4bbf-a978-3f21110bdc1d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{total_valor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

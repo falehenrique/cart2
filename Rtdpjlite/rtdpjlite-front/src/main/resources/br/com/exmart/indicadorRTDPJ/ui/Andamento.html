@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.model.StatusProtocolo" _id="gridAndamento" :expand>
+    <table>
+     <colgroup>
+      <col column-id="status" sortable>
+      <col column-id="data" sortable>
+      <col column-id="conteudo" sortable>
+      <col column-id="arquivo" sortable>
+      <col column-id="objConteudo" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="status">Status</th>
+       <th plain-text column-ids="data">Data</th>
+       <th plain-text column-ids="conteudo">Conteudo</th>
+       <th plain-text column-ids="arquivo">Arquivo</th>
+       <th plain-text column-ids="objConteudo">ObjConteudo</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+   <vaadin-horizontal-layout visible="false" style-name="well" width-full margin _id="panelEditarServicos">
+    <vaadin-button icon="fonticon://Vaadin-Icons/e802" style-name="small borderless" plain-text _id="btnImprimir">
+      Imprimir 
+    </vaadin-button>
+    <vaadin-button style-name="borderless small" plain-text _id="btnEditar" :right>
+      Editar 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

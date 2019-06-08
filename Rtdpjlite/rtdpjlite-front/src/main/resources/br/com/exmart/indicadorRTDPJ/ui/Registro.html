@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="well noBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="scroll marginLarge menuLateral" size-full _id="papel" :expand>
+    <vaadin-vertical-layout style-name="captionMenu" margin="false" _id="panelExame1">
+     <vaadin-horizontal-layout style-name="borderless" width-full>
+      <vaadin-vertical-layout style-name="card margin" size-full _id="panelSituacaoAtual" :expand="0.6">
+       <vaadin-text-area icon="fonticon://Vaadin-Icons/e711" caption="SITUAÇÃO ATUAL" style-name="borderless wellCokaum bg-blue-grey50" size-full _id="situacaoAtualRegistro"></vaadin-text-area>
+      </vaadin-vertical-layout>
+      <vaadin-vertical-layout style-name="card margin" size-full :expand="0.4">
+       <vaadin-text-area icon="fonticon://Vaadin-Icons/e71d" caption="OBSERVAÇÕES" style-name="borderless wellCokaum bg-blue-grey50" size-full _id="observacaoRegistro"></vaadin-text-area>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout style-name="menuLateral" width-full _id="v2" :expand>
+      <vaadin-vertical-layout style-name="card scroll captionMenu margin bg-blue-grey50" spacing="false" size-full _id="panelTimeline11" :expand="0.6">
+       <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e910" caption="CHECKLIST" margin="false" _id="panelChecklist"></vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+      <vaadin-vertical-layout style-name="card scroll captionMenu margin bg-blue-grey50" spacing="false" size-full _id="panelTimeline1" :expand="0.4">
+       <vaadin-vertical-layout icon="fonticon://Vaadin-Icons/e7a7" caption="REGISTROS ANTERIORES" margin="false" _id="timeline"></vaadin-vertical-layout>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout style-name="card margin noBorder" margin="false">
+    <vaadin-horizontal-layout width-full>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6dc" style-name="friendly small" width-full _id="btnRegistrar">
+       Apto para registro 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6da" style-name="danger small" width-full _id="btnDevolver">
+       Devolver 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

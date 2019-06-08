@@ -1,0 +1,1 @@
+CREATE INDEX cidade_estado_id_idx ON cidade(estado_id);

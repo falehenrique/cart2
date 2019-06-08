@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-absolute-layout style-name="app-shell menuLateral" width="180px">
+   <vaadin-css-layout style-name="navigation-bar-container" width="180px" height-full _id="menuGde">
+    <vaadin-css-layout style-name="navigation-bar" size-full>
+     <vaadin-label style-name="logo navigation" width-full plain-text>
+       #RTDPJWEB 
+     </vaadin-label>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7b3" style-name="menu borderless" plain-text _id="menuButton">
+       Menu 
+     </vaadin-button>
+     <vaadin-css-layout visible="false" style-name="navigation" width-full _id="menu">
+      <vaadin-button icon="fonticon://Vaadin-Icons/e71b" style-name="borderless" width-full plain-text _id="btnRecepcao">
+        Balcão Digital 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e6a9" style-name="borderless" width-full plain-text _id="btnProtocolos">
+        Protocolos 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e7f0" style-name="borderless" width-full plain-text _id="btnIndicadores">
+        Indicadores 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e6f9" style-name="borderless" width-full plain-text _id="btnLivros">
+        Livros 
+      </vaadin-button>
+     </vaadin-css-layout>
+     <vaadin-tab-sheet style-name="equal-width-tabs navigation" size-full _id="tabMenu">
+      <tab caption="TD" selected>
+       <vaadin-vertical-layout spacing="false" id="TD" margin="false">
+        <vaadin-accordion style-name="borderless" _id="accordionTD">
+         <tab caption="INÍCIO" icon="fonticon://Vaadin-Icons/e7ed" selected>
+          <vaadin-css-layout style-name="navigation bg-td wellCokaum" width-full _id="menuInicioTD">
+           <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e700" style-name="borderless" width-full plain-text _id="btnDashboardTD">
+             Painel de Controle 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e7e9" style-name="borderless" width-full plain-text _id="btnBalcaoTD">
+             RECEPÇÃO 
+           </vaadin-button>
+          </vaadin-css-layout>
+         </tab>
+         <tab caption="BUSCAR" icon="fonticon://Vaadin-Icons/e805">
+          <vaadin-css-layout style-name="navigation bg-td wellCokaum" width-full _id="menuBuscarTD">
+           <vaadin-button icon="fonticon://Vaadin-Icons/e6fc" style-name="borderless" width-full plain-text _id="btnBuscarPedidosTD">
+             Pedidos 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e71f" style-name="borderless" width-full plain-text _id="btnBuscarProtocolosTD">
+             Protocolos 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e930" style-name="borderless" width-full plain-text _id="btnBuscarIndicadoresTD">
+             Indicadores 
+           </vaadin-button>
+           <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e6f9" style-name="borderless" width-full plain-text _id="btnBuscarLivrosTD">
+             Livros 
+           </vaadin-button>
+          </vaadin-css-layout>
+         </tab>
+         <tab caption="PROTOCOLAR" icon="fonticon://Vaadin-Icons/e7ff">
+          <vaadin-css-layout style-name="navigation bg-td wellCokaum" width-full _id="menuProtocolarTD">
+           <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e63e" style-name="borderless" width-full plain-text _id="btnNotificacaoTD">
+             TESTE NOVO 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e60a" style-name="borderless" width-full plain-text _id="btnExameTD">
+             Exame e Cálculo 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e929" style-name="borderless" width-full plain-text _id="btnPrenotacaoTD">
+             REGISTRO 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e70c" style-name="borderless" width-full plain-text _id="btnCertidaoTD">
+             Certidão 
+           </vaadin-button>
+          </vaadin-css-layout>
+         </tab>
+         <tab caption="CONFIGURAÇÕES" icon="fonticon://Vaadin-Icons/e7d3">
+          <vaadin-css-layout style-name="navigation bg-td wellCokaum" width-full _id="menuConfigurarTD">
+           <vaadin-button icon="fonticon://Vaadin-Icons/e691" style-name="borderless" width-full plain-text _id="btnConfigTD">
+             Configurações 
+           </vaadin-button>
+           <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e736" style-name="borderless" width-full plain-text _id="btnIntegracoesTD">
+             Integrações 
+           </vaadin-button>
+           <vaadin-button icon="fonticon://Vaadin-Icons/e7ec" style-name="borderless" width-full plain-text _id="btnAdminTD">
+             Administração 
+           </vaadin-button>
+          </vaadin-css-layout>
+         </tab>
+        </vaadin-accordion>
+       </vaadin-vertical-layout>
+      </tab>
+      <tab caption="PJ">
+       <vaadin-accordion style-name="borderless" id="PJ" _id="accordionPJ">
+        <tab caption="INÍCIO" icon="fonticon://Vaadin-Icons/e7ed" selected>
+         <vaadin-css-layout style-name="navigation bg-pj wellCokaum" width-full _id="menuInicioPJ">
+          <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e700" style-name="borderless" width-full plain-text _id="btnDashboardPJ">
+            Painel de Controle 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e7e9" style-name="borderless" width-full plain-text _id="btnBalcaoPJ">
+            RECEPÇÃO 
+          </vaadin-button>
+         </vaadin-css-layout>
+        </tab>
+        <tab caption="BUSCAR" icon="fonticon://Vaadin-Icons/e805">
+         <vaadin-css-layout style-name="navigation bg-pj wellCokaum" width-full _id="menuBuscarPJ">
+          <vaadin-button icon="fonticon://Vaadin-Icons/e6fc" style-name="borderless" width-full plain-text _id="btnBuscarPedidosPJ">
+            PEDIDOS 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e71f" style-name="borderless" width-full plain-text _id="btnBuscarProtocolosPJ">
+            Protocolos 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e930" style-name="borderless" width-full plain-text _id="btnBuscarIndicadoresPJ">
+            Indicadores 
+          </vaadin-button>
+          <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e6f9" style-name="borderless" width-full plain-text _id="btnBuscarLivrosPJ">
+            Livros 
+          </vaadin-button>
+         </vaadin-css-layout>
+        </tab>
+        <tab caption="PROTOCOLAR" icon="fonticon://Vaadin-Icons/e7ff">
+         <vaadin-css-layout style-name="navigation bg-pj wellCokaum" width-full _id="menuProtocolarPJ">
+          <vaadin-button icon="fonticon://Vaadin-Icons/e60a" style-name="borderless" width-full plain-text _id="btnExamePJ">
+            Exame e Cálculo 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e929" style-name="borderless" width-full plain-text _id="btnPrenotacaoPJ">
+            REGISTRO 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e70c" style-name="borderless" width-full plain-text _id="btnCertidaoPJ">
+            Certidão 
+          </vaadin-button>
+         </vaadin-css-layout>
+        </tab>
+        <tab caption="CONFIGURAÇÕES" icon="fonticon://Vaadin-Icons/e7d3">
+         <vaadin-css-layout style-name="navigation bg-pj wellCokaum" width-full _id="menuConfigurarPJ">
+          <vaadin-button icon="fonticon://Vaadin-Icons/e691" style-name="borderless" width-full plain-text _id="btnConfigPJ">
+            Configurações 
+          </vaadin-button>
+          <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e736" style-name="borderless" width-full plain-text _id="btnIntegracoesPJ">
+            Integrações 
+          </vaadin-button>
+          <vaadin-button icon="fonticon://Vaadin-Icons/e7ec" style-name="borderless" width-full plain-text _id="btnAdminPJ">
+            Administração 
+          </vaadin-button>
+         </vaadin-css-layout>
+        </tab>
+       </vaadin-accordion>
+      </tab>
+     </vaadin-tab-sheet>
+    </vaadin-css-layout>
+   </vaadin-css-layout>
+  </vaadin-absolute-layout>
+ </body>
+</html>

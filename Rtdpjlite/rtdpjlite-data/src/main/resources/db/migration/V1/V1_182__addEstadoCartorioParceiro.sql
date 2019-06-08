@@ -1,0 +1,1 @@
+ALTER TABLE cartorio_parceiro ADD COLUMN estado_id BIGINT REFERENCES estado(id);

@@ -1,0 +1,1 @@
+ALTER TABLE protocolo ADD COLUMN vl_deposito_previo NUMERIC(12,2) DEFAULT 0;

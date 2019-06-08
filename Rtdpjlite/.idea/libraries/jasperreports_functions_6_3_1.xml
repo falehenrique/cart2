@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jasperreports-functions-6.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rtdpjlite-front/lib/jasperreports/jasperreports-functions/6.3.1/jasperreports-functions-6.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

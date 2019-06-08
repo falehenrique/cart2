@@ -1,0 +1,1 @@
+create table custa (id serial, valor decimal(12,2),custa_titulo_id bigint, CONSTRAINT pk_custa PRIMARY KEY (id));

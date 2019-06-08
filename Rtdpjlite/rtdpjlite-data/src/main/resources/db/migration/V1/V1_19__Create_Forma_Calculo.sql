@@ -1,0 +1,1 @@
+create table forma_calculo (id serial, nome varchar(255), formula varchar(255));

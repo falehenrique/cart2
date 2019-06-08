@@ -1,0 +1,2 @@
+ALTER TABLE protocolo ALTER COLUMN parte DROP NOT NULL;
+ALTER TABLE protocolo ALTER COLUMN parte_documento DROP NOT NULL;

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-radio-button-group width-full data-item-type="java.lang.String" _id="groupTipoListarSelo">
+    <option item="envio" selected>Selos à enviar</option>
+    <option item="retifica">Selos à retificar</option>
+    <option item="reenvio">Selos à reenviar</option>
+   </vaadin-radio-button-group>
+   <vaadin-grid size-full data-item-type="br.com.exmart.rtdpjlite.vo.seloeletronico.InformeSelosVO" _id="seloEnviarGrid" :expand>
+    <table>
+     <colgroup>
+      <col column-id="data" sortable>
+      <col column-id="especialidade" sortable>
+      <col column-id="protocolo" sortable>
+      <col column-id="registro" sortable>
+      <col column-id="selo" sortable>
+      <col column-id="valor" sortable>
+      <col column-id="cia" sortable>
+      <col column-id="retificar" sortable>
+      <col column-id="erros" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="data">Data</th>
+       <th plain-text column-ids="especialidade">Especialidade</th>
+       <th plain-text column-ids="protocolo">Protocolo</th>
+       <th plain-text column-ids="registro">Registro</th>
+       <th plain-text column-ids="selo">Selo</th>
+       <th plain-text column-ids="valor">Valor</th>
+       <th plain-text column-ids="cia">Cia</th>
+       <th plain-text column-ids="retificar">Retificar</th>
+       <th plain-text column-ids="erros">Erros</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+   <vaadin-horizontal-layout style-name="margin" width-full margin>
+    <vaadin-button icon="fonticon://Vaadin-Icons/e6b9" style-name="friendly" plain-text _id="btnInformar" :right>
+      Informar Selos 
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN diretorio_upload_lote VARCHAR(250);

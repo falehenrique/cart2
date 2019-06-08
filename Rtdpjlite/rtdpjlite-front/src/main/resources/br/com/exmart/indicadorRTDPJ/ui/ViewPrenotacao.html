@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-vertical-layout spacing="false" margin="false">
+    <vaadin-horizontal-layout style-name="margin" spacing="false" width-full>
+     <vaadin-horizontal-layout :middle>
+      <vaadin-label style-name="large colored" plain-text _id="labelTituloProtocolo">
+        PROTOCOLO - RTD 
+      </vaadin-label>
+      <vaadin-label style-name="small light" plain-text :middle>
+        nº: 
+      </vaadin-label>
+      <vaadin-label style-name="large" plain-text _id="labelNumeroProtocolo">
+        300.000 
+      </vaadin-label>
+      <vaadin-label style-name="small light" plain-text :middle>
+        de: 
+      </vaadin-label>
+      <vaadin-label style-name="large" plain-text _id="labelDataProtocolo">
+        12/01/2018 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout :right>
+      <vaadin-combo-box style-name="large borderless" placeholder="PRONTO PARA ENTREGA" width="320px" data-item-type="br.com.exmart.rtdpjlite.model.Status" _id="status"></vaadin-combo-box>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e71d" description="Andamentos" style-name="borderless large icon-only" plain-text _id="btnStatus"></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e76c" style-name="borderless large icon-only" plain-text _id="btnDuplicarProtocolo"></vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" height="10px" _id="panelAlertas" :right></vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-split-panel style-name="borderless" split-position="100%" _id="splitProtocolo" :expand>
+    <vaadin-tab-sheet style-name="equal-width-tabs" size-full _id="conteudo"></vaadin-tab-sheet>
+    <vaadin-horizontal-layout style-name="bg-blue-grey50" width-full margin _id="panelPdf"></vaadin-horizontal-layout>
+   </vaadin-vertical-split-panel>
+   <vaadin-horizontal-layout spacing="false" width-full>
+    <vaadin-horizontal-layout style-name="margin" _id="panelFerramentas">
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Ver título" style-name="small borderless" plain-text _id="btnVerTitulo">
+       VER TÍTULO 
+     </vaadin-button>
+     <vaadin-menu-bar style-name="small" _id="menuImpressao">
+      <menu>
+        IMPRIMIR 
+      </menu>
+      <menu description="Some description">
+       <menu>
+         Open 
+       </menu>
+       <menu>
+         Save 
+       </menu>
+       <menu>
+         Preferences 
+       </menu>
+       <menu separator></menu>
+       <menu>
+         Quit 
+       </menu>
+      </menu>
+     </vaadin-menu-bar>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout style-name="margin" width-full _id="panelEditarExame" :expand>
+     <vaadin-button style-name="small borderless" plain-text _id="btnCancelar" :right :expand>
+       Cancelar 
+     </vaadin-button>
+     <vaadin-button enabled="false" style-name="small" plain-text _id="btnEditar" :right>
+       Editar 
+     </vaadin-button>
+     <vaadin-button style-name="friendly small" plain-text _id="btnSalvar" :right>
+       Salvar 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

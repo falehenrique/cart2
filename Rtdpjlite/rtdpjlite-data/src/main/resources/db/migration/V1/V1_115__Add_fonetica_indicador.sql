@@ -1,0 +1,1 @@
+ALTER TABLE indicador_pessoal ADD COLUMN nome_fonetico VARCHAR(250);

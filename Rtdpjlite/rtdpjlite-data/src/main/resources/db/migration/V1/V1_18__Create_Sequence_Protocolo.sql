@@ -1,0 +1,54 @@
+CREATE SEQUENCE protocolo_exame_td
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 1000
+  CACHE 1;
+ALTER TABLE protocolo_exame_td
+  OWNER TO exmart;
+  
+ CREATE SEQUENCE protocolo_exame_pj
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 2000
+  CACHE 1;
+ALTER TABLE protocolo_exame_pj
+  OWNER TO exmart;
+  
+CREATE SEQUENCE protocolo_prenotacao_td
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 3000
+  CACHE 1;
+ALTER TABLE protocolo_prenotacao_td
+  OWNER TO exmart;
+    
+CREATE SEQUENCE protocolo_prenotacao_pj
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 4000
+  CACHE 1;
+ALTER TABLE protocolo_prenotacao_pj
+  OWNER TO exmart;
+
+CREATE SEQUENCE protocolo_certidao_td
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 6000
+  CACHE 1;
+ALTER TABLE protocolo_certidao_td
+  OWNER TO exmart;
+
+CREATE SEQUENCE protocolo_certidao_pj
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 9223372036854775807
+  START 5000
+  CACHE 1;
+ALTER TABLE protocolo_certidao_pj
+  OWNER TO exmart;
+  

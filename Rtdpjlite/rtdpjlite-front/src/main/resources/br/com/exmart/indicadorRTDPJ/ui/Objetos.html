@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll well noBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge" size-full margin="false" :expand>
+    <vaadin-vertical-layout margin="false" _id="panelObjetos">
+     <vaadin-vertical-layout spacing="false" margin="false">
+      <vaadin-vertical-layout style-name="card marginLarge bg-blue-grey50 noBorder" margin="false">
+       <vaadin-combo-box caption="Tipo do objeto" width-full data-item-type="br.com.exmart.rtdpjlite.model.Objeto" _id="objetos"></vaadin-combo-box>
+      </vaadin-vertical-layout>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e801" style-name="primary small noBorder" width-full plain-text _id="btnAdicionarObjeto">
+        Adicionar 
+      </vaadin-button>
+     </vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout margin="false" _id="panelObjetosList" :expand></vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

@@ -1,0 +1,1 @@
+create table servico(id serial, tabela_id bigint, alinea varchar(255), faixa_id bigint, item_tabela_id bigint);

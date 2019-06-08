@@ -1,0 +1,1 @@
+ALTER TABLE db_portal.tb_usuario ADD COLUMN lembrete_senha VARCHAR(250) NOT NULL DEFAULT 'init';

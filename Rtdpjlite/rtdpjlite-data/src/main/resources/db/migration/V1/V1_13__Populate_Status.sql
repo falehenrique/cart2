@@ -1,0 +1,13 @@
+insert into status (nome, automatico) values('PROTOCOLADO', TRUE);
+insert into status (nome, automatico) values('REENTRADA', FALSE);
+insert into status (nome, automatico) values('DIGITALIZADO', true);
+insert into status (nome, automatico) values('1º CONFERÊNCIA', TRUE);
+insert into status (nome, automatico) values('2º CONFERÊNCIA', TRUE);
+insert into status (nome, automatico) values('DEVOLVIDO', TRUE);
+insert into status (nome, automatico) values('REGISTRADO', FALSE);
+insert into status (nome, automatico) values('PRONTO PARA ENTREGA', FALSE);
+insert into status (nome, automatico) values('ENTREGUE', FALSE);
+insert into status (nome, automatico) values('CANCEL. PELA PARTE', FALSE);
+insert into status (nome, automatico) values('CANCEL. JUDICIALMENTE', FALSE);
+insert into status (nome, automatico) values('CANCEL. DECURSO DE PRAZO', TRUE);
+insert into status (nome, automatico) values('SUSCITAÇÃO DE DÚVIDA', FALSE);

@@ -1,0 +1,6 @@
+INSERT INTO configuracao (nome_cartorio, cnpj_cartorio, diretorio_upload,cep_cartorio, cidade_cartorio, sg_cartorio, bairro_cartorio, logradouro_cartorio, numero_logradouro_cartorio,
+carimbo_certidao, texto_explicativo_assinatura, url_qrcode) VALUES ('2º Oficial de Registro de Imóveis, Títulos e Documentos e Civil de Pessoa Jurídica de Osasco', '51.241.396/0001-08', '','06013-030','Osasco','SP','Centro','Rua Dante Battiston','249',
+'Certidão eletrônica, com valor de original, do documento registrado sob o número [[NUMERO_REGISTRO]] em [[DATA_REGISTRO]], assinada digitalmente pelo 2º Oficial de Registro de Títulos e Documentos e Civil de Pessoa Jurídica de Osasco',
+'Documento assinado digitalmente em Conformidade do Padrão Brasileiro de Assinatura Digital, padrão ICP-Brasil. Validação do atributo de assinatura digital <<URL_VALIDACAO>>. Este é um documento público eletrônico, emitido nos termos da Medida Provisória de nº 2200-2, de 24/08/2001, só tendo validade em formato digital. Vedada a sua reprodução.',
+'http://rtdpj-portal.exmart.com.br:8080/'
+);

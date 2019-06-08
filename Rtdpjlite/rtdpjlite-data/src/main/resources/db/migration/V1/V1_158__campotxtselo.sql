@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN ds_mensagem_carimbo_selo TEXT default 'Para verificar a autenticidade do documento, acesse o site http://www.sitedoselo.com.br.';

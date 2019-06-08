@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" margin="false">
+   <vaadin-horizontal-layout width-full _id="cardTimeline">
+    <vaadin-css-layout style-name="bg-purple-grey-medium" width="3px" height-full></vaadin-css-layout>
+    <vaadin-horizontal-layout style-name="card" spacing="false" width-full :expand>
+     <vaadin-vertical-layout style-name="margin" margin="false" :expand>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-label style-name="large purple-grey-medium" width-full plain-text _id="dataLabel" :expand>
+         25/01/2017 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout width-full>
+       <vaadin-label caption="Status" style-name="bold purple-grey" width-full plain-text _id="statusLabel">
+         Nome do status 
+       </vaadin-label>
+       <vaadin-label caption="Remetente" width-full plain-text _id="remetenteLabel">
+         Nome do Usuário REMETENTE 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-vertical-layout spacing="false" margin="false">
+       <vaadin-text-area rows="4" style-name="well noBorder" width-full _id="mensagemText"></vaadin-text-area>
+      </vaadin-vertical-layout>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style-name="well noBorder" spacing="false" width-auto height-full margin="false">
+      <vaadin-button icon="fonticon://Vaadin-Icons/e7df" description="Visualizar documento" style-name="borderless" height-full plain-text _id="btnVisualizarAnexo" :expand></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e725" description="Averbar a Margem" style-name="borderless" height-full plain-text _id="btnBaixarAnexo" :expand></vaadin-button>
+     </vaadin-vertical-layout>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

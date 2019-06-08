@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="br_com_exmart_indicadorrtdpj_ui_component:br.com.exmart.indicadorRTDPJ.ui.component">
+ </head>
+ <body>
+  <vaadin-vertical-layout spacing="false" size-full margin="false">
+   <vaadin-horizontal-layout style-name="blue-grey100" spacing="false" width-full height="79px" margin-left _id="panelBusca">
+    <vaadin-combo-box style-name="large borderless menuTopoBusca verde" placeholder="ONDE DESEJA BUSCAR?" width="300px" data-item-type="java.lang.String" _id="tipoIndicador" :middle>
+     <option item="INDICADOR REAL TD">INDICADOR REAL TD</option>
+     <option item="INDICADOR PESSOAL TD">INDICADOR PESSOAL TD</option>
+     <option item="INDICADOR PESSOAL PJ">INDICADOR PESSOAL PJ</option>
+    </vaadin-combo-box>
+    <vaadin-horizontal-layout style-name="margin" width-full margin :middle :expand>
+     <vaadin-horizontal-layout visible="false" width-full _id="buscaPessoal" :expand>
+      <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" style-name="inline-icon search" placeholder="Buscar" width-full _id="txtBuscaPessoal" :expand></vaadin-text-field>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless icon-only" plain-text _id="btnBuscarIndicadorPessoal"></vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e7ba" style-name="borderless icon-only" plain-text _id="btnFiltrarData"></vaadin-button>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full _id="buscaReal" :expand>
+      <vaadin-combo-box description="Selecione o tipo de objeto" placeholder="Tipo de objeto" width-full data-item-type="java.lang.String" _id="comboObjeto" :expand>
+       <option item="Option1">Máquina Agrícola</option>
+       <option item="Option2">Automóvel</option>
+       <option item="Option3">Equipamento industrial</option>
+      </vaadin-combo-box>
+      <vaadin-combo-box description="Agora selecione o atributo" placeholder="Atributo" width-full data-item-type="java.lang.String" _id="comboAtributo" :expand>
+       <option item="Option1">Option 1</option>
+       <option item="Option2">Option 2</option>
+       <option item="Option3">Option 3</option>
+      </vaadin-combo-box>
+      <vaadin-text-field icon="fonticon://Vaadin-Icons/e805" description="Digite aqui o que deseja buscar" style-name="inline-icon search" placeholder="Buscar" width-full _id="txtBuscaReal" :bottom :expand></vaadin-text-field>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless icon-only" plain-text _id="btnBuscarIndicadorReal"></vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" style-name="wellCokaum bg-blue-grey50 margin" height-full _id="filtroData">
+     <vaadin-date-field placeholder="" width="140px" _id="dtInicial" :middle></vaadin-date-field>
+     <vaadin-label style-name="large light purple-grey" plain-text :middle :center>
+       à 
+     </vaadin-label>
+     <vaadin-date-field width="140px" _id="dtFinal" :middle></vaadin-date-field>
+    </vaadin-horizontal-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-vertical-layout size-full margin="false" _id="resultado" :expand></vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

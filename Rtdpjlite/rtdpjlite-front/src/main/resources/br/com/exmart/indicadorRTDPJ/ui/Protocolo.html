@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="pl_pdfviewer:pl.pdfviewer">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll well noBorder" spacing="false" size-full margin="false">
+   <vaadin-vertical-layout style-name="marginLarge" margin="false" _id="panelAdd" :expand>
+    <vaadin-horizontal-layout visible="false" width-full _id="panelRegistrado">
+     <vaadin-button icon="fonticon://Vaadin-Icons/e792" style-name="small danger" height-full plain-text _id="btnReverterRegistro"></vaadin-button>
+     <vaadin-vertical-layout style-name="margin card" margin="false" :expand>
+      <vaadin-horizontal-layout width-full _id="panelViewRegistro">
+       <vaadin-label style-name="huge colored bold" plain-text _id="lblRegistrado" :middle>
+         REGISTRADO 
+       </vaadin-label>
+       <vaadin-label plain-text :middle>
+         SOB O Nº 
+       </vaadin-label>
+       <vaadin-label style-name="huge colored bold" plain-text _id="panelRegistrado_nrRegistro" :middle>
+         123654 
+       </vaadin-label>
+       <vaadin-label plain-text :middle>
+         EM 
+       </vaadin-label>
+       <vaadin-label style-name="large blue-grey300" plain-text _id="panelRegistrado_dtRegistro" :middle :expand>
+         99/99/9999 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+      <vaadin-horizontal-layout _id="panelNotificacao">
+       <vaadin-label style-name="large bold red" width-full plain-text _id="panelNotificacao_mensagem">
+         Aguardando Notificação 
+       </vaadin-label>
+       <vaadin-label width-full plain-text _id="panelNotificacao_ate" :middle>
+         ATÉ 
+       </vaadin-label>
+       <vaadin-label style-name="large blue-grey300" plain-text _id="panelNotificacao_dtVencNotificacao">
+         99/99/9999 
+       </vaadin-label>
+      </vaadin-horizontal-layout>
+     </vaadin-vertical-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" style-name="small primary" height-full plain-text _id="panelRegistrado_btnVerRegistro">
+       VER REGISTRO 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" style-name="small primary" height-full plain-text _id="panelRegistrado_btnVerCertidaoIntimacao">
+       VER CERTIDÃO 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6b7" style-name="small friendly" height-full plain-text _id="panelRegistrado_btnEntregue">
+       Entregue 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" width-full _id="panelDevolvido">
+     <vaadin-horizontal-layout style-name="margin card" width-full margin _id="panelViewRegistro1" :expand>
+      <vaadin-label style-name="huge danger bold" plain-text :middle>
+        DEVOLVIDO 
+      </vaadin-label>
+      <vaadin-label plain-text :middle>
+        EM 
+      </vaadin-label>
+      <vaadin-label style-name="large blue-grey300" plain-text _id="panelDevolvido_dtDevolvido" :middle :expand>
+        99/99/9999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" style-name="small primary" height-full plain-text _id="panelDevolvido_btnVerDevolucao">
+       VER DEVOLUÇÃO 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6b7" style-name="small friendly" height-full plain-text _id="panelDevolvido_btnEntregue">
+       ENTREGUE 
+     </vaadin-button>
+     <vaadin-button visible="false" icon="fonticon://Vaadin-Icons/e643" style-name="small friendly" height-full plain-text _id="panelDevolvido_btnReentrada">
+       Reentrada 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" width-full _id="panelExaminado">
+     <vaadin-horizontal-layout style-name="margin card" width-full margin :expand>
+      <vaadin-label style-name="huge danger bold" plain-text _id="labelExaminado" :middle>
+        APTO PARA REGISTRO 
+      </vaadin-label>
+      <vaadin-label plain-text :middle>
+        EM 
+      </vaadin-label>
+      <vaadin-label style-name="large blue-grey300" plain-text _id="panelExaminado_dtExaminado" :middle :expand>
+        99/99/9999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" style-name="small primary" height-full plain-text _id="panelExaminado_btnVerExame">
+       VER RESULTADO 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6b7" style-name="small friendly" height-full plain-text _id="panelExaminado_btnEntregue">
+       ENTREGAR 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e71f" style-name="small friendly" height-full plain-text _id="panelExaminado_btnProtocolar">
+       PROTOCOLAR 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout visible="false" width-full _id="panelCertidaoEmitida">
+     <vaadin-button icon="fonticon://Vaadin-Icons/e792" style-name="small danger" height-full plain-text _id="btnReverterCertidao"></vaadin-button>
+     <vaadin-horizontal-layout style-name="margin card" width-full margin _id="panelViewRegistro111" :expand>
+      <vaadin-label style-name="huge danger bold" plain-text :middle>
+        CERTIDÃO EMITIDA 
+      </vaadin-label>
+      <vaadin-label plain-text :middle>
+        EM 
+      </vaadin-label>
+      <vaadin-label style-name="large blue-grey300" plain-text _id="panelCertidaoEmitida_dtEmissao" :middle :expand>
+        99/99/9999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e7df" style-name="small primary" height-full plain-text _id="panelCertidaoEmitida_btnVerCertidao">
+       VER CERTIDÃO 
+     </vaadin-button>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e6b7" style-name="small friendly" height-full plain-text _id="panelCertidaoEmitida_btnEntregueCertidao">
+       Entregue 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+    <vaadin-vertical-layout style-name="card marginLarge" _id="panelAddProtocolo">
+     <vaadin-horizontal-layout width-full _id="panelNatureza1">
+      <vaadin-combo-box required-indicator-visible caption="Natureza" empty-selection-allowed="false" placeholder="Selecione a Natureza do Protocolo" width-full data-item-type="br.com.exmart.rtdpjlite.model.Natureza" _id="naturezaTitulo" :expand></vaadin-combo-box>
+      <vaadin-combo-box required-indicator-visible caption="Sub Natureza" empty-selection-allowed="false" placeholder="Agora selecione a Sub Natureza" width-full data-item-type="br.com.exmart.rtdpjlite.model.SubNatureza" _id="subNaturezaTitulo" :expand></vaadin-combo-box>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full _id="panelNatureza">
+      <vaadin-text-field caption="Nº de Vias" width="160px" _id="numeroVias"></vaadin-text-field>
+      <vaadin-text-field caption="Valor Documento" width-full _id="valorDocumento" :expand></vaadin-text-field>
+      <vaadin-text-field caption="Data Doc." width-full _id="dtDocumento" :expand></vaadin-text-field>
+      <vaadin-text-field caption="Nº Contrato" width-full _id="nrContrato" :expand></vaadin-text-field>
+      <vaadin-vertical-layout size-auto margin="false" _id="panelGuardaConservacao" :bottom :right>
+       <vaadin-check-box caption="Guarda e conservação" style-name="small" _id="checkGuarda"></vaadin-check-box>
+       <vaadin-check-box caption="Possui sigilo legal" enabled="false" style-name="small" _id="checkSigilo"></vaadin-check-box>
+      </vaadin-vertical-layout>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-text-field required-indicator-visible caption="CPF/CNPJ" width="160px" _id="docParte"></vaadin-text-field>
+      <vaadin-text-field caption="Parte" width-full _id="parte" :expand></vaadin-text-field>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full _id="panelRegistro">
+      <vaadin-text-field caption="Nº de Registro" width="160px" _id="numeroReg"></vaadin-text-field>
+      <vaadin-text-field caption="Pasta PJ" width="160px" _id="pastaPj"></vaadin-text-field>
+      <vaadin-combo-box caption="Forma de entrega" empty-selection-allowed="false" width-full data-item-type="br.com.exmart.rtdpjlite.model.FormaEntrega" _id="entrega" :expand></vaadin-combo-box>
+     </vaadin-horizontal-layout>
+     <vaadin-check-box caption="Registrar título em outra praça" _id="ckRegistrarOutraPraca"></vaadin-check-box>
+     <vaadin-horizontal-layout visible="false" width-full>
+      <vaadin-combo-box caption="Escrevente responsável" width-full data-item-type="br.com.exmart.rtdpjlite.model.Usuario" _id="escrevente" :expand></vaadin-combo-box>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style-name="marginLarge card" margin="false" _id="panelAddApresentante">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-combo-box caption="Cliente (Faturado)" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cliente" _id="comboCliente" :expand></vaadin-combo-box>
+     </vaadin-horizontal-layout>
+     <vaadin-combo-box caption="Responsável (Cliente)" width-full data-item-type="br.com.exmart.rtdpjlite.model.portal.UsuarioPortal" _id="comboResponsavel"></vaadin-combo-box>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-text-field required-indicator-visible caption="Apresentante" width-full _id="apresentante"></vaadin-text-field>
+      <vaadin-text-field caption="Responsável" width-full _id="responsavel"></vaadin-text-field>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-text-field caption="Identidade" placeholder="" width="120px" _id="apresentanteIdentidade"></vaadin-text-field>
+      <vaadin-text-field caption="Telefone" placeholder="" width="160px" _id="apresentanteTelefone"></vaadin-text-field>
+      <vaadin-text-field caption="Email" placeholder="" width-full _id="apresentanteEmail" :expand></vaadin-text-field>
+     </vaadin-horizontal-layout>
+     <vaadin-text-area caption="Observações" width-full _id="observacao"></vaadin-text-area>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout enabled="false" style-name="marginLarge card" _id="panelAddDatasPrenotacao" :expand>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-date-field caption="Data Prevista" placeholder="" date-format="dd/MM/yyyy" width-full _id="dataPrevista"></vaadin-date-field>
+      <vaadin-date-field caption="Data Vencimento" placeholder="" date-format="dd/MM/yyyy" width-full _id="dataVencimento"></vaadin-date-field>
+      <vaadin-date-field caption="Data Entrega" date-format="dd/MM/yyyy" width-full _id="dataEntrega"></vaadin-date-field>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout visible="false" enabled="false" style-name="well marginLarge" _id="panelAddDatasExame" :expand>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-date-field caption="Data Exame" placeholder="" width-full _id="dataExame"></vaadin-date-field>
+      <vaadin-date-field caption="Data Retirada" placeholder="" width-full _id="dataRetirada"></vaadin-date-field>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout visible="false" style-name="well marginLarge" margin="false" _id="panelView" :expand>
+    <vaadin-vertical-layout style-name="card marginLarge" _id="panelViewDatas">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e605" caption="Data Prevista" style-name="large blue-grey300" plain-text>
+        99/99/9999 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e605" caption="Data Vencimento" style-name="large blue-grey300" plain-text :center>
+        99/99/9999 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e605" caption="Data Entrega" style-name="large blue-grey300" plain-text :right>
+        99/99/9999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style-name="card marginLarge" _id="panelViewProtocolo">
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e7e2" caption="Natureza" style-name="large colored" width-full plain-text :expand>
+        Registro Integral 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e802" caption="Nº de Vias" style-name="large blue-grey300" plain-text>
+        999.999 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e60a" caption="Valor Doc." style-name="large blue-grey300" plain-text>
+        R$ 999.999,99 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e7ba" caption="Data Doc." style-name="large blue-grey300" plain-text>
+        99/99/9999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e80d" caption="Parte" style-name="large blue-grey300" width-full plain-text :expand>
+        João Alberto da Silva Medeiros e Albuquerque Cardoso 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e61a" caption="CPF/CNPJ" style-name="large blue-grey300" width="150px" plain-text>
+        999.999.999-99 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e962" caption="Responsável" style-name="large blue-grey300" width-full plain-text :expand>
+        João Alberto da Silva Medeiros e Albuquerque Cardoso 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e77b" caption="Pasta PJ" style-name="large blue-grey300" width="150px" plain-text>
+        99.999.999.999 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style-name="card marginLarge" _id="panelViewApresentante" :expand>
+     <vaadin-label icon="fonticon://Vaadin-Icons/e634" caption="Apresentante" style-name="large blue-grey300" width-full plain-text>
+       João Alberto da Silva Medeiros e Albuquerque Cardoso 
+     </vaadin-label>
+     <vaadin-horizontal-layout width-full>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e7fb" caption="Nº de telefone" style-name="large blue-grey300" plain-text>
+        (99) 99999-9999 
+      </vaadin-label>
+      <vaadin-label icon="fonticon://Vaadin-Icons/e7dc" caption="Email" style-name="large blue-grey300" width-full plain-text :expand>
+        apresentante.sobrenome@nomedaempresa.com.br 
+      </vaadin-label>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>

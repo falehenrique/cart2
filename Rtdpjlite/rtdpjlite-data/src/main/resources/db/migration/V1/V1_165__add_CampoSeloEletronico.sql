@@ -1,0 +1,1 @@
+ALTER TABLE configuracao ADD COLUMN ic_selo_eletronico BOOLEAN NOT NULL DEFAULT TRUE;

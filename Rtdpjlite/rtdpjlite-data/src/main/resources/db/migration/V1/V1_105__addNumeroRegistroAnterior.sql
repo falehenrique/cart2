@@ -1,0 +1,1 @@
+ALTER TABLE registro ADD COLUMN numero_registro_referencia BIGINT;

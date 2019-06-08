@@ -1,0 +1,441 @@
+// Styles imported from Application_Menu.html
+@mixin vaadin-app-shell-template {
+	.app-shell {
+
+	// Navigation bar background color
+	$navigation-bar-bg-color: $v-focus-color;
+	$navigation-bar-selection-color: $v-selection-color;
+
+		.custom-menubar {
+			.v-menubar-menuitem {
+			position: relative;
+				:before {
+					content: "";
+					display: block;
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					background: $v-focus-color;
+					bottom: -20px;
+					left: 0;
+				}
+         	}
+		}
+
+		.navigation-bar {
+			background: $navigation-bar-bg-color;
+			z-index: 10000;
+		}
+
+		.logo {
+			color: $v-selection-color;
+			text-align: center;
+			padding: $v-unit-size / 2 $v-unit-size / 4;
+			font-size: $v-font-size * 1.4;
+			font-weight: lighter;
+			background-color: lighten($navigation-bar-bg-color, 10%);
+		}
+
+		.view-title {
+			font-size: $v-font-size * 1.1;
+			color: lighten($v-font-color, 10%);
+			padding: $v-unit-size / 2 $v-unit-size / 3;
+		}
+
+		.padding {
+			padding: $v-unit-size / 3;
+		}
+
+		.padding-top {
+			padding-top: $v-unit-size / 3;
+		}
+
+		.padding-right {
+			padding-right: $v-unit-size / 3;
+		}
+
+		.padding-bottom {
+			padding-bottom: $v-unit-size / 3;
+		}
+
+		.padding-left {
+			padding-left: $v-unit-size / 3;
+		}
+
+		.content-section {
+			background: lighten($v-background-color, 20%);
+			border: valo-border($border: $v-border, $strength: 0.2);
+			font-size: $v-font-size * .9;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		.menu {
+			float: right;
+			padding: 0 10px;
+			line-height: $v-unit-size;
+			color: lighten($navigation-bar-bg-color, 40%);
+			display: none;
+         		.v-icon {
+           			line-height: 1;
+					color: $navigation-bar-selection-color;
+           			font-size: 16px;
+         		}
+		}
+
+		
+		/* NAVIGATION RTD */
+		.navigation {
+			.v-button {
+				text-align: left;
+				font-size: $v-font-size * .9;
+				text-overflow: ellipsis;
+				color: lighten($navigation-bar-bg-color, 5%);
+	
+				&.active, &:focus {
+					color: $navigation-bar-bg-color;
+					.v-icon {
+		               color: $navigation-bar-bg-color;
+					}
+				}
+	
+				// Removes the default focus border
+				&:focus:after {
+	             content: none;
+				}
+	
+				&.borderless:hover {
+	             background: darken($navigation-bar-bg-color, 7%);
+	             cursor: pointer;
+				}
+			}
+		}	
+		.navigation .v-tabsheet-tabitemcell .v-tabsheet-tabitem-selected .v-caption.v-caption {
+		    border-bottom-color: $navigation-bar-selection-color;
+		    color: $v-selection-color;
+		    background: lighten($navigation-bar-bg-color, 1%) !important;
+		    text-align: center;
+		    padding: 10px !important;
+    
+    	}
+		.navigation .v-tabsheet-tabitem .v-caption{
+			padding: 10px !important;
+		}
+	
+		.navigation .v-accordion .v-accordion-item{
+			background: $navigation-bar-bg-color !important;
+			.v-accordion-item-caption{ 
+				.v-caption{
+					color: white;
+					font-weight: light;
+					border:0px !important;
+				}
+			}	
+			.v-accordion-item-content{
+				background: $navigation-bar-selection-color !important;
+			}
+		}
+	
+
+		// Responsive styles
+		/*&[width-range~="601px-1000px"] {
+			.navigation-bar-container {
+				width: 80px !important;
+
+				.logo {
+					font-size: $v-font-size * .95;
+				}
+
+				.navigation .v-button {
+					font-size: 26px;
+					height: 65px;
+					padding: 10px 6px;
+					box-sizing: border-box;
+					line-height: 1;
+
+					&:before {
+						content: none;
+					}
+
+					.v-button-wrap {
+						width: 100%;
+					}
+
+					.v-button-caption {
+						font-size: $v-font-size * 0.6;
+						margin: 0;
+						width: 100%;
+						float: left;
+						margin-top: 3px;
+						text-align: center;
+					}
+
+					.v-icon {
+						width: 100%;
+						float: left;
+						text-align: center;
+					}
+				}
+				.navigation .v-accordion-item {
+					background: $v-focus-color;
+
+					.v-accordion-item-caption{
+						border-bottom: 1px solid darken($v-focus-color, 5%) !important;
+						.v-caption{
+							color: $v-focus-color;
+							font-weight: bolder;
+							font-size: $v-font-size * 0.8;
+							margin: 0;
+							width: 100%;
+							float: left;
+							margin-top: 3px;
+							text-align: center;
+							.v-icon {
+				            	width: 100%;
+				            	float: left;
+				            	text-align: center;
+				            	font-size: $v-font-size * 1.5;
+				            	color: $v-selection-color;
+							}
+						}
+					}
+				}
+			}
+		}*/
+		
+
+		&[width-range~="-600px"] {
+			.navigation-bar-container {
+				width: 0px !important;
+			}
+	
+			.menu {
+				display: block;
+			}
+	
+			.navigation {
+				display: none;
+			}
+	
+			.navigation:hover, .navigation:active, .menu:focus + .navigation {
+				display: inline-block;
+			}
+	
+			.navigation-bar {
+				position: fixed;
+				width: 100%;
+				height: $v-unit-size !important;
+			}
+	
+			.logo {
+				line-height: $v-unit-size;
+				width: auto !important;
+				float: left;
+				padding: 0 $v-unit-size / 2.5;
+				font-size: $v-font-size;
+				font-weight: 100;
+	         }
+	
+			.content-container {
+				padding-top: $v-unit-size;
+			}
+		}
+	}
+}
+
+// Styles imported from Data_Grid_With_Editor.html
+@mixin vaadin-crud-template {
+     .crud-template {
+       .top-bar {
+         background: white;
+         color: $v-focus-color;
+         padding: 0 $v-unit-size / 2;
+         border-bottom: valo-border($border: $v-border, $strength: 1.0);
+       }
+
+       .padding {
+         padding: $v-unit-size / 2;
+       }
+
+       .border {
+         border: valo-border($v-border)
+       }
+
+       .border-top {
+         border-top: valo-border($v-border)
+       }
+
+       .border-left {
+         border-left: valo-border($v-border)
+       }
+
+       .filters {
+         padding: $v-unit-size / 4;
+
+         .v-slot {
+           position: relative;
+         }
+       }
+
+       .content {
+         position: relative;
+       }
+
+       .list {
+         padding-right: 300px;
+       }
+
+       .inspect {
+         position: absolute;
+         right: 0;
+         top: 0;
+         background: darken($v-app-background-color, 5%);
+         width: 300px !important;
+         border-left: 4px solid darken($v-app-background-color, 10%);
+       }
+
+       .section {
+         padding: $v-unit-size / 4;
+       }
+
+       .edit {
+         padding: $v-unit-size / 4;
+         overflow-x: hidden;
+         overflow-y: auto;
+         border-left: 1px solid darken($v-app-background-color, 15%);
+         border-top: 1px solid darken($v-app-background-color, 15%);
+       }
+
+       .search {
+         background: transparent;
+         border: none;
+         box-shadow: none;
+         border-bottom: 2px solid $v-focus-color;
+         border-radius: 0;
+         max-width: 350px;
+       }
+
+       .buttons {
+         background: $v-app-background-color;
+         padding: $v-unit-size / 4;
+         border-left: 1px solid darken($v-app-background-color, 15%);
+       }
+
+       &[width-range~="-850px"] {
+         .list {
+           height: 50% !important;
+           padding-right: 0;
+         }
+
+         .inspect {
+           position: static;
+           height: 50% !important;
+           width: 100% !important;
+           border-top: 4px solid darken($v-app-background-color, 10%);
+           border-left: none;
+         }
+
+         .section, .edit {
+           padding: $v-unit-size / 8;
+         }
+
+         .half {
+           width: 50% !important;
+           float: left;
+         }
+       }
+
+       &[width-range~="-650px"] {
+         .half {
+           width: 100% !important;
+         }
+       }
+     }
+   }
+
+// Styles imported from Tile_Layout.html
+@mixin vaadin-tiles-template {
+     .tiles {
+       padding: $v-unit-size / 6;
+       overflow-y: auto;
+       overflow-x: hidden;
+
+       .padding {
+         padding: $v-unit-size / 3;
+       }
+
+       .padding-top {
+         padding-top: $v-unit-size / 3;
+       }
+
+       .padding-right {
+         padding-right: $v-unit-size / 3;
+       }
+
+       .padding-bottom {
+         padding-bottom: $v-unit-size / 3;
+       }
+
+       .padding-left {
+         padding-left: $v-unit-size / 3;
+       }
+
+       .row {
+         display: -webkit-flex;
+         display: -ms-flexbox;
+         display: flex;
+
+         -webkit-flex-wrap: wrap;
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+       }
+
+       .tile {
+         float: left;
+         padding: $v-unit-size / 6;
+         display: -webkit-flex;
+         display: -ms-flexbox;
+         display: flex;
+       }
+
+       .title {
+         font-size: $v-font-size;
+         color: $v-focus-color;
+         text-transform: uppercase;
+         margin-bottom: $v-unit-size / 4;
+       }
+
+       .tile-content {
+         background: lighten($v-background-color, 20%);
+         border: valo-border($border: $v-border, $strength: 0.2);
+         font-size: $v-font-size * .9;
+       }
+
+       .full {
+         width: 100%;
+       }
+
+       .two-thirds {
+         width: 66.66%;
+       }
+
+       .half {
+         width: 50%;
+       }
+
+       .third {
+         width: 33.33%;
+       }
+
+       .quarter {
+         width: 25%;
+       }
+
+       // Responsive tile styles
+       &[width-range~="-750px"] {
+         .two-thirds, .half, .third, .quarter {
+           width: 100%;
+         }
+       }
+     }
+   }

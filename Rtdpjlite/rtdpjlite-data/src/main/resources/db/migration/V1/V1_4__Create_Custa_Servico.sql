@@ -1,0 +1,1 @@
+create table servico_custas(id serial, custas_id bigint, servico_id bigint)

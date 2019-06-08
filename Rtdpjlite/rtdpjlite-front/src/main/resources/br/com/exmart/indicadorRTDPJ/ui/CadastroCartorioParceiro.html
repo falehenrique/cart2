@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;mytheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+ </head>
+ <body>
+  <vaadin-vertical-layout style-name="scroll" spacing="false" margin="false">
+   <vaadin-panel>
+    <vaadin-horizontal-layout size-full margin>
+     <vaadin-button icon="fonticon://Vaadin-Icons/e61a" style-name="btnGrey borderless" width="40px" height="40px" plain-text :middle></vaadin-button>
+     <vaadin-label style-name="h3" plain-text :middle :expand="0.75">
+       Cadastro Cartório Parceiro 
+     </vaadin-label>
+     <vaadin-button visible="false" icon="fonticon://FontAwesome/f00c" style-name="icon-only borderless large" width="40px" height="40px" plain-text :middle :right></vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-panel>
+   <vaadin-vertical-layout :expand>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-combo-box caption="Estado" width-full data-item-type="br.com.exmart.rtdpjlite.model.Estado" _id="estado" :expand="0.3"></vaadin-combo-box>
+     <vaadin-combo-box caption="Cidade" width-full data-item-type="br.com.exmart.rtdpjlite.model.Cidade" _id="cidade" :expand></vaadin-combo-box>
+     <vaadin-text-field caption="Comarca" width-full _id="comarca" :expand></vaadin-text-field>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-text-field caption="Cns" width-full _id="cns" :expand="0.4"></vaadin-text-field>
+     <vaadin-text-field caption="Cnpj" width-full _id="cnpj" :expand="0.6"></vaadin-text-field>
+     <vaadin-text-field caption="Denominação" width-full _id="denominacao" :expand></vaadin-text-field>
+     <vaadin-text-field caption="Apelido" width-full _id="apelido" :expand="0.8"></vaadin-text-field>
+    </vaadin-horizontal-layout>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-text-field caption="Oficial" width-full _id="oficial" :expand></vaadin-text-field>
+     <vaadin-text-field caption="Cpf" width-full _id="cpf" :expand="0.5"></vaadin-text-field>
+     <vaadin-text-field caption="Email" placeholder="Utilizado para acessar o portal" width-full _id="email" :expand="0.8"></vaadin-text-field>
+    </vaadin-horizontal-layout>
+    <vaadin-vertical-layout margin="false">
+     <vaadin-check-box caption="Recebe Certidão Eletronica" width-full height="19px" _id="icCertidaoEletronica" :bottom :center :expand></vaadin-check-box>
+     <vaadin-text-field caption="Qtd vias fisica" width="100px" _id="qtdViasFisica" :expand></vaadin-text-field>
+    </vaadin-vertical-layout>
+    <vaadin-horizontal-layout width-full>
+     <vaadin-button style-name="borderless" plain-text _id="fechar" :middle :right :expand>
+       Fechar 
+     </vaadin-button>
+     <vaadin-button style-name="friendly" plain-text _id="salvar" :middle :right>
+       Salvar 
+     </vaadin-button>
+    </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
+  </vaadin-vertical-layout>
+ </body>
+</html>
